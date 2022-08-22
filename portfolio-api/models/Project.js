@@ -1,4 +1,4 @@
-const { Schema, model } = require('express');
+const { Schema, model } = require('mongoose');
 
 const ProjectSchema = new Schema({
   name: {
