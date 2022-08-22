@@ -6,10 +6,10 @@
         <h5 class="fs-5 fw-bold">Software Engineer</h5>
       </div>
     </header>
-    <div class="row justify-content-center text-center">
+    <div class="row ps-lg-5 pe-lg-5 justify-content-center text-center">
       <img
         src="HunkPic.png"
-        class="col-2 img-thumbnail border border-0 p-0 rounded-pill mb-5"
+        class="col-2 col-lg-1 img-thumbnail border border-0 p-0 rounded-pill mb-5"
         alt="Hunk Los"
       />
       <p class="pe-5 ps-5 text-break">

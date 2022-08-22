@@ -1,9 +1,21 @@
 <template>
-  <Header />
-  <Tech />
-  <Backend />
-  <About />
-  <Footer />
+  <div class="container">
+    <section>
+      <Header />
+    </section>
+    <section>
+      <Tech />
+    </section>
+    <section>
+      <Backend />
+    </section>
+    <section>
+      <About />
+    </section>
+    <section>
+      <Footer />
+    </section>
+  </div>
 </template>
 
 <script>

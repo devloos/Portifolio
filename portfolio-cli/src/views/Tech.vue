@@ -1,9 +1,35 @@
 <template>
-  <div class="container text-white"></div>
+  <div class="container text-white">
+    <div class="row text-center mb-0">
+      <h4 class="fst-italic mb-3">Technologies</h4>
+      <hr class="border border-1" />
+    </div>
+    <div class="row">
+      <div v-for="Tech in Techs" class="col-2 col-md-1 col-lg-1 mb-2" :key="Tech.name">
+        <img :src="Tech.image_path" :alt="Tech.name" width="30" height="30" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import GetTechnologies from '../api/Tech';
+
 export default {
   name: 'Tech-V',
+  data() {
+    return {
+      Techs: [],
+    };
+  },
+  async mounted() {
+    this.Techs = await GetTechnologies();
+  },
 };
 </script>
+
+<style scoped>
+.img-thumbnail {
+  background-color: transparent;
+}
+</style>
