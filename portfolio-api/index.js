@@ -30,6 +30,8 @@ mongoose
   })
   .catch((err) => console.log(`Connection unsuccessful: ${err}`));
 
+app.use('/api/tech', require('./routes/api/Tech'));
+
 // Heroku
 if (process.env.NODE_ENV === 'production') {
   app.get('/*', (req, res) => {
