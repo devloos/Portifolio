@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-md-7 col-lg-8 col-xl-6">
+  <div class="container col-md-7 col-lg-7 col-xl-5">
     <section class="mt-5">
       <Header />
     </section>
