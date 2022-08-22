@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white">Tech</div>
+  <div class="container text-white"></div>
 </template>
 
 <script>
