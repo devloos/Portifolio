@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <section>
+  <div class="container col-md-7 col-lg-8 col-xl-6">
+    <section class="mt-5">
       <Header />
     </section>
     <section>
@@ -36,3 +36,11 @@ export default {
   },
 };
 </script>
+
+<style>
+/* @media (min-width: 990px) {
+  .container {
+    max-width: 720px;
+  }
+} */
+</style>

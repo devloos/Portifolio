@@ -1,11 +1,11 @@
 <template>
   <div class="container text-white">
-    <div class="row text-center mb-0">
+    <div class="row text-center">
       <h4 class="fst-italic mb-3">Technologies</h4>
       <hr class="border border-1" />
     </div>
-    <div class="row">
-      <div v-for="Tech in Techs" class="col-2 col-md-1 col-lg-1 mb-2" :key="Tech.name">
+    <div class="row ps-lg-4 pe-lg-4">
+      <div v-for="Tech in Techs" class="col-1 m-2 m-lg-0 mb-lg-2" :key="Tech.name">
         <img :src="Tech.image_path" :alt="Tech.name" width="30" height="30" />
       </div>
     </div>
