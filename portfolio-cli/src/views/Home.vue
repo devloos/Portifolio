@@ -22,7 +22,7 @@
 import Header from './Header.vue';
 import Tech from './Tech.vue';
 import Backend from './Backend.vue';
-import About from './About.vue';
+import About from './Web.vue';
 import Footer from './Footer.vue';
 
 export default {

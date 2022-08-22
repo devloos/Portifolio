@@ -1,9 +1,0 @@
-<template>
-  <div class="text-white">About</div>
-</template>
-
-<script>
-export default {
-  name: 'About-V',
-};
-</script>

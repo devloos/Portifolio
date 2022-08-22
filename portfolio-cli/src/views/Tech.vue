@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-white">
+  <div class="container-fluid mt-5 text-white">
     <div class="row text-center">
       <h4 class="fst-italic mb-3">Technologies</h4>
       <hr class="border border-1" />
