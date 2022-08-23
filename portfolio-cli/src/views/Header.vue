@@ -13,13 +13,16 @@
         alt="Hunk Los"
       />
       <p class="text-break">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident recusandae
-        quis at cum ipsa impedit! Labore amet ipsa sequi incidunt commodi ex veritatis,
-        molestiae beatae corrupti? Qui libero vitae dolores.
+        Web Developer for Ethika Inc. I am very passionate about programming and the whole
+        package it comes with. Some of my goals are to get into a good university known
+        for Computer Science. Accomplishing this would lead me to another goal of mine :
+        pushing for a FAANG SWE Position. I am very motivated and willing to tackle any
+        sort of problem tossed to me.
       </p>
       <p class="text-break">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident recusandae
-        quis at cum ipsa impedit!
+        Some of the schools that I will be applying to in the Fall semester of 2022 are [
+        UCI, UCSC, UCR, UCSD, SLO, SDSU, CSULA, SFSU, Pomona ], just to name a few. My top
+        choices are UCI, SFSU, and UC Santa Cruz.
       </p>
     </div>
   </div>

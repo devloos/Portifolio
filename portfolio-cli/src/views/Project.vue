@@ -80,7 +80,7 @@ export default {
       name: res[0].name,
       video_path: res[0].video_path,
       description: res[0].description,
-      creation: res[0].mini_description,
+      creation: res[0].creation,
       code_link: res[0].code_link,
       test_link: res[0].test_link,
       date: res[0].date,

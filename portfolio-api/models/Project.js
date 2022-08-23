@@ -21,7 +21,7 @@ const ProjectSchema = new Schema({
     type: String,
     required: true,
   },
-  mini_description: {
+  creation: {
     type: String,
     required: true,
   },
