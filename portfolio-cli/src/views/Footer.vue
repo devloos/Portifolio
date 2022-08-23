@@ -39,7 +39,7 @@ export default {
         {
           name: 'MonkeyType',
           url: 'https://monkeytype.com/profile/m79cIZ2I3ATVjygkeIK8kbVFByI2',
-          image_path: './Github.svg',
+          image_path: './MonkeyType.png',
         },
       ],
     };

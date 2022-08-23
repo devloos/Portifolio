@@ -5,5 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
   </nav> -->
-  <router-view />
+  <div class="container col-md-7 col-lg-7 col-xl-5">
+    <router-view />
+  </div>
 </template>

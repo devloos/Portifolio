@@ -6,6 +6,7 @@
       class="btn btn-sm text-light"
       v-text="project.name"
       type="button"
+      @click="this.$router.push(`project/${project.name}`)"
     ></p>
   </div>
 </template>

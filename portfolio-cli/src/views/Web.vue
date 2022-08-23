@@ -10,7 +10,7 @@
 
 <script>
 import Projects from '../components/Projects';
-import GetProjectsByCategory from '../api/Projects';
+import Project from '../api/Projects';
 
 export default {
   name: 'Web-V',
@@ -23,7 +23,7 @@ export default {
     Projects,
   },
   async mounted() {
-    this.projects = await GetProjectsByCategory('web');
+    this.projects = await Project.GetProjectsByCategory('web');
   },
 };
 </script>

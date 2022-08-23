@@ -1,21 +1,19 @@
 <template>
-  <div class="container col-md-7 col-lg-7 col-xl-5">
-    <section class="mt-5">
-      <Header />
-    </section>
-    <section>
-      <Tech />
-    </section>
-    <section>
-      <Backend />
-    </section>
-    <section class="mb-5">
-      <About />
-    </section>
-    <section>
-      <Footer />
-    </section>
-  </div>
+  <section class="mt-5">
+    <Header />
+  </section>
+  <section>
+    <Tech />
+  </section>
+  <section>
+    <Backend />
+  </section>
+  <section class="mb-5">
+    <About />
+  </section>
+  <section>
+    <Footer />
+  </section>
 </template>
 
 <script>
