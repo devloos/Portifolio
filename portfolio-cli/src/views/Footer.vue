@@ -1,7 +1,10 @@
 <template>
   <div class="container-fluid mt-5 pt-5 mb-3 pb-5 text-white">
     <div class="row text-center justify-content-center mt-5 mb-4">
-      <button class="btn btn-sm col-4 p-0 text-muted mb-3" @click="copy">
+      <button
+        class="btn btn-sm col-6 col-md-4 col-lg-4 col-xl-4 p-0 text-muted mb-3"
+        @click="copy"
+      >
         los@caguilera.dev
       </button>
       <div>

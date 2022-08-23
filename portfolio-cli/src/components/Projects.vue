@@ -1,13 +1,13 @@
 <template>
   <div class="row d-flex text-center justify-content-center">
-    <p
+    <button
       v-for="project in projects"
       :key="project.name"
-      class="btn btn-sm text-light"
+      class="btn btn-sm text-light mb-2"
       v-text="project.name"
       type="button"
       @click="this.$router.push(`project/${project.name}`)"
-    ></p>
+    ></button>
   </div>
 </template>
 
