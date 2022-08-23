@@ -9,7 +9,7 @@
     <section>
       <Backend />
     </section>
-    <section>
+    <section class="mb-5">
       <About />
     </section>
     <section>

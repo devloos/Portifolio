@@ -1,9 +1,9 @@
 <template>
-  <div class="container pt-3 text-light">
+  <div class="container text-light">
     <header class="row d-grid justify-content-center pt-3 mb-4">
       <div class="text-center">
-        <h1 class="fs-1 text-uppercase">Carlos Aguilera</h1>
-        <h5 class="fs-5 fw-bold">Software Engineer</h5>
+        <h1 class="fs-1 text-uppercase mb-0">Carlos Aguilera</h1>
+        <h5 class="fs-5 text-muted">Software Engineer</h5>
       </div>
     </header>
     <div class="row ps-lg-5 pe-lg-5 justify-content-center text-center">
