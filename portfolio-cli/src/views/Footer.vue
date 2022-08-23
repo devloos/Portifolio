@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid mt-5 pt-5 mb-3 pb-5 text-white">
-    <div class="row text-center mt-5 mb-4">
-      <a href="#" class="link-light mb-3">los@caguilera.dev</a>
+    <div class="row text-center justify-content-center mt-5 mb-4">
+      <button class="btn btn-sm col-4 p-0 text-muted mb-3" @click="copy">
+        los@caguilera.dev
+      </button>
       <div>
         <a
           v-for="social in socials"
@@ -43,6 +45,16 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    copy() {
+      try {
+        navigator.clipboard.writeText('los@caguilera.dev');
+        alert('Copied');
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
 </script>
