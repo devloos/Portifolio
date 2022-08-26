@@ -20,7 +20,7 @@
         sort of problem tossed to me.
       </p>
       <p class="text-break">
-        Some of the schools that I will be applying to in the Fall semester of 2022 are [
+        Some of the schools that I will be applying to in the Fall semester of 2023 are [
         UCI, UCSC, UCR, UCSD, SLO, SDSU, CSULA, SFSU, Pomona ], just to name a few. My top
         choices are UCI, SFSU, and UC Santa Cruz.
       </p>
