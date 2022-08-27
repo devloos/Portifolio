@@ -13,11 +13,9 @@
         alt="Hunk Los"
       />
       <p class="text-break">
-        Web Developer for Ethika Inc. I am very passionate about programming and the whole
-        package it comes with. Some of my goals are to get into a good university known
-        for Computer Science. Accomplishing this would lead me to another goal of mine :
-        pushing for a FAANG SWE Position. I am very motivated and willing to tackle any
-        sort of problem tossed to me.
+        Web Developer for Ethika Inc. Some of my goals are to get into a good university
+        known for Computer Science. Accomplishing this would lead me to another goal of
+        mine : pushing for a FAANG SWE Position.
       </p>
       <p class="text-break">
         Some of the schools that I will be applying to in the Fall semester of 2023 are [
