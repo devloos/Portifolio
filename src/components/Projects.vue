@@ -22,3 +22,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.btn {
+  --bs-btn-bg: #1f1f1f;
+  --bs-btn-hover-bg: #313131;
+}
+</style>
