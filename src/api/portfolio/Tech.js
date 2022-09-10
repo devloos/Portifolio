@@ -5,7 +5,7 @@ const GetTechnologies = async () => {
     const res = await axios.get('/api/tech');
     return res.data;
   } catch (err) {
-    console.log(err);
+    return err;
   }
 };
 

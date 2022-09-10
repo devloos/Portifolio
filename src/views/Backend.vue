@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Project from '../api/Projects';
+import Project from '../api/portfolio/Projects';
 import Projects from '../components/Projects.vue';
 
 export default {
@@ -23,7 +23,7 @@ export default {
     };
   },
   async mounted() {
-    this.projects = await Project.GetProjectsByCategory('backend');
+    this.projects = await Project.GetByCategory('backend');
   },
 };
 </script>

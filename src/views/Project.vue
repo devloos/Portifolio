@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import Project from '../api/Projects';
+import Project from '../api/portfolio/Projects';
 
 export default {
   name: 'Project-V',
@@ -75,7 +75,7 @@ export default {
     };
   },
   async mounted() {
-    const res = await Project.GetProjectByName(this.$route.params.project);
+    const res = await Project.GetByName(this.$route.params.project);
     this.project = {
       name: res[0].name,
       video_path: res[0].video_path,

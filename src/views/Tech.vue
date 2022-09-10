@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import GetTechnologies from '../api/Tech';
+import GetTechnologies from '../api/portfolio/Tech';
 
 export default {
   name: 'Tech-V',
