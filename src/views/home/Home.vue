@@ -19,9 +19,9 @@
 
 <script>
 import Header from './Header.vue';
-import Tech from './Tech.vue';
-import Backend from './Backend.vue';
-import About from './Web.vue';
+import Tech from '../tech/Tech.vue';
+import Backend from '../projects/Backend.vue';
+import About from '../projects/Web.vue';
 import Footer from './Footer.vue';
 
 export default {

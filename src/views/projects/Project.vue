@@ -1,16 +1,16 @@
 <template>
   <div class="container text-white mt-5 pt-5">
-    <div class="row d-flex justify-content-between">
+    <div class="row d-flex justify-content-between p-0">
       <button
-        class="btn btn-sm col-2 ms-3 col-lg-1 text-muted active"
+        class="btn btn-sm ms-1 p-0 col-2 col-lg-1 text-muted active"
         @click="$router.push('/')"
       >
         &#8592;
       </button>
-      <div class="dropdown-center col-3 col-lg-2">
+      <div class="d-flex justify-content-end dropdown-center col-3 col-lg-2 me-1 pe-0">
         <button
-          class="btn btn-sm text-muted active dropdown-toggle"
-          type="buttn"
+          class="btn btn-sm text-muted active dropdown-toggle me-0"
+          type="button"
           data-bs-toggle="dropdown"
         >
           MORE
@@ -21,7 +21,7 @@
               Code Repository
             </a>
           </li>
-          <li v-if="ProjectHasLiveTest">
+          <li v-if="projectHasLiveTest">
             <a
               :href="project.test_link"
               class="dropdown-item text-white"
@@ -64,31 +64,20 @@
 </template>
 
 <script>
-import Project from '../api/portfolio/Projects';
+import Project from '@/api/portfolio/Projects';
 
 export default {
   name: 'Project-V',
   data() {
     return {
       project: {},
-      ProjectHasLiveTest: false,
+      projectHasLiveTest: false,
     };
   },
   async mounted() {
     const res = await Project.GetByName(this.$route.params.project);
-    this.project = {
-      name: res[0].name,
-      video_path: res[0].video_path,
-      description: res[0].description,
-      creation: res[0].creation,
-      code_link: res[0].code_link,
-      test_link: res[0].test_link,
-      date: res[0].date,
-    };
-
-    if (this.project.test_link) {
-      this.ProjectHasLiveTest = true;
-    }
+    this.project = res[0];
+    this.projectHasLiveTest = this.project?.test_link ? true : false;
   },
 };
 </script>

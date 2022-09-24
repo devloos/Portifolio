@@ -5,7 +5,7 @@
       <hr class="border border-1" />
     </div>
     <div class="row ps-lg-4 pe-lg-4">
-      <div v-for="Tech in Techs" class="col-1 m-2 m-lg-0 mb-lg-2" :key="Tech.name">
+      <div v-for="Tech in techs" class="col-1 m-2 m-lg-0 mb-lg-2" :key="Tech.name">
         <img :src="Tech.image_path" :alt="Tech.name" width="30" height="30" />
       </div>
     </div>
@@ -13,17 +13,17 @@
 </template>
 
 <script>
-import GetTechnologies from '../api/portfolio/Tech';
+import GetTechnologies from '@/api/portfolio/Tech';
 
 export default {
   name: 'Tech-V',
   data() {
     return {
-      Techs: [],
+      techs: [],
     };
   },
   async mounted() {
-    this.Techs = await GetTechnologies();
+    this.techs = await GetTechnologies();
   },
 };
 </script>
