@@ -2,6 +2,5 @@
 
 npm run build
 
-mv dist/ /Users/ca/Development/Projects/Portfolio/portfolio-api/
-
-gx . "version update"
+rm -rf /Users/ca/Development/Projects/Portfolio/portfolio-api/dist
+mv dist /Users/ca/Development/Projects/Portfolio/portfolio-api
