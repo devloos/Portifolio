@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'Footer-V',
+  name: 'footer-i',
   data() {
     return {
       socials: [

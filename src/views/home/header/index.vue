@@ -28,6 +28,6 @@
 
 <script>
 export default {
-  name: 'Header-V',
+  name: 'header-i',
 };
 </script>

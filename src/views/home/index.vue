@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import Header from './Header.vue';
-import Tech from '../tech/Tech.vue';
-import Backend from '../projects/Backend.vue';
-import About from '../projects/Web.vue';
-import Footer from './Footer.vue';
+import Header from './header/index';
+import Tech from '@/views/tech/index';
+import Backend from '@/views/projects/Backend';
+import About from '@/views/projects/Web';
+import Footer from '@/views/footer/index';
 
 export default {
-  name: 'Home-V',
+  name: 'home-i',
   components: {
     Header,
     Tech,
@@ -35,11 +35,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* @media (min-width: 990px) {
-  .container {
-    max-width: 720px;
-  }
-} */
-</style>

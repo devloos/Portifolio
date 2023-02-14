@@ -16,7 +16,7 @@
 import GetTechnologies from '@/api/portfolio/Tech';
 
 export default {
-  name: 'Tech-V',
+  name: 'tech-i',
   data() {
     return {
       techs: [],
