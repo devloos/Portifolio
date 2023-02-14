@@ -43,7 +43,7 @@ export default {
         },
         {
           name: 'MonkeyType',
-          url: 'https://monkeytype.com/profile/m79cIZ2I3ATVjygkeIK8kbVFByI2',
+          url: 'https://monkeytype.com/profile/Puwya',
           image_path: './MonkeyType.png',
         },
       ],
