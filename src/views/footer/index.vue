@@ -15,7 +15,12 @@
           target="_blank"
           class="m-2"
         >
-          <img :src="social.image_path" :alt="social.name" width="30" height="30" />
+          <img
+            :src="social.image_path"
+            :alt="social.name"
+            width="30"
+            height="30"
+          />
         </a>
       </div>
     </div>
@@ -27,24 +32,24 @@
 
 <script>
 export default {
-  name: 'footer-i',
+  name: "footer-i",
   data() {
     return {
       socials: [
         {
-          name: 'Linkedin',
-          url: 'https://www.linkedin.com/in/aguilerac/',
-          image_path: './Linkedin.svg',
+          name: "Linkedin",
+          url: "https://www.linkedin.com/in/aguilerac/",
+          image_path: "./Linkedin.svg",
         },
         {
-          name: 'Github',
-          url: 'https://github.com/Puwya',
-          image_path: './Github.svg',
+          name: "Github",
+          url: "https://github.com/devloos",
+          image_path: "./Github.svg",
         },
         {
-          name: 'MonkeyType',
-          url: 'https://monkeytype.com/profile/Puwya',
-          image_path: './MonkeyType.png',
+          name: "MonkeyType",
+          url: "https://monkeytype.com/profile/devlos",
+          image_path: "./MonkeyType.png",
         },
       ],
     };
@@ -52,8 +57,8 @@ export default {
   methods: {
     copy() {
       try {
-        navigator.clipboard.writeText('los@caguilera.dev');
-        alert('Copied');
+        navigator.clipboard.writeText("los@caguilera.dev");
+        alert("Copied");
       } catch (err) {
         console.log(err);
       }
