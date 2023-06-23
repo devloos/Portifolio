@@ -5,7 +5,16 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#1e293b',
+        'primary-light': '#626976',
+        'primary-dark': '#151d29',
+        alternate: '#4383cb',
+        'alternate-light': '#7ba8db',
+        'alternate-dark': '#2f5c8e',
+      },
+    },
   },
   plugins: [],
 };
