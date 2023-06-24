@@ -2,8 +2,9 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-import '@/assets/scss/hamburger.scss';
-import '@/assets/css/styles.css';
+import '@/assets/hamburger.scss';
+import '@/assets/index.css';
+import '@/assets/index.pcss';
 
 const app = createApp(App);
 

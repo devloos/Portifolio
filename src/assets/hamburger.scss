@@ -27,11 +27,6 @@
 .hamburger.is-active:hover {
   opacity: 0.7;
 }
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  background-color: #e5e5e5;
-}
 
 .hamburger-box {
   width: 40px;
@@ -45,12 +40,12 @@
   top: 50%;
   margin-top: -2px;
 }
+
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
   width: 40px;
   height: 3px;
-  background-color: #e5e5e5;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
