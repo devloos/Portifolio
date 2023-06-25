@@ -1,7 +1,7 @@
 <template>
   <main class="container flex max-w-4xl flex-col justify-between">
     <div
-      class="flex flex-col items-center justify-center gap-4 pt-8 md:flex-row-reverse md:gap-2 md:pt-16"
+      class="flex flex-col items-center justify-center gap-4 pt-8 md:flex-row-reverse md:gap-2 md:px-3 md:pt-20"
     >
       <img
         class="mx-auto max-w-[150px] self-center rounded-full border border-slate-700"
