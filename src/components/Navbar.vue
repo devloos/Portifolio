@@ -3,6 +3,7 @@ import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
+import SmartLinks from '@/components/smart/SmartLinks.vue';
 
 const isDark = useDark();
 
@@ -39,19 +40,16 @@ onMounted(() => {
 <template>
   <nav class="sticky top-0">
     <div
-      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.9] px-5 py-2 backdrop-blur-sm transition-all dark:border-neutral-500 dark:bg-primary/[.9] md:justify-center md:gap-32 xl:gap-36"
+      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.4] px-5 py-2 backdrop-blur-sm transition-all dark:border-neutral-500 dark:bg-primary/[.6] md:justify-center md:gap-32 xl:gap-36"
     >
       <RouterLink to="/">
         <img src="goat.png" alt="" class="max-w-[42px]" />
       </RouterLink>
-      <div class="hidden gap-12 font-semibold md:flex lg:gap-16">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <p>Contact</p>
+      <div class="hidden gap-12 font-semibold md:flex md:text-xl lg:gap-16">
+        <SmartLinks />
       </div>
       <button
-        class="hidden h-[29px] w-[58px] cursor-pointer items-center rounded-full bg-slate-300 pl-[2px] hover:outline hover:outline-sky-800 dark:bg-primary-light md:flex"
+        class="hidden h-[29px] w-[58px] cursor-pointer items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-light md:flex"
         type="button"
         @click="isDark = !isDark"
       >
@@ -87,10 +85,7 @@ onMounted(() => {
           class="fixed right-1 top-[59.2px] z-40 h-80 w-80 rounded-b bg-slate-100 dark:bg-primary-dark"
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/projects">Projects</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-            <p>Contact</p>
+            <SmartLinks />
             <div class="flex gap-8">
               <a href="#">
                 <i class="fa-brands fa-linkedin fa-lg"></i>
