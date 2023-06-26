@@ -1,3 +1,14 @@
+<script setup>
+// Todo change to grabbing from backend
+function downloadResume() {
+  const anchor = document.createElement('a');
+  anchor.setAttribute('href', '/Aguilera-CV.pdf');
+  anchor.setAttribute('download', '');
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.parentNode.removeChild(anchor);
+}
+</script>
 <template>
   <main class="container flex max-w-4xl flex-col justify-between">
     <div
@@ -15,6 +26,7 @@
         <div class="px-2">
           <button
             class="mr-6 rounded bg-alternate-400 px-5 py-2 ring-2 ring-gray-500 transition-all hover:bg-alternate-500 dark:bg-alternate-600 dark:ring-slate-600 hover:dark:bg-alternate-500"
+            @click.prevent="downloadResume"
           >
             <div class="flex items-center justify-center gap-3">
               <p>Resume</p>
