@@ -1,24 +1,24 @@
 <template>
   <RouterLink
+    v-slot="{ isActive }"
     to="/"
-    active-class="text-alternate-500 dark:text-alternate-400 hover:text-alternate-500 hover:dark:text-alternate-400"
-    class="hover:text-gray-500"
+    active-class="text-alternate-500 dark:text-alternate-400"
   >
-    Home
+    <span :class="{ 'hover:text-gray-500': !isActive }">Home</span>
   </RouterLink>
   <RouterLink
+    v-slot="{ isActive }"
     to="/projects"
-    active-class="text-alternate-500 dark:text-alternate-400 hover:text-alternate-500 hover:dark:text-alternate-400"
-    class="hover:text-gray-500"
+    active-class="text-alternate-500 dark:text-alternate-400"
   >
-    Projects
+    <span :class="{ 'hover:text-gray-500': !isActive }">Projects</span>
   </RouterLink>
   <RouterLink
+    v-slot="{ isActive }"
     to="/about"
-    active-class="text-alternate-500 dark:text-alternate-400 hover:text-alternate-500 hover:dark:text-alternate-400"
-    class="hover:text-gray-500"
+    active-class="text-alternate-500 dark:text-alternate-400"
   >
-    About
+    <span :class="{ 'hover:text-gray-500': !isActive }">About</span>
   </RouterLink>
   <RouterLink :to="{ name: 'home', hash: '#contact' }" class="hover:text-gray-500">
     Contact

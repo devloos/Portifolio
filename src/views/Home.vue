@@ -21,14 +21,15 @@
               <i class="fa-solid fa-download"></i>
             </div>
           </button>
-          <button
-            class="rounded bg-slate-300 px-5 py-2 ring-2 ring-slate-400 dark:bg-slate-700 dark:ring-slate-500 hover:dark:bg-slate-600"
+          <RouterLink
+            to="/projects"
+            class="inline-block rounded bg-slate-300 px-5 py-2 ring-2 ring-slate-500 hover:bg-slate-400 dark:bg-slate-700 dark:ring-slate-500 hover:dark:bg-slate-600"
           >
             <div class="flex items-center justify-center gap-3">
               <p>Projects</p>
               <i class="fa-solid fa-arrow-right"></i>
             </div>
-          </button>
+          </RouterLink>
         </div>
       </div>
     </div>
