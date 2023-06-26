@@ -13,4 +13,6 @@
 body {
   box-sizing: border-box;
   font-family: sans-serif;
+  transition: color 300ms ease !important;
+  transition: background-color 300ms ease !important;
 }

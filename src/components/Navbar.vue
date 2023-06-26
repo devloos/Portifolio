@@ -40,7 +40,7 @@ onMounted(() => {
 <template>
   <nav class="sticky top-0">
     <div
-      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.4] px-5 py-2 backdrop-blur-sm transition-all dark:border-neutral-500 dark:bg-primary-500/[.6] md:justify-center md:gap-32 xl:gap-36"
+      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.4] px-5 py-2 backdrop-blur-sm dark:border-neutral-500 dark:bg-primary-500/[.6] md:justify-center md:gap-32 xl:gap-36"
     >
       <RouterLink to="/">
         <img src="goat.png" alt="" class="max-w-[42px]" />
@@ -49,12 +49,12 @@ onMounted(() => {
         <SmartLinks />
       </div>
       <button
-        class="hidden h-[29px] w-[58px] cursor-pointer items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
+        class="hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
         type="button"
         @click="isDark = !isDark"
       >
         <div
-          class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 transition-all dark:bg-primary-500"
+          class="flex h-[26px] w-[26px] transform items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary-500"
           :class="{ 'translate-x-[28px]': isDark }"
         >
           <i class="fa-solid" :class="isDark ? 'fa-moon' : 'fa-sun'"></i>
