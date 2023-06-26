@@ -40,7 +40,7 @@ onMounted(() => {
 <template>
   <nav class="sticky top-0">
     <div
-      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.4] px-5 py-2 backdrop-blur-sm transition-all dark:border-neutral-500 dark:bg-primary/[.6] md:justify-center md:gap-32 xl:gap-36"
+      class="z-50 flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.4] px-5 py-2 backdrop-blur-sm transition-all dark:border-neutral-500 dark:bg-primary-500/[.6] md:justify-center md:gap-32 xl:gap-36"
     >
       <RouterLink to="/">
         <img src="goat.png" alt="" class="max-w-[42px]" />
@@ -49,12 +49,12 @@ onMounted(() => {
         <SmartLinks />
       </div>
       <button
-        class="hidden h-[29px] w-[58px] cursor-pointer items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-light md:flex"
+        class="hidden h-[29px] w-[58px] cursor-pointer items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
         type="button"
         @click="isDark = !isDark"
       >
         <div
-          class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 transition-all dark:bg-primary"
+          class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 transition-all dark:bg-primary-500"
           :class="{ 'translate-x-[28px]': isDark }"
         >
           <i class="fa-solid" :class="isDark ? 'fa-moon' : 'fa-sun'"></i>
@@ -82,28 +82,28 @@ onMounted(() => {
       <SmartTransition name="slide-from-right">
         <div
           v-if="navOpened"
-          class="fixed right-1 top-[59.2px] z-40 h-80 w-80 rounded-b bg-slate-100 dark:bg-primary-dark"
+          class="fixed right-1 top-[59.2px] z-40 h-80 w-80 rounded-b bg-slate-100 dark:bg-primary-600"
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
             <SmartLinks />
             <div class="flex gap-8">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
                 <i class="fa-brands fa-linkedin fa-lg"></i>
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/devloos" target="_blank">
                 <i class="fa-brands fa-instagram fa-lg"></i>
               </a>
-              <a href="#">
+              <a href="https://github.com/devloos" target="_blank">
                 <i class="fa-brands fa-github fa-lg"></i>
               </a>
-              <a href="#">
+              <a href="https://twitter.com/18aguilerac" target="_blank">
                 <i class="fa-brands fa-twitter fa-lg"></i>
               </a>
             </div>
             <div>
-              <hr class="mb-3 bg-neutral-300 dark:bg-coal" />
+              <hr class="mb-3 bg-neutral-300 dark:bg-coal-500" />
               <button
-                class="flex w-full items-center justify-center gap-5 rounded bg-alternate-light py-3 transition-all dark:bg-alternate-dark"
+                class="flex w-full items-center justify-center gap-5 rounded bg-alternate-400 py-3 transition-all dark:bg-alternate-600"
                 @click="isDark = !isDark"
               >
                 <i class="fa-solid" :class="isDark ? 'fa-sun' : 'fa-moon'"></i>
