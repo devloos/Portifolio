@@ -10,9 +10,9 @@ function downloadResume() {
 }
 </script>
 <template>
-  <main class="container flex max-w-4xl flex-col justify-between">
+  <main class="container max-w-6xl">
     <div
-      class="flex flex-col items-center justify-center gap-4 pt-8 md:flex-row-reverse md:gap-2 md:px-3 md:pt-20"
+      class="mx-auto mb-24 flex max-w-4xl flex-col items-center justify-center gap-4 pt-8 md:flex-row-reverse md:gap-2 md:px-3 md:pt-20"
     >
       <img
         class="mx-auto max-w-[150px] self-center rounded-full border border-slate-700"
@@ -45,6 +45,38 @@ function downloadResume() {
         </div>
       </div>
     </div>
-    <div id="contact">dkjlj</div>
+    <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
+    <div class="grid grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2">
+      <div
+        v-for="(i, n) in 4"
+        :key="n"
+        class="max-w-xl rounded shadow-lg grayscale transition duration-300 ease-in hover:grayscale-0 dark:shadow-2xl"
+      >
+        <img class="rounded-t" src="test.jpg" alt="" />
+        <div class="px-4 py-2">
+          <h5 class="mb-1 font-semibold text-alternate-500 dark:text-alternate-300">
+            El Andariego
+          </h5>
+          <p class="mb-3 text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolores, nisi
+            quibusdam voluptates, minima perspiciatis aut porro, provident
+          </p>
+          <a
+            class="mr-4 text-sm text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-slate-500"
+            href="https://www.elandariegotruck.com/"
+            target="_blank"
+          >
+            Visit Site
+          </a>
+          <a
+            class="text-sm text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-slate-500"
+            href="https://github.com/devloos/El-Andariego"
+            target="_blank"
+          >
+            View Source
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
