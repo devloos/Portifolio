@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar.vue';
 
 <template>
   <img
-    class="absolute -top-28 left-0 right-0 -z-50 mx-auto sm:-top-48 md:-top-64 lg:-top-72"
+    class="absolute -top-28 left-0 right-0 -z-40 mx-auto sm:-top-48 md:-top-96"
     src="rays.png"
     alt="rays"
   />
