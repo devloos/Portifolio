@@ -1,4 +1,6 @@
 <script setup>
+import { buildTagUrl } from '@/assets/utility';
+
 defineProps({
   project: {
     type: Object,
@@ -25,9 +27,15 @@ defineProps({
         <div class="mb-2 flex flex-wrap items-center justify-start gap-2">
           <img
             v-for="tag in project.tags"
-            :key="tag.title"
-            :src="tag.url"
-            :alt="tag.title"
+            :key="tag.text"
+            :src="
+              buildTagUrl({
+                text: tag.text,
+                backgroundColor: '333',
+                logo: tag.logo,
+              })
+            "
+            alt=""
           />
         </div>
       </div>

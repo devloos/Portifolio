@@ -3,6 +3,8 @@ import projects from '@/assets/constants/projects';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
+import tech from '@/assets/constants/tech';
+import { buildTagUrl } from '@/assets/utility';
 </script>
 <template>
   <main>
@@ -58,12 +60,24 @@ import ProjectCard from '@/components/ProjectCard.vue';
     </section>
     <section class="relative pt-14">
       <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
-      <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nostrum ipsa
-        quia placeat consectetur saepe amet commodi cupiditate, natus veritatis esse ullam
-        maiores aut nam ut fugiat doloremque nihil quidem!
+      <div class="mx-auto mt-8 max-w-4xl">
+        <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
+        <div class="flex flex-wrap justify-center gap-3">
+          <img
+            v-for="tag in tech"
+            :key="tag.text"
+            :src="
+              buildTagUrl({
+                text: tag.text,
+                backgroundColor: '333',
+                style: 'for-the-badge',
+                logo: tag.logo,
+              })
+            "
+            alt=""
+          />
+        </div>
       </div>
     </section>
-    <div id="contact">jdalkjdf</div>
   </main>
 </template>
