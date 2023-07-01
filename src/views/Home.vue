@@ -34,7 +34,7 @@ import { buildTagUrl } from '@/assets/utility';
             </a>
             <RouterLink
               to="/projects"
-              class="inline-block rounded bg-slate-300 px-5 py-2 ring-2 ring-slate-500 hover:bg-slate-400 dark:bg-slate-700 dark:ring-slate-500 hover:dark:bg-slate-600"
+              class="inline-block rounded bg-slate-300 px-5 py-2 ring-2 ring-slate-500 transition-all hover:bg-slate-400 dark:bg-slate-700 dark:ring-slate-500 hover:dark:bg-slate-600"
             >
               <div class="flex items-center justify-center gap-3">
                 <p>Projects</p>
@@ -62,7 +62,7 @@ import { buildTagUrl } from '@/assets/utility';
       <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
       <div class="mx-auto mt-8 max-w-4xl">
         <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
-        <div class="flex flex-wrap justify-center gap-3">
+        <div class="mb-14 flex flex-wrap justify-center gap-3">
           <img
             v-for="tag in tech"
             :key="tag.text"
@@ -74,6 +74,13 @@ import { buildTagUrl } from '@/assets/utility';
                 logo: tag.logo,
               })
             "
+            alt=""
+          />
+        </div>
+        <div class="px-3">
+          <img
+            class="mx-auto"
+            src="https://github-readme-stats.vercel.app/api?username=devloos&count_private=true&show_icons=true&include_all_commits=true&icon_color=1e81b0&bg_color=333&text_color=f1f5f9&title_color=f1f5f9&border_color=699cd5"
             alt=""
           />
         </div>
