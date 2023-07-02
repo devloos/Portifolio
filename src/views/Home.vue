@@ -6,7 +6,6 @@ import { buildTagUrl } from '@/assets/utility';
 import projects from '@/assets/constants/projects';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
-import FooterWave from '@/components/wave-svgs/FooterWave.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import tech from '@/assets/constants/tech';
 
@@ -49,7 +48,7 @@ function statCardUrl() {
 </script>
 <template>
   <main>
-    <section class="relative pb-24 pt-8 md:px-3 md:pt-20">
+    <section class="mb-16 pt-8 md:px-3 md:pt-20">
       <div
         class="container mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 md:flex-row-reverse md:gap-2"
       >
@@ -85,22 +84,24 @@ function statCardUrl() {
           </div>
         </div>
       </div>
-      <TopWave class="fill-alternate-100 dark:fill-slate-700" />
     </section>
-    <section class="bg-alternate-100 dark:bg-slate-700">
-      <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
-      <div
-        class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
-      >
-        <ProjectCard
-          v-for="project in projects"
-          :key="project.title"
-          :project="project"
-        />
+    <section class="relative py-12">
+      <TopWave class="fill-alternate-100 dark:fill-slate-700" />
+      <div class="bg-alternate-100 dark:bg-slate-700">
+        <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
+        <div
+          class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
+        >
+          <ProjectCard
+            v-for="project in projects"
+            :key="project.title"
+            :project="project"
+          />
+        </div>
       </div>
+      <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
     </section>
     <section class="relative mb-16 pt-14">
-      <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
       <div class="mx-auto mt-8 max-w-4xl">
         <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
         <div class="mb-14 flex flex-wrap justify-center gap-3">
@@ -124,7 +125,7 @@ function statCardUrl() {
       </div>
     </section>
     <section class="relative pt-12">
-      <FooterWave class="fill-alternate-100 dark:fill-slate-700" />
+      <TopWave class="fill-alternate-100 dark:fill-slate-700" />
       <div class="bg-alternate-100 dark:bg-slate-700">
         <div>jdlksajf</div>
         <div>dkljafl</div>

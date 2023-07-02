@@ -23,8 +23,8 @@ defineOptions({
 <style scoped lang="scss">
 .wave {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
