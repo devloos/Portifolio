@@ -1,50 +1,11 @@
 <script setup>
-import { computed, ref } from 'vue';
-import { useMouseInElement } from '@vueuse/core';
-
 import { buildTagUrl } from '@/assets/utility';
 import projects from '@/assets/constants/projects';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
+import StatCard from '@/components/StatCard.vue';
 import tech from '@/assets/constants/tech';
-
-const statCard = ref(null);
-
-const { elementX, elementY, elementHeight, elementWidth, isOutside } =
-  useMouseInElement(statCard);
-
-const cardTransform = computed(() => {
-  const MAX_ROTATION = 6;
-
-  const rX = (
-    MAX_ROTATION / 2 -
-    (elementY.value / elementHeight.value) * MAX_ROTATION
-  ).toFixed(2);
-
-  const rY = (
-    (elementX.value / elementWidth.value) * MAX_ROTATION -
-    MAX_ROTATION / 2
-  ).toFixed(2);
-
-  return isOutside.value
-    ? ''
-    : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
-});
-
-function statCardUrl() {
-  const url = new URL('https://github-readme-stats.vercel.app/api');
-  url.searchParams.append('username', 'devloos');
-  url.searchParams.append('count_private', 'true');
-  url.searchParams.append('show_icons', 'true');
-  url.searchParams.append('include_all_commits', 'true');
-  url.searchParams.append('icon_color', '1e81b0');
-  url.searchParams.append('bg_color', '333');
-  url.searchParams.append('text_color', 'f1f5f9');
-  url.searchParams.append('title_color', 'f1f5f9');
-  url.searchParams.append('border_color', '699cd5');
-  return url;
-}
 </script>
 <template>
   <main>
@@ -120,23 +81,16 @@ function statCardUrl() {
           />
         </div>
         <div class="px-3">
-          <img ref="statCard" class="stat-card mx-auto" :src="statCardUrl()" alt="" />
+          <StatCard perspective />
         </div>
       </div>
     </section>
     <section class="relative pt-12">
       <TopWave class="fill-alternate-100 dark:fill-slate-700" />
       <div class="bg-alternate-100 dark:bg-slate-700">
-        <div>jdlksajf</div>
+        <div id="contact">jdlksajf</div>
         <div>dkljafl</div>
       </div>
     </section>
   </main>
 </template>
-
-<style scoped lang="scss">
-.stat-card {
-  transform: v-bind(cardTransform);
-  transition: transform 0.25s ease-out;
-}
-</style>
