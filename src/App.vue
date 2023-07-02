@@ -10,7 +10,7 @@ import Navbar from '@/components/Navbar.vue';
     alt="rays"
   />
   <Navbar />
-  <RouterView v-slot="{ Component }" class="h-[4000px]">
+  <RouterView v-slot="{ Component }" class="h-[2500px]">
     <SmartTransition name="fade-up" mode="out-in" duration="500">
       <component :is="Component" />
     </SmartTransition>
