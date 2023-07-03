@@ -85,12 +85,5 @@ import tech from '@/assets/constants/tech';
         </div>
       </div>
     </section>
-    <section class="relative pt-12">
-      <TopWave class="fill-alternate-100 dark:fill-slate-700" />
-      <div class="bg-alternate-100 dark:bg-slate-700">
-        <div id="contact">jdlksajf</div>
-        <div>dkljafl</div>
-      </div>
-    </section>
   </main>
 </template>
