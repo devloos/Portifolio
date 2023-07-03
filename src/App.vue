@@ -1,6 +1,6 @@
 <script setup>
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import Navbar from '@/components/Navbar.vue';
+import PortfolioNav from '@/components/PortfolioNav.vue';
 import PorfolioFooter from '@/components/PortfolioFooter.vue';
 </script>
 
@@ -10,7 +10,7 @@ import PorfolioFooter from '@/components/PortfolioFooter.vue';
     src="rays.png"
     alt="rays"
   />
-  <Navbar />
+  <PortfolioNav />
   <RouterView v-slot="{ Component }" class="router-view">
     <SmartTransition name="fade-up" mode="out-in" duration="500">
       <component :is="Component" />
