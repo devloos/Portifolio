@@ -1,20 +1,46 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
+import { ref, toRefs } from 'vue';
 
-defineProps({
+const props = defineProps({
   project: {
     type: Object,
     required: true,
   },
 });
+
+const { project } = toRefs(props);
+
+const vid = ref(null);
+
+function playVideo() {
+  vid.value.play();
+}
+
+function resetVideo() {
+  vid.value.pause();
+  vid.value.currentTime = 0;
+}
 </script>
 
 <template>
-  <div class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl">
-    <img
+  <div
+    class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl"
+    @mouseover="playVideo()"
+    @mouseleave="resetVideo()"
+  >
+    <video
+      v-if="project.file.type === 'video'"
+      ref="vid"
+      :src="project.file.src"
       class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
-      :src="project.image"
+      muted
+    />
+    <img
+      v-else
+      :src="project.file.src"
       alt=""
+      class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
       <div>

@@ -59,7 +59,7 @@ function contactSubmit() {
         <div class="flex justify-around gap-28 text-xl lg:text-2xl">
           <div>
             <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
-            <div class="grid grid-cols-2 lg:grid-cols-1">
+            <div class="grid grid-cols-2 gap-y-2 lg:grid-cols-1">
               <SmartLinks />
             </div>
           </div>
@@ -93,6 +93,13 @@ function contactSubmit() {
                 target="_blank"
               >
                 <i class="fa-brands fa-twitter fa-lg"></i>
+              </a>
+              <a
+                class="transition-all hover:text-gray-500"
+                href="https://leetcode.com/devlos/"
+                target="_blank"
+              >
+                <i class="fa-solid fa-gear fa-lg"></i>
               </a>
             </div>
           </div>
