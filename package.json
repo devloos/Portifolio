@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@vueuse/core": "^10.2.0",
+    "@vueuse/core": "^10.2.1",
     "@vueuse/head": "^1.1.26",
     "axios": "^1.4.0",
     "vue": "^3.3.4",
@@ -20,7 +20,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.43.0",
+    "eslint": "^8.44.0",
     "eslint-plugin-vue": "^9.15.1",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
