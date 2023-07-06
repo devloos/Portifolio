@@ -60,7 +60,7 @@ const projects = [
       src: 'projects/graphics-modeler.mp4',
     },
     title: 'Graphics Modeler',
-    desc: 'This was an Agile Development project created to use the basics of C++ alongside the Graphical User Interface library Qt to create a UI and render shapes',
+    desc: 'This was an Agile Development project created to use the basics of C++ alongside the Graphical User Interface library Qt to create a UI and render shapes.',
     tags: [
       {
         text: 'C++',
@@ -87,7 +87,7 @@ const projects = [
       src: 'projects/sales-system.mp4',
     },
     title: 'Sales System',
-    desc: 'A terminal based POS system! No External Libraries',
+    desc: 'This terminal-based POS (Point of Sale) system is designed to operate without relying on any external libraries, offering a lightweight and self-contained solution.',
     tags: [
       {
         text: 'C++',
