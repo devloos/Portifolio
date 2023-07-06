@@ -66,19 +66,25 @@ import tech from '@/assets/constants/tech';
       <div class="mx-auto mt-8 max-w-4xl">
         <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
         <div class="mb-14 flex flex-wrap justify-center gap-3">
-          <img
-            v-for="tag in tech"
-            :key="tag.text"
-            :src="
-              buildTagUrl({
-                text: tag.text,
-                backgroundColor: '333',
-                style: 'for-the-badge',
-                logo: tag.logo,
-              })
-            "
-            alt=""
-          />
+          <div v-for="tag in tech" :key="tag.text">
+            <a
+              :href="tag.url"
+              target="_blank"
+              class="inline-block transition-all hover:opacity-80"
+            >
+              <img
+                :src="
+                  buildTagUrl({
+                    text: tag.text,
+                    backgroundColor: '333',
+                    style: 'for-the-badge',
+                    logo: tag.logo,
+                  })
+                "
+                alt=""
+              />
+            </a>
+          </div>
         </div>
         <div class="px-3">
           <StatCard perspective />
