@@ -6,7 +6,7 @@ defineEmits(['link-clicked']);
   <RouterLink
     v-slot="{ isActive }"
     to="/"
-    active-class="text-alternate-500 dark:text-alternate-400"
+    active-class="text-alternate dark:text-alternate-400"
     @click="$emit('link-clicked')"
   >
     <span :class="{ 'transition-all hover:text-gray-500': !isActive }">Home</span>
@@ -14,7 +14,7 @@ defineEmits(['link-clicked']);
   <RouterLink
     v-slot="{ isActive }"
     to="/projects"
-    active-class="text-alternate-500 dark:text-alternate-400"
+    active-class="text-alternate dark:text-alternate-400"
     @click="$emit('link-clicked')"
   >
     <span :class="{ 'transition-all hover:text-gray-500': !isActive }">Projects</span>
@@ -22,7 +22,7 @@ defineEmits(['link-clicked']);
   <RouterLink
     v-slot="{ isActive }"
     to="/about"
-    active-class="text-alternate-500 dark:text-alternate-400"
+    active-class="text-alternate dark:text-alternate-400"
     @click="$emit('link-clicked')"
   >
     <span :class="{ 'transition-all hover:text-gray-500': !isActive }">About</span>
