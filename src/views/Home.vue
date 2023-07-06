@@ -24,8 +24,8 @@ import tech from '@/assets/constants/tech';
           </p>
           <div class="px-2">
             <a
-              class="mr-6 inline-block rounded bg-alternate-400 px-5 py-2 ring-2 ring-gray-500 transition-all hover:bg-alternate-500 dark:bg-alternate-600 dark:ring-slate-600 hover:dark:bg-alternate-500"
-              href="/Aguilera-CV.pdf"
+              class="mr-6 inline-block rounded bg-alternate-400 px-5 py-2 ring-2 ring-gray-500 transition-all hover:bg-alternate dark:bg-alternate-600 dark:ring-slate-600 hover:dark:bg-alternate"
+              href="/resume.pdf"
               download
             >
               <div class="flex items-center justify-center gap-3">

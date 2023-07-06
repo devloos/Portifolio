@@ -40,7 +40,7 @@ onMounted(() => {
 <template>
   <nav class="sticky top-0 z-50">
     <div
-      class="flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.8] px-5 py-2 backdrop-blur-sm dark:border-neutral-500 dark:bg-primary-500/[.8] md:justify-center md:gap-32 xl:gap-36"
+      class="flex items-center justify-between border-b border-neutral-300 bg-slate-100/[.8] px-5 py-2 backdrop-blur-sm dark:border-neutral-500 dark:bg-primary/[.8] md:justify-center md:gap-32 xl:gap-36"
     >
       <RouterLink to="/">
         <img src="goat.png" alt="" class="max-w-[42px]" />
@@ -54,7 +54,7 @@ onMounted(() => {
         @click="isDark = !isDark"
       >
         <div
-          class="flex h-[26px] w-[26px] transform items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary-500"
+          class="flex h-[26px] w-[26px] transform items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary"
           :class="{ 'translate-x-[28px]': isDark }"
         >
           <i class="fa-solid" :class="isDark ? 'fa-moon' : 'fa-sun'"></i>
@@ -101,7 +101,7 @@ onMounted(() => {
               </a>
             </div>
             <div>
-              <hr class="mb-3 bg-neutral-300 dark:bg-coal-500" />
+              <hr class="mb-3 bg-neutral-300 dark:bg-coal" />
               <button
                 class="flex w-full items-center justify-center gap-5 rounded bg-alternate-400 py-3 transition-all dark:bg-alternate-600"
                 @click="isDark = !isDark"

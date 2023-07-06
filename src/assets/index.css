@@ -15,7 +15,7 @@ body {
   font-family: sans-serif;
   transition: color 300ms ease !important;
   transition: background-color 300ms ease !important;
-  @apply bg-slate-100 text-primary-600 dark:bg-primary-500 dark:text-slate-100;
+  @apply bg-slate-100 text-primary-600 dark:bg-primary dark:text-slate-100;
 }
 
 .hamburger-inner,
@@ -24,5 +24,5 @@ body {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  @apply bg-primary-500 dark:bg-alternate-600;
+  @apply bg-primary dark:bg-alternate-600;
 }
