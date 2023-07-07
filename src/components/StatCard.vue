@@ -43,6 +43,7 @@ function statCardUrl() {
   url.searchParams.append('text_color', 'f1f5f9');
   url.searchParams.append('title_color', 'f1f5f9');
   url.searchParams.append('border_color', '699cd5');
+  url.searchParams.append('disable_animations', 'true');
   return url;
 }
 </script>
