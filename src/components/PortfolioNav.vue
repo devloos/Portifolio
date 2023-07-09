@@ -54,7 +54,7 @@ onMounted(() => {
         @click="isDark = !isDark"
       >
         <div
-          class="flex h-[26px] w-[26px] transform items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary"
+          class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary"
           :class="{ 'translate-x-[28px]': isDark }"
         >
           <i class="fa-solid" :class="isDark ? 'fa-moon' : 'fa-sun'"></i>
