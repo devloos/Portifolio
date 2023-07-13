@@ -1,7 +1,5 @@
 ### HOME
 
-- different color types for tags and statcards on light mode?
-
 - possibly add another section
 - footer fix? didnt like how it came out
 
