@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { useMouseInElement } from '@vueuse/core';
+import { usePerspective } from '@/composables/perspective.js';
 
 const props = defineProps({
   perspective: {
@@ -10,29 +10,9 @@ const props = defineProps({
 });
 
 const statCard = ref(null);
+const { transformClass } = usePerspective(statCard);
 
-const { elementX, elementY, elementHeight, elementWidth, isOutside } =
-  useMouseInElement(statCard);
-
-const cardTransform = computed(() => {
-  const MAX_ROTATION = 6;
-
-  const rX = (
-    MAX_ROTATION / 2 -
-    (elementY.value / elementHeight.value) * MAX_ROTATION
-  ).toFixed(2);
-
-  const rY = (
-    (elementX.value / elementWidth.value) * MAX_ROTATION -
-    MAX_ROTATION / 2
-  ).toFixed(2);
-
-  return isOutside.value
-    ? ''
-    : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
-});
-
-function statCardUrl() {
+const statCardUrl = computed(() => {
   const url = new URL('https://github-readme-stats.vercel.app/api');
   url.searchParams.append('username', 'devloos');
   url.searchParams.append('count_private', 'true');
@@ -45,21 +25,21 @@ function statCardUrl() {
   url.searchParams.append('border_color', '699cd5');
   url.searchParams.append('disable_animations', 'true');
   return url;
-}
+});
 </script>
 <template>
   <img
     ref="statCard"
     class="mx-auto"
     :class="{ perspective: props.perspective }"
-    :src="statCardUrl()"
+    :src="statCardUrl"
     alt=""
   />
 </template>
 
 <style scoped lang="scss">
 .perspective {
-  transform: v-bind(cardTransform);
+  transform: v-bind(transformClass);
   transition: transform 0.25s ease-out;
 }
 </style>
