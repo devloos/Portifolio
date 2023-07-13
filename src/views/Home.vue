@@ -6,6 +6,9 @@ import BottomWave from '@/components/wave-svgs/BottomWave.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 import StatCard from '@/components/StatCard.vue';
 import tech from '@/assets/constants/tech';
+import { useDark } from '@vueuse/core';
+
+const isDark = useDark();
 </script>
 <template>
   <main>
@@ -76,7 +79,7 @@ import tech from '@/assets/constants/tech';
                 :src="
                   buildTagUrl({
                     text: tag.text,
-                    backgroundColor: '333',
+                    backgroundColor: isDark ? '333' : 'b4cdea',
                     style: 'for-the-badge',
                     logo: tag.logo,
                   })

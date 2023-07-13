@@ -1,22 +1,18 @@
-export function buildTagUrl(
-  options = {
-    text: 'TEXT REQUIRED',
-    backgroundColor: 'red',
-    style: null,
-    logo: null,
-  }
-) {
+export function buildTagUrl({
+  text = 'TEXT REQUIRED',
+  backgroundColor = 'red',
+  style = null,
+  logo = null,
+}) {
   // https://img.shields.io/badge/javascript-%23323330.svg?&style=for-the-badge&logo=javascript
-  const url = new URL(
-    `https://img.shields.io/badge/${options.text}-${options.backgroundColor}`
-  );
+  const url = new URL(`https://img.shields.io/badge/${text}-${backgroundColor}`);
 
-  if (options.style) {
-    url.searchParams.append('style', options.style);
+  if (style) {
+    url.searchParams.append('style', style);
   }
 
-  if (options.logo) {
-    url.searchParams.append('logo', options.logo);
+  if (logo) {
+    url.searchParams.append('logo', logo);
   }
 
   return url.href;
