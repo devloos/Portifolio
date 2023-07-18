@@ -45,7 +45,7 @@ onMounted(() => {
       <RouterLink to="/">
         <img src="goat.png" alt="" class="max-w-[42px]" />
       </RouterLink>
-      <div class="hidden gap-8 font-semibold md:flex md:text-xl lg:gap-16">
+      <div class="hidden gap-6 font-semibold md:flex md:text-xl lg:gap-16">
         <SmartLinks @link-clicked="navOpened = false" />
       </div>
       <button

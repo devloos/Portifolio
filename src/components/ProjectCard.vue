@@ -44,7 +44,7 @@ function resetVideo() {
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
       <div>
-        <h5 class="mb-1 font-semibold text-alternate dark:text-alternate-300">
+        <h5 class="mb-1 font-semibold text-alternate dark:text-alternate-200">
           {{ project.title }}
         </h5>
         <p class="mb-2 text-sm">
