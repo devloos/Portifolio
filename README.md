@@ -1,6 +1,6 @@
 ### HOME
 
-- possibly add another section
+- clean up experience section and add needed functionality
 - footer fix? didnt like how it came out
 
 - (wait on this) Contact form submission
