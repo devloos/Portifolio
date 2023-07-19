@@ -7,6 +7,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import StatCard from '@/components/StatCard.vue';
 import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
+import ExperienceCard from '@/components/ExperienceCard.vue';
 
 const isDark = useDark();
 </script>
@@ -100,54 +101,17 @@ const isDark = useDark();
         </div>
         <div class="px-4">
           <h4 class="mb-8 font-bold">Experience</h4>
-          <div
-            v-for="i in 4"
-            :key="i"
-            class="group mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:bg-alternate-100 lg:hover:drop-shadow-lg lg:hover:dark:bg-slate-700"
-          >
-            <div>
-              <p class="text-xs font-semibold uppercase">2018 - PRESENT</p>
-            </div>
-            <div>
-              <p class="mb-3 font-bold dark:text-slate-400">
-                Lead Engineer - Ethika
-                <span class="ml-2">
-                  <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
-                </span>
-              </p>
-              <p class="mb-4 text-sm leading-relaxed tracking-wide">
-                Deliver high-quality, robust production code for a diverse array of
-                projects for clients including Harvard Business School, Everytown for Gun
-                Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th
-                News, and more. Provide leadership within engineering department through
-                close collaboration, knowledge shares, and mentorship.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <div v-for="tag in tech.slice(6)" :key="tag.text">
-                  <a
-                    :href="tag.url"
-                    target="_blank"
-                    class="inline-block transition-all hover:opacity-80"
-                  >
-                    <img
-                      :src="
-                        buildTagUrl({
-                          text: tag.text,
-                          backgroundColor: '333',
-                          logo: tag.logo,
-                        })
-                      "
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="group">
+            <ExperienceCard
+              v-for="i in 4"
+              :key="i"
+              class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
+            />
           </div>
         </div>
       </div>
     </section>
-    <section class="relative mb-16 pt-14">
+    <section class="relative mb-16 pt-6">
       <div class="mx-auto mt-8 max-w-4xl">
         <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
         <div class="mb-14 flex flex-wrap justify-center gap-3">
