@@ -11,17 +11,20 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <a
+    href="#"
+    class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
+  >
     <div>
       <p class="text-xs font-semibold uppercase tracking-wide">2018 - PRESENT</p>
     </div>
     <div>
-      <p class="mb-3 font-bold dark:text-slate-400">
+      <a href="#" class="mb-3 font-bold dark:text-slate-400">
         Lead Engineer - Ethika
         <span class="ml-2">
           <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
         </span>
-      </p>
+      </a>
       <p class="mb-4 text-sm leading-relaxed tracking-wide">
         Deliver high-quality, robust production code for a diverse array of projects for
         clients including Harvard Business School, Everytown for Gun Safety, Pratt
@@ -50,5 +53,5 @@ defineProps({
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>

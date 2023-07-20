@@ -1,6 +1,6 @@
 ### HOME
 
-- clean up experience section and add needed functionality
+- get custom content for experience section
 - footer fix? didnt like how it came out
 
 - (wait on this) Contact form submission

@@ -18,7 +18,7 @@ const isDark = useDark();
         class="container mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 md:flex-row-reverse md:gap-2"
       >
         <img
-          class="mx-auto max-w-[150px] self-center rounded-full border border-slate-700"
+          class="mx-auto max-w-[180px] self-center rounded-full border border-slate-700"
           src="stud.jpg"
           alt="stud"
         />
@@ -75,25 +75,31 @@ const isDark = useDark();
               Junior Web Developer at Ethika Inc.
             </p>
           </div>
-          <div class="mb-10">
+          <div class="mb-10 leading-relaxed">
             <h4 class="mb-3 font-bold">About</h4>
-            <p class="mb-3 leading-relaxed">
+            <p class="mb-3">
               Back in 2012, I decided to try my hand at creating custom Tumblr themes and
               tumbled head first into the rabbit hole of coding and web development.
               Fast-forward to today, and I’ve had the privilege of building software for
               an
-              <span class="font-semibold dark:text-slate-400">advertising agency,</span>
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
+                advertising agency,
+              </a>
               a start-up, a student-led design studio, and a huge corporation.
             </p>
-            <p class="mb-3 leading-relaxed">
+            <p class="mb-3">
               My main focus these days is building products and leading projects for our
               clients at
-              <span class="font-semibold dark:text-slate-400">Upstatement.</span>
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
+                Upstatement.
+              </a>
               In my free time I've also released an online video course that covers
               everything you need to know to build a web app with the
-              <span class="font-semibold dark:text-slate-400">Spotify API.</span>
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
+                Spotify API.
+              </a>
             </p>
-            <p class="leading-relaxed">
+            <p>
               When I’m not at the computer, I’m usually rock climbing, hanging out with my
               wife and two cats, or running around Hyrule searching for Korok seeds.
             </p>
@@ -102,11 +108,7 @@ const isDark = useDark();
         <div class="px-4">
           <h4 class="mb-8 font-bold">Experience</h4>
           <div class="group">
-            <ExperienceCard
-              v-for="i in 4"
-              :key="i"
-              class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
-            />
+            <ExperienceCard v-for="i in 4" :key="i" />
           </div>
         </div>
       </div>
