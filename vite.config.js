@@ -8,7 +8,7 @@ import eslintPlugin from 'vite-plugin-eslint';
 export default defineConfig({
   plugins: [vue(), eslintPlugin()],
   server: {
-    port: 8080,
+    port: 8081,
   },
   resolve: {
     alias: {
