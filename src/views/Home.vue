@@ -66,46 +66,70 @@ const isDark = useDark();
       </div>
       <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
     </section>
-    <section class="mt-16">
+    <section id="about" class="mt-16">
       <div class="container relative flex max-w-7xl flex-col lg:flex-row">
-        <div class="self-start px-4 lg:sticky lg:top-[78px]">
+        <div class="mx-auto max-w-2xl self-start px-4 lg:sticky lg:top-[78px]">
           <div class="mb-10">
             <h1 class="mb-2 text-3xl font-bold">Carlos Aguilera</h1>
             <p class="font-light text-coal-400 dark:text-slate-400">
               Junior Web Developer at Ethika Inc.
             </p>
           </div>
-          <div class="mb-10 leading-relaxed">
-            <h4 class="mb-3 font-bold">About</h4>
+          <div class="mb-10 text-sm leading-relaxed">
+            <h4 class="mb-3 text-base font-bold">About</h4>
             <p class="mb-3">
-              Back in 2012, I decided to try my hand at creating custom Tumblr themes and
-              tumbled head first into the rabbit hole of coding and web development.
-              Fast-forward to today, and I’ve had the privilege of building software for
-              an
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
-                advertising agency,
+              I am an enthusiastic software engineer with a passion for Computer Science.
+              My journey into this field started in 2020 when I first became interested in
+              it through a counselor. However, due to conflicting priorities, I was not
+              able to pursue it actively until November 2021. Once I started, I quickly
+              became enamored with numerous concepts in Computer Science. To kickstart my
+              learning, I took online tutorials and focused primarily on mastering C++
+              since it was the language used in my local community college. Through these
+              resources, I successfully built projects such as the
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
+                Snake Game,
               </a>
-              a start-up, a student-led design studio, and a huge corporation.
+              a
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
+                Pokemon Clone,
+              </a>
+              and a
+              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
+                POS System.
+              </a>
+              I utilized libraries like ncurses, RayLib, and mongocxx to bring these
+              projects to life.
             </p>
             <p class="mb-3">
-              My main focus these days is building products and leading projects for our
-              clients at
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
-                Upstatement.
-              </a>
-              In my free time I've also released an online video course that covers
-              everything you need to know to build a web app with the
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-slate-400">
-                Spotify API.
-              </a>
+              A few months later, I enrolled in college and have been excelling,
+              maintaining an impressive 3.9 GPA while pursuing Computer Science. My goal
+              is to apply to UCI in the fall of 2023, which would be a significant
+              achievement for me since I would be the first in my family to attend a
+              university.
+            </p>
+            <p class="mb-3">
+              Back in 2020, I started working at a clothing company called Ethika, where I
+              held a supervisor position in the warehouse. However, it was around 2021
+              when my passion for computers took flight, and I began demonstrating my
+              knowledge and skills in the field to the company. As a result, I was offered
+              my first software development job, marking a pivotal moment in my career.
+            </p>
+            <p class="mb-3">
+              I am relentless in my pursuit of Computer Science, and every day, I am
+              excited to learn something new. The spark of curiosity that ignited me at
+              the beginning of this journey has only grown stronger, and I believe it will
+              continue to thrive indefinitely, given the trajectory I am on.
             </p>
             <p>
-              When I’m not at the computer, I’m usually rock climbing, hanging out with my
-              wife and two cats, or running around Hyrule searching for Korok seeds.
+              While I am deeply passionate about Computer Science, I also find joy in
+              various other activities, such as fishing, playing soccer and basketball,
+              and spending quality time with my family. Despite my dedication to the
+              field, my ultimate life goal is to create something that leaves a meaningful
+              impact, regardless of its scale.
             </p>
           </div>
         </div>
-        <div class="px-4">
+        <div class="mx-auto max-w-2xl px-4">
           <h4 class="mb-8 font-bold">Experience</h4>
           <div class="group">
             <ExperienceCard v-for="i in 4" :key="i" />

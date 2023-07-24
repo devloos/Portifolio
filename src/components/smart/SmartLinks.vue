@@ -20,12 +20,11 @@ defineEmits(['link-clicked']);
     <span :class="{ 'transition-all hover:text-gray-500': !isActive }">Projects</span>
   </RouterLink>
   <RouterLink
-    v-slot="{ isActive }"
-    to="/about"
-    active-class="text-alternate dark:text-alternate-400"
+    :to="{ name: 'home', hash: '#about' }"
+    class="transition-all hover:text-gray-500"
     @click="$emit('link-clicked')"
   >
-    <span :class="{ 'transition-all hover:text-gray-500': !isActive }">About</span>
+    About
   </RouterLink>
   <RouterLink
     :to="{ name: 'home', hash: '#contact' }"
