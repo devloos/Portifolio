@@ -82,7 +82,7 @@ onMounted(() => {
       <SmartTransition name="slide-from-right">
         <div
           v-if="navOpened"
-          class="fixed right-1 top-[59.2px] z-40 h-80 w-80 rounded-b bg-slate-100 dark:bg-primary-600"
+          class="fixed right-0 top-[59.3px] z-40 h-80 w-80 rounded-b bg-slate-100/[.9] backdrop-blur-sm dark:bg-primary-600"
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
             <SmartLinks @link-clicked="navOpened = false" />

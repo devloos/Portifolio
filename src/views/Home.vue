@@ -7,7 +7,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import StatCard from '@/components/StatCard.vue';
 import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
-import ExperienceCard from '@/components/ExperienceCard.vue';
+import ExperienceCards from '@/components/ExperienceCards.vue';
 
 const isDark = useDark();
 </script>
@@ -78,14 +78,12 @@ const isDark = useDark();
           <div class="mb-10 text-sm leading-relaxed">
             <h4 class="mb-3 text-base font-bold">About</h4>
             <p class="mb-3">
-              I am an enthusiastic software engineer with a passion for Computer Science.
-              My journey into this field started in 2020 when I first became interested in
-              it through a counselor. However, due to conflicting priorities, I was not
-              able to pursue it actively until November 2021. Once I started, I quickly
-              became enamored with numerous concepts in Computer Science. To kickstart my
-              learning, I took online tutorials and focused primarily on mastering C++
-              since it was the language used in my local community college. Through these
-              resources, I successfully built projects such as the
+              I'm an enthusiastic software engineer with a deep passion for Computer
+              Science. My journey into this field started in 2020, but it wasn't until
+              November 2021 that I could actively pursue it due to conflicting priorities.
+              Once I began, I quickly fell in love with various Computer Science concepts.
+              I focused on mastering C++ through online tutorials and built projects like
+              the
               <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
                 Snake Game,
               </a>
@@ -95,45 +93,33 @@ const isDark = useDark();
               </a>
               and a
               <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
-                POS System.
+                POS System
               </a>
-              I utilized libraries like ncurses, RayLib, and mongocxx to bring these
-              projects to life.
+              using libraries like ncurses, RayLib, and mongocxx.
             </p>
             <p class="mb-3">
-              A few months later, I enrolled in college and have been excelling,
-              maintaining an impressive 3.9 GPA while pursuing Computer Science. My goal
-              is to apply to UCI in the fall of 2023, which would be a significant
-              achievement for me since I would be the first in my family to attend a
-              university.
+              Later, I enrolled in college and have been excelling, maintaining an
+              impressive 3.9 GPA while pursuing Computer Science. My goal is to apply to
+              UCI in the fall of 2023, a significant achievement as I'd be the first in my
+              family to attend a university.
             </p>
             <p class="mb-3">
-              Back in 2020, I started working at a clothing company called Ethika, where I
-              held a supervisor position in the warehouse. However, it was around 2021
-              when my passion for computers took flight, and I began demonstrating my
-              knowledge and skills in the field to the company. As a result, I was offered
-              my first software development job, marking a pivotal moment in my career.
-            </p>
-            <p class="mb-3">
-              I am relentless in my pursuit of Computer Science, and every day, I am
-              excited to learn something new. The spark of curiosity that ignited me at
-              the beginning of this journey has only grown stronger, and I believe it will
-              continue to thrive indefinitely, given the trajectory I am on.
+              In 2021, while working as a supervisor at Ethika, my passion for computers
+              grew, and I started demonstrating my knowledge. This led to my first
+              software development job, marking a pivotal moment in my career.
             </p>
             <p>
-              While I am deeply passionate about Computer Science, I also find joy in
-              various other activities, such as fishing, playing soccer and basketball,
-              and spending quality time with my family. Despite my dedication to the
-              field, my ultimate life goal is to create something that leaves a meaningful
-              impact, regardless of its scale.
+              I'm dedicated to learning in Computer Science and maintain a relentless
+              pursuit of knowledge. Alongside my passion for the field, I enjoy fishing,
+              playing soccer and basketball, and spending time with my family. My ultimate
+              life goal is to create something that leaves a meaningful impact, regardless
+              of its scale.
             </p>
           </div>
         </div>
         <div class="mx-auto max-w-2xl px-4">
           <h4 class="mb-8 font-bold">Experience</h4>
-          <div class="group">
-            <ExperienceCard v-for="i in 4" :key="i" />
-          </div>
+          <ExperienceCards />
         </div>
       </div>
     </section>

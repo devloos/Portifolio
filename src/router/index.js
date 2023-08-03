@@ -19,22 +19,25 @@ const router = createRouter({
       component: () => import('@/views/About.vue'),
     },
   ],
-  scrollBehavior(to, from) {
+  scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
-      const position = {};
-      if (to.hash) {
-        position.el = to.hash;
-        position.behavior = 'smooth';
-        position.top = 76;
-      } else {
-        position.top = 0;
-      }
-
-      if (to.path === from.path || !to.hash) {
-        resolve(position);
+      if (savedPosition) {
+        resolve(savedPosition);
+      } else if (to.hash) {
+        const waitTimeMs = to.path === from.path ? 100 : 1300;
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            behavior: 'smooth',
+            top: 76,
+          });
+        }, waitTimeMs);
       } else {
         setTimeout(() => {
-          resolve(position);
+          resolve({
+            top: 0,
+            left: 0,
+          });
         }, 1300);
       }
     });
