@@ -49,7 +49,7 @@ function contactSubmit() {
             </div>
 
             <button
-              class="col-end-3 rounded bg-alternate-300 py-2 font-semibold transition-all hover:bg-alternate-400 hover:ring hover:ring-alternate-600 hover:ring-offset-1 hover:ring-offset-alternate-200 dark:bg-slate-800 dark:hover:bg-slate-600 dark:hover:ring-slate-400 dark:hover:ring-offset-slate-800"
+              class="col-end-3 rounded bg-slate-400 py-2 font-semibold transition-all hover:bg-slate-500 hover:ring hover:ring-alternate-600 hover:ring-offset-1 hover:ring-offset-alternate-200 dark:bg-slate-800 dark:hover:bg-slate-600 dark:hover:ring-slate-400 dark:hover:ring-offset-slate-800"
               type="submit"
             >
               Submit
