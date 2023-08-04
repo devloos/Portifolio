@@ -137,7 +137,7 @@ const isDark = useDark();
                 :src="
                   buildTagUrl({
                     text: tag.text,
-                    backgroundColor: isDark ? '333' : 'b4cdea',
+                    backgroundColor: isDark ? '333' : 'cbd5e1',
                     style: 'for-the-badge',
                     logo: tag.logo,
                   })

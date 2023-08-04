@@ -28,7 +28,7 @@ const statCardUrl = computed(() => {
     url.searchParams.append('text_color', 'f1f5f9');
     url.searchParams.append('title_color', 'f1f5f9');
   } else {
-    url.searchParams.append('bg_color', 'b4cdea');
+    url.searchParams.append('bg_color', 'cbd5e1');
     url.searchParams.append('text_color', '333');
     url.searchParams.append('title_color', '333');
   }
