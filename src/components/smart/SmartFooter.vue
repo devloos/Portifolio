@@ -1,6 +1,6 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
-import SmartLinks from '@/components/smart/SmartLinks.vue';
+import PageLinks from '@/components/PageLinks.vue';
 
 const year = new Date().getFullYear();
 
@@ -60,7 +60,7 @@ function contactSubmit() {
           <div>
             <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
             <div class="grid grid-cols-2 gap-y-2 lg:grid-cols-1">
-              <SmartLinks />
+              <PageLinks />
             </div>
           </div>
           <div>

@@ -3,7 +3,7 @@ import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import SmartLinks from '@/components/smart/SmartLinks.vue';
+import PageLinks from '@/components/PageLinks.vue';
 
 const isDark = useDark();
 
@@ -46,7 +46,7 @@ onMounted(() => {
         <img src="goat.png" alt="" class="max-w-[42px]" />
       </RouterLink>
       <div class="hidden gap-6 font-semibold md:flex md:text-xl lg:gap-16">
-        <SmartLinks @link-clicked="navOpened = false" />
+        <PageLinks @link-clicked="navOpened = false" />
       </div>
       <button
         class="hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
@@ -85,7 +85,7 @@ onMounted(() => {
           class="fixed right-0 top-[59.3px] z-40 h-80 w-80 rounded-b bg-slate-100/[.9] backdrop-blur-sm dark:bg-primary-600"
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
-            <SmartLinks @link-clicked="navOpened = false" />
+            <PageLinks @link-clicked="navOpened = false" />
             <div class="flex gap-8">
               <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
                 <i class="fa-brands fa-linkedin fa-lg"></i>
