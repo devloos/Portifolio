@@ -7,7 +7,7 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import StatCard from '@/components/StatCard.vue';
 import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
-import ExperienceCards from '@/components/ExperienceCards.vue';
+import ExperienceCard from '@/components/ExperienceCard.vue';
 
 const isDark = useDark();
 </script>
@@ -119,7 +119,9 @@ const isDark = useDark();
         </div>
         <div class="mx-auto max-w-2xl px-4">
           <h4 class="mb-8 font-bold">Experience</h4>
-          <ExperienceCards />
+          <div class="group">
+            <ExperienceCard v-for="i in 4" :key="i" />
+          </div>
         </div>
       </div>
     </section>
