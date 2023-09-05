@@ -3,11 +3,11 @@ import { buildTagUrl } from '@/assets/utility';
 import projects from '@/assets/constants/projects';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
-import ProjectCard from '@/components/ProjectCard.vue';
-import StatCard from '@/components/StatCard.vue';
+import ProjectCard from '@/components/cards/ProjectCard.vue';
+import StatCard from '@/components/cards/StatCard.vue';
 import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
-import ExperienceCard from '@/components/ExperienceCard.vue';
+import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 
 const isDark = useDark();
 </script>
