@@ -59,6 +59,11 @@ const tech = [
     logo: null,
     url: 'https://www.tutorialspoint.com/java/java_documentation.htm',
   },
+  {
+    text: 'Python',
+    logo: 'python',
+    url: 'https://docs.python.org/3/',
+  },
 ];
 
 export default tech;

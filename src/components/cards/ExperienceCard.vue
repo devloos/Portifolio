@@ -11,7 +11,7 @@ defineProps({
 
 <template>
   <a
-    href="#"
+    :href="experience.url"
     class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
   >
     <div>
