@@ -1,11 +1,10 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
-import tech from '@/assets/constants/tech';
 
 defineProps({
   experience: {
     type: Object,
-    default: () => {},
+    required: true,
   },
 });
 </script>
@@ -16,24 +15,20 @@ defineProps({
     class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
   >
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide">2018 - PRESENT</p>
+      <p class="text-xs font-semibold uppercase tracking-wide">{{ experience.date }}</p>
     </div>
     <div>
-      <a href="#" class="mb-3 font-bold dark:text-slate-400">
-        Lead Engineer - Ethika
+      <div class="mb-3 font-bold dark:text-slate-400">
+        {{ experience.title }} - {{ experience.company }}
         <span class="ml-2">
           <i class="fa-solid fa-arrow-up-right-from-square fa-sm" />
         </span>
-      </a>
+      </div>
       <p class="mb-4 text-sm leading-relaxed tracking-wide">
-        Deliver high-quality, robust production code for a diverse array of projects for
-        clients including Harvard Business School, Everytown for Gun Safety, Pratt
-        Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide
-        leadership within engineering department through close collaboration, knowledge
-        shares, and mentorship.
+        {{ experience.summary }}
       </p>
       <div class="flex flex-wrap gap-2">
-        <div v-for="tag in tech.slice(6)" :key="tag.text">
+        <div v-for="tag in experience.tags" :key="tag.text">
           <a
             :href="tag.url"
             target="_blank"
