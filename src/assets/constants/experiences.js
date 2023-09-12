@@ -3,7 +3,8 @@ const experiences = [
     date: 'May 2022 - PRESENT',
     title: 'Junior Web Developer',
     company: 'Ethika',
-    summary: 'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship.',
+    summary:
+      'At Ethika, I played a crucial role in several key projects that improved business operations and customer engagement. This included migrating to GA4 for enhanced data tracking and integrating Amplitude, integrating Klaviyo for better customer communication and marketing, transitioning from Vuex to Pinia for improved state management, integrating Partnerize to expand revenue streams, implementing an out-of-stock notification system using Klaviyo, and optimizing image storage for faster page loading.',
     url: 'https://www.ethika.com/',
     tags: [
       {
@@ -36,7 +37,8 @@ const experiences = [
     date: 'July 2023 - PRESENT',
     title: 'Programmer',
     company: 'Saddleback College Robotics',
-    summary: 'Our team is organized into five subsystems: Drive, Arm, Telecommunications, Science, and Autonomy. We actively participate in The University Rover Challenge (URC), a prestigious robotics competition for college students. This event takes place annually in the desert of southern Utah, USA, where student teams are tasked with designing and constructing Mars rovers intended to collaborate with astronauts during future missions to explore the Red Planet.',
+    summary:
+      'Our team is organized into five subsystems: Drive, Arm, Telecommunications, Science, and Autonomy. We actively participate in The University Rover Challenge (URC), a prestigious robotics competition for college students. This event takes place annually in the desert of southern Utah, USA, where student teams are tasked with designing and constructing Mars rovers intended to collaborate with astronauts during future missions to explore the Red Planet.',
     url: 'https://www.youtube.com/watch?v=SAtsOZK6AJ4&ab_channel=SCRobotics',
     tags: [
       {
@@ -73,7 +75,8 @@ const experiences = [
     date: 'August 2021 - PRESENT',
     title: 'Computer Science',
     company: 'Saddleback College',
-    summary: 'I have acquired a diverse skill set, including proficiency in mathematics and problem-solving abilities, which are essential for tackling complex challenges in computer science and software development. Additionally, I have experience with agile methodologies, project management, and various programming languages such as Java, C++, and Assembly Language. My familiarity with Git version control, Linux operating systems, and software development practices further enhances my technical expertise in this field.',
+    summary:
+      'I have acquired a diverse skill set, including proficiency in mathematics and problem-solving abilities, which are essential for tackling complex challenges in computer science and software development. Additionally, I have experience with agile methodologies, project management, and various programming languages such as Java, C++, and Assembly Language. My familiarity with Git version control, Linux operating systems, and software development practices further enhances my technical expertise in this field.',
     url: 'https://www.saddleback.edu/',
     tags: [
       {
@@ -118,7 +121,8 @@ const experiences = [
     date: 'October 2018 - January 2020',
     title: 'Sales Manager',
     company: 'T-Mobile',
-    summary: 'Familiarity with radio access network (RAN) components and configurations. Knowledge of various telecommunications services such as voice, data, SMS, and MMS. Understanding of device activation, troubleshooting, and technical support. Gained knowledge of popular mobile operating systems (iOS, Android) and their functionalities. Strong troubleshooting skills to diagnose and resolve network, device, or service-related issues. Leadership skills to motivate and manage a team of sales associates and support staff.',
+    summary:
+      'Familiarity with radio access network (RAN) components and configurations. Knowledge of various telecommunications services such as voice, data, SMS, and MMS. Understanding of device activation, troubleshooting, and technical support. Gained knowledge of popular mobile operating systems (iOS, Android) and their functionalities. Strong troubleshooting skills to diagnose and resolve network, device, or service-related issues. Leadership skills to motivate and manage a team of sales associates and support staff.',
     url: 'https://www.t-mobile.com/',
     tags: [
       {
@@ -146,7 +150,7 @@ const experiences = [
         logo: null,
       },
     ],
-  }
+  },
 ];
 
 export default experiences;

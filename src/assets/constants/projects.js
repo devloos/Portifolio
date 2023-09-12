@@ -30,6 +30,7 @@ const projects = [
     ],
     site: 'https://www.elandariegotruck.com/',
     source: 'https://github.com/devloos/El-Andariego',
+    featured: true,
   },
   {
     file: {
@@ -53,6 +54,7 @@ const projects = [
       },
     ],
     source: 'https://github.com/devloos/Street-Fighter',
+    featured: true,
   },
   {
     file: {
@@ -80,6 +82,7 @@ const projects = [
       },
     ],
     source: 'https://github.com/devloos/Graphics-Modeler',
+    featured: true,
   },
   {
     file: {
@@ -103,6 +106,7 @@ const projects = [
       },
     ],
     source: 'https://github.com/devloos/Sales-System',
+    featured: true,
   },
 ];
 

@@ -11,6 +11,7 @@ import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 
 const isDark = useDark();
+const featuredProjects = projects.filter((el) => el.featured);
 </script>
 <template>
   <main>
@@ -59,7 +60,7 @@ const isDark = useDark();
           class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
         >
           <ProjectCard
-            v-for="project in projects"
+            v-for="project in featuredProjects"
             :key="project.title"
             :project="project"
           />
