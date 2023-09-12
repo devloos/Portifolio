@@ -2,7 +2,7 @@ const projects = [
   {
     file: {
       type: 'video',
-      src: 'projects/andariego.mp4',
+      src: '/tplos/portfolio/projects/andariego.mp4',
     },
     title: 'El Andariego',
     desc: 'El-Andariego is a renowned Mexican food truck. This website acts as a valuable resource for customers, providing comprehensive information and serving as a point of contact.',
@@ -35,7 +35,7 @@ const projects = [
   {
     file: {
       type: 'video',
-      src: 'projects/street-fighter.mp4',
+      src: '/tplos/portfolio/projects/street-fighter.mp4',
     },
     title: 'Street Fighter',
     desc: 'Experience the ultimate crossover as the classic game of Tic-Tac-Toe meets the world of Street Fighter in a high-octane battle for dominance.',
@@ -59,7 +59,7 @@ const projects = [
   {
     file: {
       type: 'video',
-      src: 'projects/graphics-modeler.mp4',
+      src: '/tplos/portfolio/projects/graphics-modeler.mp4',
     },
     title: 'Graphics Modeler',
     desc: 'This was an Agile Development project created to use the basics of C++ alongside the Graphical User Interface library Qt to create a UI and render shapes.',
@@ -87,7 +87,7 @@ const projects = [
   {
     file: {
       type: 'video',
-      src: 'projects/sales-system.mp4',
+      src: '/tplos/portfolio/projects/sales-system.mp4',
     },
     title: 'Sales System',
     desc: 'This terminal-based POS (Point of Sale) system is designed to operate without relying on any external libraries, offering a lightweight and self-contained solution.',

@@ -2,13 +2,17 @@
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import SmartNav from '@/components/smart/SmartNav.vue';
 import SmartFooter from '@/components/smart/SmartFooter.vue';
+import SmartImg from '@/components/smart/SmartImg.vue';
 </script>
 
 <template>
-  <img
+  <SmartImg
     class="absolute -top-28 left-0 right-0 -z-40 mx-auto sm:-top-48 md:-top-96"
-    src="rays.png"
+    src="/tplos/portfolio/rays.png"
+    width="927"
+    height="807"
     alt="rays"
+    is-transparent
   />
   <SmartNav />
   <RouterView v-slot="{ Component }" class="router-view">

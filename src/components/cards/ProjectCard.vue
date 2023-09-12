@@ -1,6 +1,7 @@
 <script setup>
-import { buildTagUrl } from '@/assets/utility';
+import { buildTagUrl, getImageKitUrl } from '@/assets/utility';
 import { ref, toRefs } from 'vue';
+import SmartImg from '@/components/smart/SmartImg.vue';
 
 const props = defineProps({
   project: {
@@ -32,15 +33,17 @@ function resetVideo() {
     <video
       v-if="project.file.type === 'video'"
       ref="vid"
-      :src="project.file.src"
       class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
+      :src="getImageKitUrl(project.file.src)"
       muted
     />
-    <img
+    <SmartImg
       v-else
-      :src="project.file.src"
-      alt=""
       class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
+      :src="project.file.src"
+      width="3454"
+      height="1924"
+      :alt="project.title"
     />
     <div class="flex grow flex-col justify-between px-4 py-2">
       <div>

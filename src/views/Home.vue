@@ -9,6 +9,7 @@ import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
+import SmartImg from '@/components/smart/SmartImg.vue';
 
 const isDark = useDark();
 const featuredProjects = projects.filter((el) => el.featured);
@@ -19,9 +20,11 @@ const featuredProjects = projects.filter((el) => el.featured);
       <div
         class="container mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 md:flex-row-reverse md:gap-2"
       >
-        <img
+        <SmartImg
           class="mx-auto max-w-[180px] self-center rounded-full border border-slate-700"
-          src="stud.jpg"
+          src="/tplos/portfolio/stud.jpg"
+          width="1328"
+          height="1274"
           alt="stud"
         />
         <div class="grow px-2 text-center md:text-start">

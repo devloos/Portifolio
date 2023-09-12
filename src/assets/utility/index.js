@@ -17,3 +17,7 @@ export function buildTagUrl({
 
   return url.href;
 }
+
+export function getImageKitUrl(src) {
+  return new URL(src, 'https://ik.imagekit.io');
+}

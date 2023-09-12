@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue';
+import { getImageKitUrl } from '@/assets/utility';
 
 const placeholder =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
@@ -62,7 +63,7 @@ const srcset = computed(() => {
 
   const srcsetHolder = [];
   widths.forEach((width) => {
-    const url = new URL(props.src, 'https://ik.imagekit.io');
+    const url = getImageKitUrl(props.src);
     const params = new URLSearchParams(url.search);
     params.set('tr', `w-${width}`);
     url.search = params.toString();
