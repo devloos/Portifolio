@@ -2,6 +2,6 @@
 
 - footer fix? didnt like how it came out
 - project layout
-- resume done
+- resume
 
 - (wait on this) Contact form submission
