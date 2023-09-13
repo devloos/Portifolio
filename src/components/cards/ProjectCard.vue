@@ -1,6 +1,6 @@
 <script setup>
 import { buildTagUrl, getImageKitUrl } from '@/assets/utility';
-import { ref, toRefs } from 'vue';
+import { toRefs } from 'vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 
 const props = defineProps({
@@ -11,35 +11,21 @@ const props = defineProps({
 });
 
 const { project } = toRefs(props);
-
-const vid = ref(null);
-
-function playVideo() {
-  vid.value.play();
-}
-
-function resetVideo() {
-  vid.value.pause();
-  vid.value.currentTime = 0;
-}
 </script>
 
 <template>
-  <div
-    class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl"
-    @mouseover="playVideo()"
-    @mouseleave="resetVideo()"
-  >
+  <div class="group flex h-full max-w-xl flex-col rounded shadow-lg dark:shadow-2xl">
     <video
       v-if="project.file.type === 'video'"
-      ref="vid"
-      class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
+      class="rounded-t"
       :src="getImageKitUrl(project.file.src)"
       muted
+      autoplay
+      loop
     />
     <SmartImg
       v-else
-      class="rounded-t grayscale transition duration-300 ease-in group-hover:grayscale-0"
+      class="rounded-t"
       :src="project.file.src"
       width="3454"
       height="1924"
