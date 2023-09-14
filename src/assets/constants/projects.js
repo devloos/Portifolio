@@ -38,7 +38,7 @@ const projects = [
       src: '/tplos/portfolio/projects/street-fighter.mp4',
     },
     title: 'Street Fighter',
-    desc: 'Experience the ultimate crossover as the classic game of Tic-Tac-Toe meets the world of Street Fighter in a high-octane battle for dominance.',
+    desc: 'Street Fighter themed Tic Tac Toe game in Java featured multithreading to handle concurrent gameplay actions and networking through sockets for multiplayer functionality. Agile project management practices, including version control and regular team meetings, ensured efficient development and collaboration.',
     tags: [
       {
         text: 'Java',
