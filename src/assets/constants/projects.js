@@ -62,7 +62,7 @@ const projects = [
       src: '/tplos/portfolio/projects/graphics-modeler.mp4',
     },
     title: 'Graphics Modeler',
-    desc: 'This was an Agile Development project created to use the basics of C++ alongside the Graphical User Interface library Qt to create a UI and render shapes.',
+    desc: "This project implements a C++ library for 2D graphical objects, emphasizing core programming concepts such as inheritance, aggregation, polymorphism, and more. It utilizes Qt's GUI capabilities, featuring a user-friendly interface for manipulating object properties and adheres to agile development methodologies, including Scrum practices and UML diagrams for design and implementation planning.",
     tags: [
       {
         text: 'C++',
