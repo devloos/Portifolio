@@ -5,7 +5,7 @@ const projects = [
       src: '/tplos/portfolio/projects/andariego.mp4',
     },
     title: 'El Andariego',
-    desc: 'El-Andariego is a renowned Mexican food truck. This website acts as a valuable resource for customers, providing comprehensive information and serving as a point of contact.',
+    desc: "The use of Vue's Virtual DOM optimized rendering performance, reducing unnecessary updates. I also employed Vue's Pinia for structured state management and Vue Router for client-side routing, facilitating seamless navigation in your single-page application. MongoDB's flexible document-oriented data model provided efficient storage for dynamic content like menu items and customer orders.",
     tags: [
       {
         text: 'Javascript',
@@ -90,7 +90,7 @@ const projects = [
       src: '/tplos/portfolio/projects/sales-system.mp4',
     },
     title: 'Sales System',
-    desc: 'This terminal-based POS (Point of Sale) system is designed to operate without relying on any external libraries, offering a lightweight and self-contained solution.',
+    desc: 'Gained proficiency in manual memory allocation, preventing memory leaks through proper memory deallocation. I also learned about the benefits of smart pointers, which facilitated ownership management and resource release through the RAII principle. Additionally, move semantics enhanced resource optimization and efficient data transfer, while the STL provided essential containers and algorithms for managing and processing data.',
     tags: [
       {
         text: 'C++',
