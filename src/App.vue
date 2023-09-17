@@ -3,6 +3,13 @@ import SmartTransition from '@/components/smart/SmartTransition.vue';
 import SmartNav from '@/components/smart/SmartNav.vue';
 import SmartFooter from '@/components/smart/SmartFooter.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import LoadingOverlay from '@/components/LoadingOverlay.vue';
+import { provide, ref } from 'vue';
+
+const isLoading = ref(false);
+
+provide('start-overlay', () => (isLoading.value = true));
+provide('end-overlay', () => (isLoading.value = false));
 </script>
 
 <template>
@@ -21,6 +28,7 @@ import SmartImg from '@/components/smart/SmartImg.vue';
     </SmartTransition>
   </RouterView>
   <SmartFooter />
+  <LoadingOverlay :loading="isLoading" />
 </template>
 
 <style scoped lang="scss">

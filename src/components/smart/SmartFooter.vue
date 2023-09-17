@@ -1,11 +1,49 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import PageLinks from '@/components/PageLinks.vue';
+import { inject, ref } from 'vue';
+import supabase from '@/lib/supabase-client.js';
 
 const year = new Date().getFullYear();
 
-function contactSubmit() {
-  console.log('this');
+const startOverlay = inject('start-overlay');
+const endOverlay = inject('end-overlay');
+
+const name = ref('');
+const email = ref('');
+const subject = ref('');
+const message = ref('');
+
+function resetFormFields() {
+  name.value = '';
+  email.value = '';
+  subject.value = '';
+  message.value = '';
+}
+
+async function submitEmail() {
+  try {
+    startOverlay();
+
+    const emailRow = {
+      name: name.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value,
+    };
+
+    const { error } = await supabase.from('emails').insert(emailRow);
+
+    if (error) {
+      throw error;
+    }
+
+    resetFormFields();
+  } catch (e) {
+    // not handling just yet
+  } finally {
+    endOverlay();
+  }
 }
 </script>
 <template>
@@ -18,11 +56,12 @@ function contactSubmit() {
         <div id="contact">
           <form
             class="mx-auto grid max-w-lg grid-cols-2 gap-3"
-            @submit.prevent="contactSubmit"
+            @submit.prevent="submitEmail"
           >
             <div class="flex flex-col">
               <label class="text-sm font-semibold dark:text-alternate-100">Name</label>
               <input
+                v-model.trim="name"
                 type="text"
                 class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 text-coal-800 dark:border-primary-400 dark:bg-slate-400"
                 required
@@ -32,6 +71,7 @@ function contactSubmit() {
             <div class="flex flex-col">
               <label class="text-sm font-semibold dark:text-alternate-100">Email</label>
               <input
+                v-model.trim="email"
                 type="email"
                 class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 text-coal-800 dark:border-primary-400 dark:bg-slate-400"
                 required
@@ -39,8 +79,18 @@ function contactSubmit() {
             </div>
 
             <div class="col-span-2 flex flex-col">
+              <label class="text-sm font-semibold dark:text-alternate-100">Subject</label>
+              <input
+                v-model.trim="subject"
+                type="text"
+                class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 dark:border-primary-400 dark:bg-slate-400 dark:text-coal-800"
+                required
+              />
+            </div>
+            <div class="col-span-2 flex flex-col">
               <label class="text-sm font-semibold dark:text-alternate-100">Message</label>
               <textarea
+                v-model.trim="message"
                 rows="8"
                 cols="70"
                 class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 dark:border-primary-400 dark:bg-slate-400 dark:text-coal-800"
