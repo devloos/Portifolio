@@ -1,11 +1,11 @@
 <script setup>
+import { provide, ref } from 'vue';
+import { useHead } from '@unhead/vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import SmartNav from '@/components/smart/SmartNav.vue';
 import SmartFooter from '@/components/smart/SmartFooter.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
-import { provide, ref } from 'vue';
-import { useHead } from '@unhead/vue';
 
 useHead({
   title: 'Devlos',
