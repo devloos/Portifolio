@@ -5,6 +5,17 @@ import SmartFooter from '@/components/smart/SmartFooter.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { provide, ref } from 'vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  title: 'Devlos',
+  meta: [
+    {
+      name: 'description',
+      content: '[object, object]',
+    },
+  ],
+});
 
 const isLoading = ref(false);
 
