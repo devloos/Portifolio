@@ -8,3 +8,4 @@
 - hover bug on experience
 - our own project badges
 - better section dividers
+- toast messages
