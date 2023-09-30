@@ -13,18 +13,15 @@ const router = createRouter({
       name: 'projects',
       component: () => import('@/views/Projects.vue'),
     },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/views/About.vue'),
-    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
       if (savedPosition) {
         resolve(savedPosition);
       } else if (to.hash) {
+        // if in the same page go right away
         const waitTimeMs = to.path === from.path ? 100 : 1300;
+
         setTimeout(() => {
           resolve({
             el: to.hash,

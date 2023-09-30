@@ -3,8 +3,8 @@ import { useDark, useWindowSize } from '@vueuse/core';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import PageLinks from '@/components/PageLinks.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import navLinks from '@/assets/constants/nav-links';
 
 const isDark = useDark();
 
@@ -54,7 +54,18 @@ onMounted(() => {
         />
       </RouterLink>
       <div class="hidden gap-6 font-semibold md:flex md:text-xl lg:gap-16">
-        <PageLinks @link-clicked="navOpened = false" />
+        <RouterLink
+          v-for="(link, i) in navLinks"
+          :key="i"
+          v-slot="{ isActive }"
+          :to="link"
+          active-class="text-alternate dark:text-alternate-400"
+          @click="navOpened = false"
+        >
+          <span :class="{ 'transition-all hover:text-gray-500': !isActive }">
+            {{ link.displayName }}
+          </span>
+        </RouterLink>
       </div>
       <button
         class="hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
@@ -93,7 +104,18 @@ onMounted(() => {
           class="fixed right-0 top-[59.3px] z-40 h-80 w-80 rounded-b bg-slate-100/[.9] backdrop-blur-sm dark:bg-primary-600"
         >
           <div class="grid gap-4 p-5 text-lg font-semibold">
-            <PageLinks @link-clicked="navOpened = false" />
+            <RouterLink
+              v-for="(link, i) in navLinks"
+              :key="i"
+              v-slot="{ isActive }"
+              :to="link"
+              active-class="text-alternate dark:text-alternate-400"
+              @click="navOpened = false"
+            >
+              <span :class="{ 'transition-all hover:text-gray-500': !isActive }">
+                {{ link.displayName }}
+              </span>
+            </RouterLink>
             <div class="flex gap-8">
               <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
                 <i class="fa-brands fa-linkedin fa-lg"></i>

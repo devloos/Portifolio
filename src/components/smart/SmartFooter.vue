@@ -1,8 +1,8 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
-import PageLinks from '@/components/PageLinks.vue';
 import { inject, ref } from 'vue';
 import supabase from '@/lib/supabase-client.js';
+import navLinks from '@/assets/constants/nav-links';
 
 const year = new Date().getFullYear();
 
@@ -110,7 +110,18 @@ async function submitEmail() {
           <div>
             <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
             <div class="grid grid-cols-2 gap-y-2 lg:grid-cols-1">
-              <PageLinks />
+              <RouterLink
+                v-for="(link, i) in navLinks"
+                :key="i"
+                v-slot="{ isActive }"
+                :to="link"
+                active-class="text-alternate dark:text-alternate-400"
+                @click="navOpened = false"
+              >
+                <span :class="{ 'transition-all hover:text-gray-500': !isActive }">
+                  {{ link.displayName }}
+                </span>
+              </RouterLink>
             </div>
           </div>
           <div>
