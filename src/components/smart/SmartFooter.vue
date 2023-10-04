@@ -3,6 +3,9 @@ import TopWave from '@/components/wave-svgs/TopWave.vue';
 import { inject, ref } from 'vue';
 import supabase from '@/lib/supabase-client.js';
 import navLinks from '@/assets/constants/nav-links';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 const year = new Date().getFullYear();
 
@@ -113,12 +116,16 @@ async function submitEmail() {
               <RouterLink
                 v-for="(link, i) in navLinks"
                 :key="i"
-                v-slot="{ isActive }"
                 :to="link"
-                active-class="text-alternate dark:text-alternate-400"
+                lass="transition-all hover:text-gray-500"
                 @click="navOpened = false"
               >
-                <span :class="{ 'transition-all hover:text-gray-500': !isActive }">
+                <span
+                  :class="{
+                    'text-alternate dark:text-alternate-400':
+                      route.fullPath === link.fullPath,
+                  }"
+                >
                   {{ link.displayName }}
                 </span>
               </RouterLink>
