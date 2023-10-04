@@ -9,3 +9,5 @@
 - our own project badges
 - better section dividers
 - add custom toasts
+- handle error page
+- expand footer on empty page
