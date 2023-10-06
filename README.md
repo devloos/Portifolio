@@ -11,3 +11,4 @@
 - add custom toasts
 - handle error page
 - expand footer on empty page
+- add blog page
