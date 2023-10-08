@@ -64,6 +64,11 @@ const tech = [
     logo: 'python',
     url: 'https://docs.python.org/3/',
   },
+  {
+    text: 'Linux',
+    logo: 'linux',
+    url: 'https://github.com/torvalds/linux',
+  },
 ];
 
 export default tech;
