@@ -1,22 +1,12 @@
 <script setup>
-import { provide, ref } from 'vue';
-import { useHead } from '@unhead/vue';
+import { computed, provide, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
-import SmartNav from '@/components/smart/SmartNav.vue';
-import SmartFooter from '@/components/smart/SmartFooter.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
+import { useRoute } from 'vue-router';
 
-useHead({
-  title: 'Devlos',
-  meta: [
-    {
-      name: 'description',
-      content: '[object, object]',
-    },
-  ],
-});
+const route = useRoute();
 
+const layout = computed(() => route.meta.layout || 'DefaultLayout');
 const isLoading = ref(false);
 
 provide('start-overlay', () => (isLoading.value = true));
@@ -24,22 +14,14 @@ provide('end-overlay', () => (isLoading.value = false));
 </script>
 
 <template>
-  <SmartImg
-    class="absolute -top-28 left-0 right-0 -z-40 mx-auto sm:-top-48 md:-top-96"
-    src="/tplos/portfolio/rays.png"
-    width="927"
-    height="807"
-    alt="rays"
-    is-transparent
-  />
-  <SmartNav />
-  <RouterView v-slot="{ Component }" class="router-view">
-    <SmartTransition name="fade-up" mode="out-in" duration="500">
-      <component :is="Component" />
-    </SmartTransition>
-  </RouterView>
-  <SmartFooter />
   <LoadingOverlay :loading="isLoading" />
+  <component :is="layout">
+    <RouterView v-slot="{ Component }" class="router-view">
+      <SmartTransition name="fade-up" mode="out-in" duration="500">
+        <component :is="Component" />
+      </SmartTransition>
+    </RouterView>
+  </component>
 </template>
 
 <style scoped lang="scss">

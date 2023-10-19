@@ -10,6 +10,17 @@ import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import { useHead } from '@unhead/vue';
+
+useHead({
+  title: 'Devlos',
+  meta: [
+    {
+      name: 'description',
+      content: '[object, object]',
+    },
+  ],
+});
 
 const isDark = useDark();
 const featuredProjects = projects.filter((el) => el.featured);

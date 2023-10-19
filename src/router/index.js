@@ -1,19 +1,33 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+const Home = () => import('@/views/Home.vue');
+const Projects = () => import('@/views/Projects.vue');
+const PageNotFound = () => import('@/views/PageNotFound.vue');
+
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: Home,
+  },
+  {
+    path: '/projects',
+    name: 'projects',
+    component: Projects,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'PageNotFound',
+    meta: {
+      layout: 'BlankLayout',
+    },
+    component: PageNotFound,
+  },
+];
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('@/views/Home.vue'),
-    },
-    {
-      path: '/projects',
-      name: 'projects',
-      component: () => import('@/views/Projects.vue'),
-    },
-  ],
+  routes,
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
       if (savedPosition) {
