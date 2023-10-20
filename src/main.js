@@ -17,4 +17,6 @@ app.use(head);
 app.component('DefaultLayout', DefaultLayout);
 app.component('BlankLayout', BlankLayout);
 
-app.mount('#app');
+router.isReady().then(() => {
+  app.mount('#app');
+});
