@@ -21,6 +21,7 @@ const durationMS = computed(() => `${props.duration}ms`);
 
 <template>
   <Transition :name="name" :mode="mode">
+    <!-- eslint-disable-next-line vue/require-toggle-inside-transition -->
     <slot />
   </Transition>
 </template>
