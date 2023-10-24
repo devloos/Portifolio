@@ -22,5 +22,9 @@ os.system('git add .')
 os.system('git commit -m "deploy"')
 os.system('git push')
 
+if int(os.popen('echo $?').read()) != 0:
+    print('Error building Portfolio Vue! [FAILED]')
+    exit(1)
+
 # deploy
 os.system('railway up --detach')
