@@ -3,6 +3,7 @@ import { computed, provide, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { useRoute } from 'vue-router';
+import { useDark } from '@vueuse/core';
 
 const route = useRoute();
 
@@ -11,6 +12,8 @@ const isLoading = ref(false);
 
 provide('start-overlay', () => (isLoading.value = true));
 provide('end-overlay', () => (isLoading.value = false));
+
+useDark();
 </script>
 
 <template>
