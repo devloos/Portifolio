@@ -2,7 +2,7 @@ import os
 from git import Repo
 
 PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio/portfolio-vue'
-BRANCH = 'master'
+BRANCH = 'main'
 
 answer = input("Are you sure you want to deploy? (yes/no) [no]: ")
 
