@@ -12,17 +12,12 @@ const year = new Date().getFullYear();
 const startOverlay = inject('start-overlay');
 const endOverlay = inject('end-overlay');
 
+const form = ref(null);
+
 const name = ref('');
 const email = ref('');
 const subject = ref('');
 const message = ref('');
-
-function resetFormFields() {
-  name.value = '';
-  email.value = '';
-  subject.value = '';
-  message.value = '';
-}
 
 async function submitEmail() {
   try {
@@ -41,9 +36,9 @@ async function submitEmail() {
       throw error;
     }
 
-    resetFormFields();
+    form.value.reset();
   } catch (e) {
-    // not handling just yet
+    // need to add toast still
   } finally {
     endOverlay();
   }
@@ -58,6 +53,7 @@ async function submitEmail() {
       >
         <div id="contact">
           <form
+            ref="form"
             class="mx-auto grid max-w-lg grid-cols-2 gap-3"
             @submit.prevent="submitEmail"
           >
