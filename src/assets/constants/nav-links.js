@@ -6,7 +6,7 @@ export default [
   },
   {
     displayName: 'Projects',
-    name: 'projects',
+    name: 'Projects',
     fullPath: '/projects',
   },
   {
