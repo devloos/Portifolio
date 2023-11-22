@@ -15,7 +15,7 @@ if Repo(PORTFOLIO_VUE_PATH).active_branch.name != BRANCH:
     exit(1)
 
 # check for latest changes
-os.system('git pull origin master')
+os.system(f"git pull origin {BRANCH}")
 
 # push any pending changes
 os.system('git add .')
