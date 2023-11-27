@@ -115,9 +115,10 @@ const featuredProjects = projects.filter((el) => el.featured);
             </p>
             <p class="mb-3">
               Later, I enrolled in college and have been excelling, maintaining an
-              impressive 3.9 GPA while pursuing Computer Science. My goal is to apply to
-              UCI in the fall of 2023, a significant achievement as I'd be the first in my
-              family to attend a university.
+              impressive 3.83 GPA while pursuing Computer Science. My goal is to get
+              accepted into the University of California in the fall of 2023, a
+              significant achievement as I'd be the first in my family to attend a
+              university.
             </p>
             <p class="mb-3">
               In 2021, while working as a supervisor at Ethika, my passion for computers
