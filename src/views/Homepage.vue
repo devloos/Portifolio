@@ -100,16 +100,28 @@ const featuredProjects = projects.filter((el) => el.featured);
               Once I began, I quickly fell in love with various Computer Science concepts.
               I focused on mastering C++ through online tutorials and built projects like
               the
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
+              <a
+                href="https://github.com/devloos/Snake-Game"
+                class="font-semibold hover:opacity-50 dark:text-white"
+                target="_blank"
+              >
                 Snake Game,
               </a>
               a
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
+              <a
+                href="https://github.com/devloos/Pokemon-Clone"
+                class="font-semibold hover:opacity-50 dark:text-white"
+                target="_blank"
+              >
                 Pokemon Clone,
               </a>
               and a
-              <a href="#" class="font-semibold hover:opacity-50 dark:text-white">
-                POS System
+              <a
+                href="https://github.com/devloos/Sales-System"
+                class="font-semibold hover:opacity-50 dark:text-white"
+                target="_blank"
+              >
+                Sales System
               </a>
               using libraries like ncurses, RayLib, and mongocxx.
             </p>
