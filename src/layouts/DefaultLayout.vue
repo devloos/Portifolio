@@ -14,6 +14,8 @@ import SmartImg from '@/components/smart/SmartImg.vue';
     is-transparent
   />
   <SmartNav />
-  <slot />
+  <div class="pb-12">
+    <slot />
+  </div>
   <SmartFooter />
 </template>

@@ -1,110 +1,59 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
-import { inject, ref } from 'vue';
-import supabase from '@/lib/supabase-client.js';
 import navLinks from '@/assets/constants/nav-links';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
 const year = new Date().getFullYear();
-
-const startOverlay = inject('start-overlay');
-const endOverlay = inject('end-overlay');
-
-const form = ref(null);
-
-const name = ref('');
-const email = ref('');
-const subject = ref('');
-const message = ref('');
-
-async function submitEmail() {
-  try {
-    startOverlay();
-
-    const emailRow = {
-      name: name.value,
-      email: email.value,
-      subject: subject.value,
-      message: message.value,
-    };
-
-    const { error } = await supabase.from('emails').insert(emailRow);
-
-    if (error) {
-      throw error;
-    }
-
-    form.value.reset();
-  } catch (e) {
-    // need to add toast still
-  } finally {
-    endOverlay();
-  }
-}
 </script>
 <template>
   <div class="relative pt-12">
     <TopWave class="fill-alternate-100 dark:fill-slate-700" />
-    <div class="bg-alternate-100 dark:bg-slate-700">
+    <div class="absolute -top-10 w-full px-3 text-white">
+      <div
+        class="mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:p-10"
+      >
+        <div class="flex flex-col items-center justify-center gap-8 md:flex-row">
+          <div>
+            <h3 class="text-2xl font-bold">Contact me</h3>
+          </div>
+          <div class="max-w-96 md:max-w-64 lg:max-w-96">
+            <p>
+              Interested in working together or need help with anything? We should queue
+              up a time to chat. I’ll buy the coffee.
+            </p>
+          </div>
+          <div>
+            <button
+              class="group rounded bg-slate-700 px-5 py-3 transition-all hover:bg-slate-800"
+            >
+              <div class="flex items-center gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6 motion-safe:group-hover:animate-spin"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                  />
+                </svg>
+                <span>Let Me Know!</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-alternate-100 pt-60 dark:bg-slate-700 md:pt-32">
       <div
         class="mx-auto mt-1 flex max-w-5xl flex-col items-center justify-between gap-x-12 gap-y-8 px-4 lg:flex-row-reverse"
       >
-        <div id="contact">
-          <form
-            ref="form"
-            class="mx-auto grid max-w-lg grid-cols-2 gap-3"
-            @submit.prevent="submitEmail"
-          >
-            <div class="flex flex-col">
-              <label class="text-sm font-semibold dark:text-alternate-100">Name</label>
-              <input
-                v-model.trim="name"
-                type="text"
-                class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 text-coal-800 dark:border-primary-400 dark:bg-slate-400"
-                required
-              />
-            </div>
-
-            <div class="flex flex-col">
-              <label class="text-sm font-semibold dark:text-alternate-100">Email</label>
-              <input
-                v-model.trim="email"
-                type="email"
-                class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 text-coal-800 dark:border-primary-400 dark:bg-slate-400"
-                required
-              />
-            </div>
-
-            <div class="col-span-2 flex flex-col">
-              <label class="text-sm font-semibold dark:text-alternate-100">Subject</label>
-              <input
-                v-model.trim="subject"
-                type="text"
-                class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 dark:border-primary-400 dark:bg-slate-400 dark:text-coal-800"
-                required
-              />
-            </div>
-            <div class="col-span-2 flex flex-col">
-              <label class="text-sm font-semibold dark:text-alternate-100">Message</label>
-              <textarea
-                v-model.trim="message"
-                rows="8"
-                cols="70"
-                class="rounded border border-primary-100 bg-slate-50 px-2 py-1.5 dark:border-primary-400 dark:bg-slate-400 dark:text-coal-800"
-                required
-              />
-            </div>
-
-            <button
-              class="col-end-3 rounded bg-slate-400 py-2 font-semibold transition-all hover:bg-slate-500 hover:ring hover:ring-alternate-600 hover:ring-offset-1 hover:ring-offset-alternate-200 dark:bg-slate-800 dark:hover:bg-slate-600 dark:hover:ring-slate-400 dark:hover:ring-offset-slate-800"
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
         <div class="flex justify-around gap-28 text-xl lg:text-2xl">
           <div>
             <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
