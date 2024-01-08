@@ -2,6 +2,7 @@
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import navLinks from '@/assets/constants/nav-links';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
+import SmartImg from '@/components/smart/SmartImg.vue';
 import { RouterLink, useRoute } from 'vue-router';
 
 const route = useRoute();
@@ -42,10 +43,22 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </div>
-    <div class="bg-alternate-100 pt-72 dark:bg-slate-700 md:pt-44">
-      <div
-        class="mx-auto mt-1 flex max-w-5xl flex-col items-center justify-between gap-x-12 gap-y-8 px-4 lg:flex-row-reverse"
-      >
+    <div class="bg-alternate-100 pt-64 dark:bg-slate-700 md:pt-40">
+      <div class="flex flex-col items-center justify-center gap-10">
+        <div>
+          <SmartImg
+            class="max-w-20 self-center rounded-full border border-slate-700"
+            src="/tplos/portfolio/stud.jpg"
+            width="1328"
+            height="1274"
+            alt="stud"
+          />
+        </div>
+        <blockquote>
+          <p class="max-w-sm text-center font-mono text-xl tracking-wide antialiased">
+            Leave a meaningful impact, regardless of its scale.
+          </p>
+        </blockquote>
         <div class="flex justify-around gap-28 text-xl lg:text-2xl">
           <div>
             <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
