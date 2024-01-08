@@ -27,8 +27,8 @@ watch(
         <div class="flex h-full w-full items-center justify-center">
           <svg
             class="animate-spin"
-            width="100px"
-            height="100px"
+            width="75px"
+            height="75px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
