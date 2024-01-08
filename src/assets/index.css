@@ -26,3 +26,35 @@ body {
 .hamburger.is-active .hamburger-inner::after {
   @apply bg-primary dark:bg-alternate-600;
 }
+
+@layer components {
+  .light-conic-border {
+    background-image: conic-gradient(
+        from var(--border-angle),
+        rgb(100, 132, 161),
+        rgb(100, 132, 161) 50%,
+        rgb(100, 132, 161)
+      ),
+      conic-gradient(
+        from var(--border-angle),
+        transparent 20%,
+        rgb(26, 76, 120),
+        rgb(39, 34, 24)
+      );
+  }
+
+  .dark-conic-border {
+    background-image: conic-gradient(
+        from var(--border-angle),
+        rgb(39, 39, 39),
+        rgb(39, 39, 39) 50%,
+        rgb(39, 39, 39)
+      ),
+      conic-gradient(
+        from var(--border-angle),
+        transparent 20%,
+        rgb(26, 76, 120),
+        rgb(39, 34, 24)
+      );
+  }
+}
