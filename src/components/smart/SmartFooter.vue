@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
     <TopWave class="fill-alternate-100 dark:fill-slate-700" />
     <div class="absolute -top-10 w-full px-3 text-white">
       <div
-        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:p-10"
+        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12"
       >
         <div class="flex flex-col items-center justify-center gap-8 md:flex-row">
           <div>
@@ -42,7 +42,7 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </div>
-    <div class="bg-alternate-100 pt-60 dark:bg-slate-700 md:pt-32">
+    <div class="bg-alternate-100 pt-72 dark:bg-slate-700 md:pt-44">
       <div
         class="mx-auto mt-1 flex max-w-5xl flex-col items-center justify-between gap-x-12 gap-y-8 px-4 lg:flex-row-reverse"
       >
