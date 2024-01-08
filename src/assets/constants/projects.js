@@ -2,7 +2,7 @@ const projects = [
   {
     file: {
       type: 'video',
-      src: '/tplos/portfolio/projects/andariego-1694729954020.mp4',
+      src: '/tplos/portfolio/projects/el-andariego-1704676212150.mp4',
     },
     title: 'El Andariego',
     desc: "The use of Vue's Virtual DOM optimized rendering performance, reducing unnecessary updates. I also employed Vue's Pinia for structured state management and Vue Router for client-side routing, facilitating seamless navigation in your single-page application. MongoDB's flexible document-oriented data model provided efficient storage for dynamic content like menu items and customer orders.",
