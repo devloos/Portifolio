@@ -14,13 +14,13 @@ const year = new Date().getFullYear();
     <TopWave class="fill-alternate-100 dark:fill-slate-700" />
     <div class="absolute -top-10 w-full px-3 text-white">
       <div
-        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12"
+        class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
       >
-        <div class="flex flex-col items-center justify-center gap-8 md:flex-row">
+        <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
           <div>
             <h3 class="text-2xl font-bold">Contact me</h3>
           </div>
-          <div class="max-w-96 md:max-w-64 lg:max-w-96">
+          <div class="max-w-96 text-lg md:max-w-64 lg:max-w-lg xl:max-w-xl">
             <p>
               Interested in working together or need help with anything? We should queue
               up a time to chat. I’ll buy the coffee.
@@ -43,7 +43,7 @@ const year = new Date().getFullYear();
         </div>
       </div>
     </div>
-    <div class="bg-alternate-100 pt-64 dark:bg-slate-700 md:pt-40">
+    <div class="bg-alternate-100 pt-72 dark:bg-slate-700 md:pt-40">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
           <SmartImg
