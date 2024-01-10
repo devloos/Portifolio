@@ -1,7 +1,7 @@
 export default [
   {
-    displayName: 'Homepage',
-    name: 'Homepage',
+    displayName: 'Home',
+    name: 'Home',
     fullPath: '/',
   },
   {
@@ -11,7 +11,7 @@ export default [
   },
   {
     displayName: 'About',
-    name: 'Homepage',
+    name: 'Home',
     hash: '#about',
     fullPath: '/#about',
   },

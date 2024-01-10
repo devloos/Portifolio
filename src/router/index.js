@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-const Homepage = () => import('@/views/Homepage.vue');
+const Home = () => import('@/views/Home.vue');
 const Projects = () => import('@/views/Projects.vue');
 const Contact = () => import('@/views/Contact.vue');
 const PageNotFound = () => import('@/views/PageNotFound.vue');
@@ -8,8 +8,8 @@ const PageNotFound = () => import('@/views/PageNotFound.vue');
 const routes = [
   {
     path: '/',
-    name: 'Homepage',
-    component: Homepage,
+    name: 'Home',
+    component: Home,
   },
   {
     path: '/projects',
@@ -58,7 +58,7 @@ const router = createRouter({
             top: 0,
             left: 0,
           });
-        }, 1300);
+        }, 500);
       }
     });
   },
