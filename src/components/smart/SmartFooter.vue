@@ -1,16 +1,13 @@
 <script setup>
 import TopWave from '@/components/wave-svgs/TopWave.vue';
-import navLinks from '@/assets/constants/nav-links';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
-import { RouterLink, useRoute } from 'vue-router';
-
-const route = useRoute();
+import { RouterLink } from 'vue-router';
 
 const year = new Date().getFullYear();
 </script>
 <template>
-  <div class="relative pt-12">
+  <div class="relative mt-24 pt-12">
     <TopWave class="fill-alternate-100 dark:fill-slate-700" />
     <div class="absolute -top-10 w-full px-3 text-white">
       <div
@@ -54,76 +51,75 @@ const year = new Date().getFullYear();
             alt="stud"
           />
         </div>
-        <blockquote>
+        <blockquote class="mb-5">
           <p class="max-w-sm text-center font-mono text-xl tracking-wide antialiased">
             Leave a meaningful impact, regardless of its scale.
           </p>
         </blockquote>
-        <div class="flex justify-around gap-28 text-xl lg:text-2xl">
-          <div>
-            <h4 class="mb-3 text-center font-bold underline">Navigation</h4>
-            <div class="grid grid-cols-2 gap-y-2 lg:grid-cols-1">
-              <RouterLink
-                v-for="(link, i) in navLinks"
-                :key="i"
-                :to="link"
-                lass="transition-all hover:text-gray-500"
-                @click="navOpened = false"
-              >
-                <span
-                  :class="{
-                    'text-alternate dark:text-alternate-400':
-                      route.fullPath === link.fullPath,
-                  }"
-                >
-                  {{ link.displayName }}
-                </span>
-              </RouterLink>
+        <div class="flex items-center justify-around gap-6 md:gap-16">
+          <a
+            class="group rounded transition-all hover:bg-white"
+            href="https://www.linkedin.com/in/aguilerac"
+            target="_blank"
+          >
+            <div class="rounded border p-2 px-3">
+              <SmartSvg
+                class="h-7 w-7 fill-white transition-all group-hover:fill-slate-700"
+                name="LinkedinSvg"
+              />
             </div>
-          </div>
-          <div>
-            <h4 class="mb-3 text-center font-bold underline">Connect</h4>
-            <div class="grid grid-cols-3 gap-3 text-lg">
-              <a
-                class="transition-all hover:text-gray-500"
-                href="https://www.linkedin.com/in/aguilerac"
-                target="_blank"
-              >
-                <i class="fa-brands fa-linkedin fa-lg"></i>
-              </a>
-              <a
-                class="transition-all hover:text-gray-500"
-                href="https://www.instagram.com/devloos"
-                target="_blank"
-              >
-                <i class="fa-brands fa-instagram fa-lg"></i>
-              </a>
-              <a
-                class="transition-all hover:text-gray-500"
-                href="https://github.com/devloos"
-                target="_blank"
-              >
-                <i class="fa-brands fa-github fa-lg"></i>
-              </a>
-              <a
-                class="transition-all hover:text-gray-500"
-                href="https://twitter.com/18aguilerac"
-                target="_blank"
-              >
-                <i class="fa-brands fa-twitter fa-lg"></i>
-              </a>
-              <a
-                class="transition-all hover:text-gray-500"
-                href="https://leetcode.com/devlos/"
-                target="_blank"
-              >
-                <i class="fa-solid fa-gear fa-lg"></i>
-              </a>
+          </a>
+          <a
+            class="group rounded transition-all hover:bg-white"
+            href="https://www.instagram.com/devloos"
+            target="_blank"
+          >
+            <div class="rounded border p-2 px-3">
+              <SmartSvg
+                class="h-7 w-7 fill-white transition-all group-hover:fill-slate-700"
+                name="InstagramSvg"
+              />
             </div>
-          </div>
+          </a>
+          <a
+            class="group rounded transition-all hover:bg-white"
+            href="https://github.com/devloos"
+            target="_blank"
+          >
+            <div class="rounded border p-2 px-3">
+              <SmartSvg
+                class="h-7 w-7 fill-white transition-all group-hover:fill-slate-700"
+                name="GithubSvg"
+              />
+            </div>
+          </a>
+          <a
+            class="group rounded transition-all hover:bg-white"
+            href="https://twitter.com/18aguilerac"
+            target="_blank"
+          >
+            <div class="rounded border p-2 px-3">
+              <SmartSvg
+                class="h-7 w-7 fill-white transition-all group-hover:fill-slate-700"
+                name="TwitterSvg"
+              />
+            </div>
+          </a>
+          <a
+            class="group rounded transition-all hover:bg-white"
+            href="https://leetcode.com/devlos/"
+            target="_blank"
+          >
+            <div class="rounded border p-2 px-3">
+              <SmartSvg
+                class="h-7 w-7 fill-white transition-all group-hover:fill-slate-700"
+                name="LaptopSvg"
+              />
+            </div>
+          </a>
         </div>
       </div>
-      <p class="py-5 text-center text-gray-500 dark:text-gray-400">
+      <p class="pb-10 pt-16 text-center text-gray-500 dark:text-gray-400">
         &copy; {{ year }} Carlos Aguilera
       </p>
     </div>

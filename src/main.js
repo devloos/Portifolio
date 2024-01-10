@@ -5,6 +5,11 @@ import { createHead } from '@unhead/vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import BlankLayout from '@/layouts/BlankLayout.vue';
 import MessageSvg from '@/components/svgs/MessageSvg.vue';
+import LinkedinSvg from '@/components/svgs/LinkedinSvg.vue';
+import InstagramSvg from '@/components/svgs/InstagramSvg.vue';
+import GithubSvg from '@/components/svgs/GithubSvg.vue';
+import TwitterSvg from '@/components/svgs/TwitterSvg.vue';
+import LaptopSvg from '@/components/svgs/LaptopSvg.vue';
 
 import '@/assets/hamburger.scss';
 import '@/assets/index.css';
@@ -18,7 +23,12 @@ app.use(head);
 app
   .component('DefaultLayout', DefaultLayout)
   .component('BlankLayout', BlankLayout)
-  .component('MessageSvg', MessageSvg);
+  .component('MessageSvg', MessageSvg)
+  .component('LinkedinSvg', LinkedinSvg)
+  .component('InstagramSvg', InstagramSvg)
+  .component('GithubSvg', GithubSvg)
+  .component('TwitterSvg', TwitterSvg)
+  .component('LaptopSvg', LaptopSvg);
 
 router.isReady().then(() => {
   app.mount('#app');
