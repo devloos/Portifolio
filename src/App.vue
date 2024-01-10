@@ -11,7 +11,7 @@ const layout = computed(() => route.meta.layout || 'DefaultLayout');
 const isLoading = ref(false);
 
 provide('start-overlay', () => (isLoading.value = true));
-provide('end-overlay', () => (isLoading.value = false));
+provide('stop-overlay', () => (isLoading.value = false));
 
 useDark();
 </script>
