@@ -21,7 +21,7 @@ const routes = [
     name: 'Contact',
     component: Contact,
     meta: {
-      layout: 'BlankLayout',
+      layout: 'NavLayout',
     },
   },
   {

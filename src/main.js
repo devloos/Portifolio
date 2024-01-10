@@ -4,6 +4,7 @@ import router from './router';
 import { createHead } from '@unhead/vue';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
 import BlankLayout from '@/layouts/BlankLayout.vue';
+import NavLayout from '@/layouts/NavLayout.vue';
 import MessageSvg from '@/components/svgs/MessageSvg.vue';
 import LinkedinSvg from '@/components/svgs/LinkedinSvg.vue';
 import InstagramSvg from '@/components/svgs/InstagramSvg.vue';
@@ -23,6 +24,7 @@ app.use(head);
 app
   .component('DefaultLayout', DefaultLayout)
   .component('BlankLayout', BlankLayout)
+  .component('NavLayout', NavLayout)
   .component('MessageSvg', MessageSvg)
   .component('LinkedinSvg', LinkedinSvg)
   .component('InstagramSvg', InstagramSvg)

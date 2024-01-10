@@ -12,7 +12,7 @@ const email = ref('');
 const subject = ref('');
 const message = ref('');
 
-async function submitEmail() {
+async function sendEmail() {
   try {
     startOverlay();
 
@@ -39,11 +39,16 @@ async function submitEmail() {
 </script>
 
 <template>
-  <div>
+  <div class="container mt-10 px-2 md:mt-16">
+    <div class="mb-12 text-center">
+      <p class="mx-auto max-w-xl font-mono text-4xl tracking-wide">
+        I’m excited to learn about your project. Ready to get started?
+      </p>
+    </div>
     <form
       ref="form"
       class="mx-auto grid max-w-lg grid-cols-2 gap-3"
-      @submit.prevent="submitEmail"
+      @submit.prevent="sendEmail"
     >
       <div class="flex flex-col">
         <label class="text-sm font-semibold dark:text-alternate-100">Name</label>
