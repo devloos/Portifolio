@@ -2,7 +2,6 @@
 
 ### Todo
 
-- footer revamp
 - project layout
 - hover bug on experience
 - our own project badges
