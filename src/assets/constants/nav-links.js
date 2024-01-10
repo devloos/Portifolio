@@ -17,8 +17,7 @@ export default [
   },
   {
     displayName: 'Contact',
-    name: 'Homepage',
-    hash: '#contact',
-    fullPath: '/#contact',
+    name: 'Contact',
+    fullPath: '/contact',
   },
 ];
