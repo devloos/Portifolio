@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
         class="border-animated dark:dark-conic-border light-conic-border mx-auto w-fit rounded bg-slate-500 p-8 shadow-lg dark:bg-gray-600 md:px-10 md:py-12 lg:px-12 lg:py-14"
       >
         <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
-          <div>
+          <div class="text-nowrap">
             <h3 class="text-2xl font-bold">Contact me</h3>
           </div>
           <div class="max-w-96 text-lg md:max-w-64 lg:max-w-lg xl:max-w-xl">
@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
               class="group inline-block rounded bg-slate-700 px-5 py-3 transition-all hover:bg-slate-800"
               to="/contact"
             >
-              <div class="flex items-center gap-3">
+              <div class="flex items-center gap-3 text-nowrap">
                 <SmartSvg
                   name="MessageSvg"
                   class="h-6 w-6 transition-all group-hover:-translate-y-1"
