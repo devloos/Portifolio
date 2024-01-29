@@ -18,13 +18,15 @@ useDark();
 
 <template>
   <LoadingOverlay :loading="isLoading" />
-  <component :is="layout">
-    <RouterView v-slot="{ Component }" class="router-view">
-      <SmartTransition name="fade-up" mode="out-in" duration="500">
-        <component :is="Component" />
-      </SmartTransition>
-    </RouterView>
-  </component>
+  <SmartTransition name="fade" mode="out-in">
+    <component :is="layout">
+      <RouterView v-slot="{ Component }" class="router-view">
+        <SmartTransition name="fade-up" mode="out-in" duration="500">
+          <component :is="Component" />
+        </SmartTransition>
+      </RouterView>
+    </component>
+  </SmartTransition>
 </template>
 
 <style scoped lang="scss">
