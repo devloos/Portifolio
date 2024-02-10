@@ -1,7 +1,7 @@
 import os
 from git import Repo
 
-PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio/portfolio-vue'
+PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio'
 BRANCH = 'main'
 
 answer = input("Are you sure you want to deploy? (yes/no) [no]: ")
@@ -22,6 +22,8 @@ os.system('git add .')
 os.system('git commit -m "deploy"')
 os.system('git push')
 
+os.system('cd client')
+
 os.system('npm run build')
 
 if int(os.popen('echo $?').read()) != 0:
@@ -31,4 +33,4 @@ if int(os.popen('echo $?').read()) != 0:
 os.system('rm -rf dist')
 
 # deploy
-os.system('railway up --detach')
+# os.system('railway up --detach')
