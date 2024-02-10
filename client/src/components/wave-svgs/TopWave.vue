@@ -35,9 +35,5 @@ defineOptions({
     width: calc(135% + 1.3px);
     height: 52px;
   }
-
-  & .shape-fill {
-    fill: #475569;
-  }
 }
 </style>

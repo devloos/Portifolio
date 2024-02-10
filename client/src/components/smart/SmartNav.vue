@@ -45,11 +45,11 @@ onMounted(() => {
     >
       <RouterLink to="/">
         <SmartImg
-          src="/tplos/portfolio/goat.png"
-          width="512"
-          height="512"
+          src="/tplos/portfolio/stud-123.jpg"
+          width="916"
+          height="916"
           alt="goat"
-          class="max-w-[42px]"
+          class="max-w-[44px] rounded-3xl"
           is-transparent
         />
       </RouterLink>

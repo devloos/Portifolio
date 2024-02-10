@@ -9,8 +9,9 @@ import tech from '@/assets/constants/tech';
 import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
-import SmartImg from '@/components/smart/SmartImg.vue';
 import { useHead } from '@unhead/vue';
+import { useAnimate } from '@vueuse/core';
+import { ref, watchEffect } from 'vue';
 
 useHead({
   title: 'Devlos',
@@ -24,22 +25,46 @@ useHead({
 
 const isDark = useDark();
 const featuredProjects = projects.filter((el) => el.featured);
+
+const nimbus = ref(null);
+const nimbusKeyframes = [
+  { transform: 'translateX(-0.5rem)' },
+  { transform: 'translateX(0.5rem)' },
+];
+
+const { playState: nimbusPlayState, play: nimbusPlay } = useAnimate(
+  nimbus,
+  nimbusKeyframes,
+  {
+    duration: 2500,
+    direction: 'alternate',
+    iterations: 2,
+  },
+);
+
+watchEffect(() => {
+  if (nimbusPlayState.value === 'finished') {
+    nimbusPlay();
+  }
+});
 </script>
 <template>
   <main>
-    <section class="mb-16 pt-8 md:px-3 md:pt-20">
+    <section class="mb-16 pt-4 md:px-3 md:pt-20">
       <div
-        class="container mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 md:flex-row-reverse md:gap-2"
+        class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-5xl"
       >
-        <SmartImg
-          class="mx-auto max-w-[180px] self-center rounded-full border border-slate-700"
-          src="/tplos/portfolio/stud.jpg"
-          width="1328"
-          height="1274"
-          alt="stud"
-        />
+        <div class="relative mb-14">
+          <img class="max-w-48 md:max-w-44" src="/avatar.png" alt="avatar" />
+          <img
+            ref="nimbus"
+            class="absolute -bottom-16 -right-10 min-w-56 md:-bottom-14 md:-right-8 md:min-w-48 lg:-bottom-16 lg:-right-10 lg:min-w-56"
+            src="/nimbus.png"
+            alt="nimbus"
+          />
+        </div>
         <div class="grow px-2 text-center md:text-start">
-          <p class="mb-7 max-w-xl px-1 text-2xl font-semibold md:text-3xl">
+          <p class="mb-7 max-w-xl px-1 text-2xl font-semibold lg:text-3xl">
             Hey! My name is Carlos. I work as a Web Developer at Ethika Inc.
           </p>
           <div class="px-2">
