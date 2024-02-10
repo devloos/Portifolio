@@ -33,4 +33,4 @@ if int(os.popen('echo $?').read()) != 0:
 os.system('rm -rf dist')
 
 # deploy
-# os.system('railway up --detach')
+os.system('railway up --detach')
