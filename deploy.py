@@ -22,7 +22,7 @@ os.system('git add .')
 os.system('git commit -m "deploy"')
 os.system('git push')
 
-os.system('cd client')
+os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
 os.system('npm run build')
 
