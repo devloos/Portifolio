@@ -132,7 +132,7 @@ const featuredProjects = projects.filter((el) => el.featured);
             <p class="mb-3">
               Later, I enrolled in college and have been excelling, maintaining an
               impressive 3.85 GPA while pursuing Computer Science. My goal is to get
-              accepted into the University of California in the fall of 2023, a
+              accepted into the University of California for the fall of 2024, a
               significant achievement as I'd be the first in my family to attend a
               university.
             </p>
