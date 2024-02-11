@@ -9,12 +9,16 @@
 - handle error page
 - add blog page
 - implement versioning
+
 - floating up and down
 - family image deck
-- get more of a glass look on hover (projects)
-- get arrow animations on hover (projects)
-- get x logo instead of twitter
 - try cursor light
 - try animation on name
-- different ring color toggle
 - StyledButton?
+
+# quick
+
+- get more of a glass look on hover (projects)
+- get arrow animations on hover (projects)
+- different ring color toggle
+- get x logo instead of twitter
