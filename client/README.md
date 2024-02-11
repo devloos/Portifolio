@@ -10,6 +10,7 @@
 - add blog page
 - implement versioning
 
+- fix route transition going from about to home
 - family image deck
 - try cursor light
 - try animation on name
