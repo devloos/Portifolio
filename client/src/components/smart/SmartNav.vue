@@ -129,16 +129,28 @@ onMounted(() => {
             </RouterLink>
             <div class="flex gap-8">
               <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
-                <SmartSvg class="w-5 fill-slate-200" name="LinkedinSvg" />
+                <SmartSvg
+                  class="w-5 fill-primary-600 dark:fill-slate-200"
+                  name="LinkedinSvg"
+                />
               </a>
               <a href="https://www.instagram.com/devloos" target="_blank">
-                <SmartSvg class="w-5 fill-slate-200" name="InstagramSvg" />
+                <SmartSvg
+                  class="w-5 fill-primary-600 dark:fill-slate-200"
+                  name="InstagramSvg"
+                />
               </a>
               <a href="https://github.com/devloos" target="_blank">
-                <SmartSvg class="w-5 fill-slate-200" name="GithubSvg" />
+                <SmartSvg
+                  class="w-5 fill-primary-600 dark:fill-slate-200"
+                  name="GithubSvg"
+                />
               </a>
               <a href="https://twitter.com/18aguilerac" target="_blank">
-                <SmartSvg class="w-5 fill-slate-200" name="TwitterSvg" />
+                <SmartSvg
+                  class="w-5 fill-primary-600 dark:fill-slate-200"
+                  name="TwitterSvg"
+                />
               </a>
             </div>
             <div>
