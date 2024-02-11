@@ -52,7 +52,7 @@ watchEffect(() => {
   <main>
     <section class="mb-16 pt-4 md:px-3 md:pt-20">
       <div
-        class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-5xl"
+        class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
       >
         <div class="relative mb-14">
           <img class="max-w-48 md:max-w-44" src="/avatar.png" alt="avatar" />
