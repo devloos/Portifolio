@@ -65,7 +65,7 @@ async function sendEmail() {
           </label>
           <input
             v-model.trim="email"
-            type="text"
+            type="email"
             class="rounded bg-inherit px-2 py-3 text-primary-600 shadow-sm ring-1 ring-primary-100 transition-all focus:outline-none focus:ring-2 focus:ring-primary-400 dark:text-slate-200 dark:ring-primary-200"
             required
           />
