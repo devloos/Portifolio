@@ -1,5 +1,6 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
+import SmartSvg from '@/components/smart/SmartSvg.vue';
 
 defineProps({
   experience: {
@@ -12,7 +13,8 @@ defineProps({
 <template>
   <a
     :href="experience.url"
-    class="mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:!bg-alternate-100 lg:hover:!opacity-100 lg:hover:!drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:!bg-slate-700"
+    target="_blank"
+    class="group/card mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6 lg:hover:bg-alternate-100 lg:hover:!opacity-100 lg:hover:drop-shadow-lg lg:group-hover:opacity-50 lg:hover:dark:bg-slate-700"
   >
     <div>
       <p class="text-xs font-semibold uppercase tracking-wide">{{ experience.date }}</p>
@@ -20,9 +22,10 @@ defineProps({
     <div>
       <div class="mb-3 font-bold dark:text-slate-400">
         {{ experience.title }} - {{ experience.company }}
-        <span class="ml-2">
-          <i class="fa-solid fa-arrow-up-right-from-square fa-sm" />
-        </span>
+        <SmartSvg
+          class="mb-1 ml-1 inline w-5 transition-all group-hover/card:-translate-y-1 group-hover/card:translate-x-1"
+          name="SquareArrowSvg"
+        />
       </div>
       <p class="mb-4 text-sm leading-relaxed tracking-wide">
         {{ experience.summary }}
