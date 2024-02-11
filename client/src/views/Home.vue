@@ -127,7 +127,7 @@ const featuredProjects = projects.filter((el) => el.featured);
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
-                <span class="underline underline-offset-2">Pokemon Clone</span>
+                <span class="underline underline-offset-2">Sales System</span>
               </a>
               using libraries like ncurses, RayLib, and mongocxx.
             </p>
