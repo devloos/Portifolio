@@ -92,8 +92,8 @@ watchEffect(() => {
       </div>
     </section>
     <section class="relative py-12">
-      <TopWave class="fill-alternate-100 dark:fill-slate-700" />
-      <div class="bg-alternate-100 dark:bg-slate-700">
+      <TopWave class="fill-alternate-100 dark:fill-primary-700" />
+      <div class="bg-alternate-100 dark:bg-primary-700">
         <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
         <div
           class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
@@ -105,7 +105,7 @@ watchEffect(() => {
           />
         </div>
       </div>
-      <BottomWave class="fill-alternate-100 dark:fill-slate-700" />
+      <BottomWave class="fill-alternate-100 dark:fill-primary-700" />
     </section>
     <section id="about" class="mt-16">
       <div class="container relative flex max-w-7xl flex-col lg:flex-row">
