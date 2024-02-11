@@ -10,7 +10,6 @@
 - add blog page
 - implement versioning
 
-- floating up and down
 - family image deck
 - try cursor light
 - try animation on name

@@ -10,8 +10,6 @@ import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
-import { useAnimate } from '@vueuse/core';
-import { ref, watchEffect } from 'vue';
 
 useHead({
   title: 'Devlos',
@@ -25,28 +23,6 @@ useHead({
 
 const isDark = useDark();
 const featuredProjects = projects.filter((el) => el.featured);
-
-const nimbus = ref(null);
-const nimbusKeyframes = [
-  { transform: 'translateX(-0.5rem)' },
-  { transform: 'translateX(0.5rem)' },
-];
-
-const { playState: nimbusPlayState, play: nimbusPlay } = useAnimate(
-  nimbus,
-  nimbusKeyframes,
-  {
-    duration: 2500,
-    direction: 'alternate',
-    iterations: 2,
-  },
-);
-
-watchEffect(() => {
-  if (nimbusPlayState.value === 'finished') {
-    nimbusPlay();
-  }
-});
 </script>
 <template>
   <main>
@@ -55,10 +31,13 @@ watchEffect(() => {
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
       >
         <div class="relative mb-14">
-          <img class="max-w-48 md:max-w-44" src="/avatar.png" alt="avatar" />
           <img
-            ref="nimbus"
-            class="absolute -bottom-16 -right-10 min-w-56 md:-bottom-14 md:-right-8 md:min-w-48 lg:-bottom-16 lg:-right-10 lg:min-w-56"
+            class="animate-vertical max-w-48 md:max-w-44"
+            src="/avatar.png"
+            alt="avatar"
+          />
+          <img
+            class="animate-vertical absolute -bottom-16 -right-10 min-w-56 md:-bottom-14 md:-right-8 md:min-w-48 lg:-bottom-16 lg:-right-10 lg:min-w-52"
             src="/nimbus.png"
             alt="nimbus"
           />
@@ -210,3 +189,22 @@ watchEffect(() => {
     </section>
   </main>
 </template>
+
+<style>
+@keyframes vertical {
+  from {
+    transform: translateY(-0.3rem);
+  }
+  to {
+    transform: translateY(0.7rem);
+  }
+}
+
+.animate-vertical {
+  animation-name: vertical;
+  animation-duration: 2500ms;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+</style>
