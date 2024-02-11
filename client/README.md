@@ -15,7 +15,3 @@
 - try cursor light
 - try animation on name
 - StyledButton?
-
-# quick
-
-- figure out why imports dont link and dont put full path
