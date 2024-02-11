@@ -109,7 +109,8 @@ const featuredProjects = projects.filter((el) => el.featured);
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
-                Snake Game,
+                <span class="underline underline-offset-2">Snake Game</span>
+                <span>,</span>
               </a>
               a
               <a
@@ -117,7 +118,8 @@ const featuredProjects = projects.filter((el) => el.featured);
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
-                Pokemon Clone,
+                <span class="underline underline-offset-2">Pokemon Clone</span>
+                <span>,</span>
               </a>
               and a
               <a
@@ -125,7 +127,7 @@ const featuredProjects = projects.filter((el) => el.featured);
                 class="font-semibold hover:opacity-50 dark:text-white"
                 target="_blank"
               >
-                Sales System
+                <span class="underline underline-offset-2">Pokemon Clone</span>
               </a>
               using libraries like ncurses, RayLib, and mongocxx.
             </p>
