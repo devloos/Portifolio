@@ -102,8 +102,8 @@ const featuredProjects = projects.filter((el) => el.featured);
               Science. My journey into this field started in 2020, but it wasn't until
               November 2021 that I could actively pursue it due to conflicting priorities.
               Once I began, I quickly fell in love with various Computer Science concepts.
-              I focused on mastering C++ through online tutorials and built projects like
-              the
+              I focused on understanding C++ through online tutorials and built projects
+              like the
               <a
                 href="https://github.com/devloos/Snake-Game"
                 class="font-semibold hover:opacity-50 dark:text-white"
