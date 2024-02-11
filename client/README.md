@@ -18,5 +18,4 @@
 
 # quick
 
-- different ring color toggle
-- get x logo instead of twitter
+- use svgs on nav
