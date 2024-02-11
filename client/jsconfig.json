@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
-    "allowJs": true
-  }
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
 }
