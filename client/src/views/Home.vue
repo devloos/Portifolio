@@ -142,11 +142,10 @@ const featuredProjects = projects.filter((el) => el.featured);
               software development job, marking a pivotal moment in my career.
             </p>
             <p>
-              I'm dedicated to learning in Computer Science and maintain a relentless
-              pursuit of knowledge. Alongside my passion for the field, I enjoy fishing,
-              playing soccer and basketball, and spending time with my family. My ultimate
-              life goal is to create something that leaves a meaningful impact, regardless
-              of its scale.
+              I'm dedicated to continuous learning and adoption of many new tools.
+              Alongside my passion for the field, I enjoy fishing, playing soccer, and
+              spending time with my family. A life goal of mine is to create something
+              that leaves a meaningful impact, regardless of its scale.
             </p>
           </div>
         </div>
