@@ -18,4 +18,4 @@
 
 # quick
 
-- use svgs on nav
+- figure out why imports dont link and dont put full path

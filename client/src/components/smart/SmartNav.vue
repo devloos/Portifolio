@@ -4,6 +4,7 @@ import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import SmartSvg from '@/components/smart/SmartSvg.vue';
 import navLinks from '@/assets/constants/nav-links';
 
 const isDark = useDark();
@@ -128,16 +129,16 @@ onMounted(() => {
             </RouterLink>
             <div class="flex gap-8">
               <a href="https://www.linkedin.com/in/aguilerac" target="_blank">
-                <i class="fa-brands fa-linkedin fa-lg"></i>
+                <SmartSvg class="w-5 fill-slate-200" name="LinkedinSvg" />
               </a>
               <a href="https://www.instagram.com/devloos" target="_blank">
-                <i class="fa-brands fa-instagram fa-lg"></i>
+                <SmartSvg class="w-5 fill-slate-200" name="InstagramSvg" />
               </a>
               <a href="https://github.com/devloos" target="_blank">
-                <i class="fa-brands fa-github fa-lg"></i>
+                <SmartSvg class="w-5 fill-slate-200" name="GithubSvg" />
               </a>
               <a href="https://twitter.com/18aguilerac" target="_blank">
-                <i class="fa-brands fa-twitter fa-lg"></i>
+                <SmartSvg class="w-5 fill-slate-200" name="TwitterSvg" />
               </a>
             </div>
             <div>
