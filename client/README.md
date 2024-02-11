@@ -18,6 +18,5 @@
 
 # quick
 
-- get arrow animations on hover (projects)
 - different ring color toggle
 - get x logo instead of twitter

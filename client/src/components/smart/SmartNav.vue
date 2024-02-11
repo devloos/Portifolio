@@ -71,7 +71,7 @@ onMounted(() => {
         </RouterLink>
       </div>
       <button
-        class="hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] hover:ring-2 hover:ring-sky-800 dark:bg-primary-400 md:flex"
+        class="group hidden h-[29px] w-[58px] items-center rounded-full bg-slate-300 pl-[2px] transition-all hover:ring-1 hover:ring-primary-800 dark:bg-primary-400 hover:dark:ring-primary-200 md:flex"
         type="button"
         @click="isDark = !isDark"
       >
@@ -79,7 +79,10 @@ onMounted(() => {
           class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-slate-400 !transition-all dark:bg-primary"
           :class="{ 'translate-x-[28px]': isDark }"
         >
-          <i class="fa-solid" :class="isDark ? 'fa-moon' : 'fa-sun'"></i>
+          <i
+            class="fa-solid group-hover:animate-spin-once"
+            :class="isDark ? 'fa-moon' : 'fa-sun'"
+          ></i>
         </div>
       </button>
       <button

@@ -7,6 +7,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      animation: {
+        'spin-once': 'spin 1s ease-in-out',
+      },
       colors: {
         primary: {
           100: '#d2d4d8',
