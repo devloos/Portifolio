@@ -25,7 +25,7 @@ const year = new Date().getFullYear();
           </div>
           <div>
             <RouterLink
-              class="group inline-block rounded bg-slate-700 px-5 py-3 transition-all hover:bg-slate-800"
+              class="group inline-block rounded bg-slate-700 px-5 py-3 transition-all hover:bg-slate-800 hover:dark:bg-slate-700 hover:dark:ring-1 hover:dark:ring-slate-500"
               to="/contact"
             >
               <div class="flex items-center gap-3 text-nowrap">
