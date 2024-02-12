@@ -13,9 +13,10 @@
 - try animation on name
 - implement versioning
 - hover bug on experience
+- switch to fully use smart svg
+- make footer image spin like a coin once only hover
 
 # TODAY
 
-- StyledButton?
 - fix route transition going from about to home
 - try cursor light

@@ -2,6 +2,7 @@
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import StyledButton from '@/components/styled/StyledButton.vue';
 import { RouterLink } from 'vue-router';
 
 const year = new Date().getFullYear();
@@ -24,17 +25,18 @@ const year = new Date().getFullYear();
             </p>
           </div>
           <div>
-            <RouterLink
-              class="group inline-block rounded bg-slate-700 px-5 py-3 transition-all hover:bg-slate-800 hover:dark:bg-slate-700 hover:dark:ring-1 hover:dark:ring-slate-500"
-              to="/contact"
-            >
-              <div class="flex items-center gap-3 text-nowrap">
-                <SmartSvg
-                  name="MessageSvg"
-                  class="h-6 w-6 transition-all group-hover:-translate-y-1"
-                />
-                <span>Let Me Know!</span>
-              </div>
+            <RouterLink class="group inline-block" to="/contact">
+              <StyledButton
+                class="bg-primary ring-1 ring-primary-100 dark:bg-slate-700 dark:ring-slate-400"
+              >
+                <div class="flex items-center gap-3 text-nowrap">
+                  <SmartSvg
+                    name="MessageSvg"
+                    class="h-6 w-6 transition-all group-hover:-translate-y-1"
+                  />
+                  <span>Let Me Know!</span>
+                </div>
+              </StyledButton>
             </RouterLink>
           </div>
         </div>

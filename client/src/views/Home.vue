@@ -10,6 +10,7 @@ import { useDark } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
+import StyledButton from '@/components/styled/StyledButton.vue';
 
 useHead({
   title: 'Devlos',
@@ -47,24 +48,27 @@ const featuredProjects = projects.filter((el) => el.featured);
             Hey! My name is Carlos. I work as a Web Developer at Ethika Inc.
           </p>
           <div class="px-2">
-            <a
-              class="mr-6 inline-block rounded bg-alternate-300 px-5 py-2 ring-2 ring-gray-500 transition-all hover:bg-alternate-400 dark:bg-alternate-600 dark:ring-slate-600 hover:dark:bg-alternate"
-              href="/resume.pdf"
-              download
-            >
-              <div class="flex items-center justify-center gap-3">
-                <p>Resume</p>
-                <i class="fa-solid fa-download"></i>
-              </div>
+            <a class="mr-6 inline-block" href="/resume.pdf" download>
+              <StyledButton
+                class="bg-alternate-200 ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
+              >
+                <div class="flex items-center justify-center gap-3">
+                  <p>Resume</p>
+                  <i class="fa-solid fa-download"></i>
+                </div>
+              </StyledButton>
             </a>
-            <RouterLink
-              to="/projects"
-              class="inline-block rounded bg-slate-300 px-5 py-2 ring-2 ring-slate-500 transition-all hover:bg-slate-400 dark:bg-slate-700 dark:ring-slate-500 hover:dark:bg-slate-600"
-            >
-              <div class="flex items-center justify-center gap-3">
-                <p>Projects</p>
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
+            <RouterLink to="/projects" class="group inline-block">
+              <StyledButton
+                class="bg-primary-100 ring-1 ring-primary-400 dark:bg-alternate-700 dark:ring-slate-400"
+              >
+                <div class="flex items-center justify-center gap-3">
+                  <p>Projects</p>
+                  <i
+                    class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-[2px]"
+                  ></i>
+                </div>
+              </StyledButton>
             </RouterLink>
           </div>
         </div>
