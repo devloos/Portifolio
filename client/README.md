@@ -15,7 +15,4 @@
 - hover bug on experience
 - switch to fully use smart svg
 - make footer image spin like a coin once only hover
-
-# TODAY
-
 - try cursor light
