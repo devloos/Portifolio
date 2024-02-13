@@ -18,5 +18,4 @@
 
 # TODAY
 
-- fix route transition going from about to home
 - try cursor light
