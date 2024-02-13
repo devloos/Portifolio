@@ -16,3 +16,4 @@
 - switch to fully use smart svg
 - make footer image spin like a coin once only hover
 - try cursor light
+- fix fast scroll on mobile
