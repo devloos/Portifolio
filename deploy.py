@@ -35,11 +35,11 @@ answer = input(
 
 match (answer):
     case 'major':
-        ver.bump_major()
+        ver = ver.bump_major()
     case 'minor':
-        ver.bump_minor()
+        ver = ver.bump_minor()
     case 'patch':
-        ver.bump_patch()
+        ver = ver.bump_patch()
     case _:
         print('Not valid semver semantics.')
         exit(1)
