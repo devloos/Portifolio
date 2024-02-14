@@ -9,6 +9,7 @@ BRANCH = 'main'
 def update_client_version():
     os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
+    # output project version and capture it in client_version
     client_version = os.popen(
         'node -p "require(\'./package.json\').version"').read()
 
@@ -36,6 +37,7 @@ def build_client():
 
     os.system('npm run build')
 
+    # check if run build errored out
     if int(os.popen('echo $?').read()) != 0:
         print('Error building Portfolio Vue! [FAILED]')
         exit(1)
@@ -70,8 +72,8 @@ def main():
     push_changes()
 
     # deploy
-    # os.chdir(PORTFOLIO_VUE_PATH + '/client')
-    # os.system('railway up --detach')
+    os.chdir(PORTFOLIO_VUE_PATH + '/client')
+    os.system('railway up --detach')
 
 
 if __name__ == '__main__':
