@@ -18,6 +18,8 @@ import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
 import '@/assets/hamburger.scss';
 import '@/assets/index.css';
 
+localStorage.setItem('version', process.env.npm_package_version);
+
 const app = createApp(App);
 const head = createHead();
 

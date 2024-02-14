@@ -1,4 +1,6 @@
 import os
+import re
+import semver
 from git import Repo
 
 PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio'
@@ -24,6 +26,15 @@ os.system('git push')
 
 os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
+ver = semver.Version.parse("0.0.0")
+
+answer = input(
+    f"The current version is {client_version}, specify the next version: ")
+
+if (re.search('major|minor|patch', answer) == None):
+    print('Not valid semver semantics.')
+    exit(1)
+
 os.system('npm run build')
 
 if int(os.popen('echo $?').read()) != 0:
@@ -33,4 +44,4 @@ if int(os.popen('echo $?').read()) != 0:
 os.system('rm -rf dist')
 
 # deploy
-os.system('railway up --detach')
+# os.system('railway up --detach')
