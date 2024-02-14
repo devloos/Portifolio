@@ -26,7 +26,8 @@ os.system('git push')
 
 os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
-client_version = os.popen('node -p "require("./package.json").version"').read()
+client_version = os.popen(
+    'node -p "require(\'./package.json\').version"').read()
 
 ver = semver.Version.parse(client_version)
 
