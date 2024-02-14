@@ -1,5 +1,4 @@
 import os
-import re
 import semver
 from git import Repo
 
@@ -34,9 +33,18 @@ ver = semver.Version.parse(client_version)
 answer = input(
     f"The current version is {ver}, specify the next version: ")
 
-if (re.search('major|minor|patch', answer) == None):
-    print('Not valid semver semantics.')
-    exit(1)
+match (answer):
+    case 'major':
+        ver.bump_major()
+    case 'minor':
+        ver.bump_minor()
+    case 'patch':
+        ver.bump_patch()
+    case _:
+        print('Not valid semver semantics.')
+        exit(1)
+
+print(ver)
 
 os.system('npm run build')
 
