@@ -32,7 +32,7 @@ client_version = os.popen(
 ver = semver.Version.parse(client_version)
 
 answer = input(
-    f"The current version is {client_version}, specify the next version: ")
+    f"The current version is {ver}, specify the next version: ")
 
 if (re.search('major|minor|patch', answer) == None):
     print('Not valid semver semantics.')
