@@ -1,3 +1,4 @@
+/* global  __VITE_APP_VERSION__ */
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
@@ -18,7 +19,7 @@ import SquareArrowSvg from '@/components/svgs/SquareArrowSvg.vue';
 import '@/assets/hamburger.scss';
 import '@/assets/index.css';
 
-localStorage.setItem('version', process.env.npm_package_version);
+localStorage.setItem('version', __VITE_APP_VERSION__);
 
 const app = createApp(App);
 const head = createHead();
