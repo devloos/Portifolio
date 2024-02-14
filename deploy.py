@@ -5,54 +5,74 @@ from git import Repo
 PORTFOLIO_VUE_PATH = '/Users/ca/Developer/Projects/Portfolio'
 BRANCH = 'main'
 
-answer = input("Are you sure you want to deploy? (yes/no) [no]: ")
 
-# anything but yes
-if (answer != 'yes'):
-    exit(0)
+def update_client_version():
+    os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
-if Repo(PORTFOLIO_VUE_PATH).active_branch.name != BRANCH:
-    print(f"Not in {BRANCH} branch! [FAILED]")
-    exit(1)
+    client_version = os.popen(
+        'node -p "require(\'./package.json\').version"').read()
 
-# check for latest changes
-os.system(f"git pull origin {BRANCH}")
+    ver = semver.Version.parse(client_version)
 
-# push any pending changes
-os.system('git add .')
-os.system('git commit -m "deploy"')
-os.system('git push')
+    answer = input(
+        f"The current version is {ver}, specify the next version: ")
 
-os.chdir(PORTFOLIO_VUE_PATH + '/client')
+    match (answer):
+        case 'major':
+            ver = ver.bump_major()
+        case 'minor':
+            ver = ver.bump_minor()
+        case 'patch':
+            ver = ver.bump_patch()
+        case _:
+            print('Not valid semver semantics.')
+            exit(1)
 
-client_version = os.popen(
-    'node -p "require(\'./package.json\').version"').read()
+    os.system(f'npm version {ver} -m "New Version {ver}"')
 
-ver = semver.Version.parse(client_version)
 
-answer = input(
-    f"The current version is {ver}, specify the next version: ")
+def build_client():
+    os.chdir(PORTFOLIO_VUE_PATH + '/client')
 
-match (answer):
-    case 'major':
-        ver = ver.bump_major()
-    case 'minor':
-        ver = ver.bump_minor()
-    case 'patch':
-        ver = ver.bump_patch()
-    case _:
-        print('Not valid semver semantics.')
+    os.system('npm run build')
+
+    if int(os.popen('echo $?').read()) != 0:
+        print('Error building Portfolio Vue! [FAILED]')
         exit(1)
 
-print(ver)
+    os.system('rm -rf dist')
 
-os.system('npm run build')
 
-if int(os.popen('echo $?').read()) != 0:
-    print('Error building Portfolio Vue! [FAILED]')
-    exit(1)
+def push_changes():
+    # check for latest changes
+    os.chdir(PORTFOLIO_VUE_PATH)
+    os.system(f"git pull origin {BRANCH}")
 
-os.system('rm -rf dist')
+    # push any pending changes
+    os.system('git add .')
+    os.system('git commit -m "deploy"')
+    os.system('git push')
 
-# deploy
-# os.system('railway up --detach')
+
+def main():
+    answer = input("Are you sure you want to deploy? (yes/no) [no]: ")
+
+    # anything but yes
+    if (answer != 'yes'):
+        exit(0)
+
+    if Repo(PORTFOLIO_VUE_PATH).active_branch.name != BRANCH:
+        print(f"Not in {BRANCH} branch! [FAILED]")
+        exit(1)
+
+    update_client_version()
+    build_client()
+    push_changes()
+
+    # deploy
+    # os.chdir(PORTFOLIO_VUE_PATH + '/client')
+    # os.system('railway up --detach')
+
+
+if __name__ == '__main__':
+    main()
