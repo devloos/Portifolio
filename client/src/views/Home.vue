@@ -45,7 +45,13 @@ const featuredProjects = projects.filter((el) => el.featured);
         </div>
         <div class="grow px-2 text-center md:text-start">
           <p class="mb-7 max-w-xl px-1 text-2xl font-semibold lg:text-3xl">
-            Hey! My name is Carlos. I work as a Web Developer at Ethika Inc.
+            <span>Hey! My name is&nbsp;</span>
+            <span
+              class="inline-block bg-gradient-to-r from-[#38AECC] to-[#022F40] bg-clip-text font-extrabold text-transparent dark:from-[#0846DA] dark:to-[#25F9F5]"
+            >
+              Carlos
+            </span>
+            <span>. I work as a Web Developer at Ethika Inc.</span>
           </p>
           <div class="px-2">
             <a class="mr-6 inline-block" href="/resume.pdf" download>
