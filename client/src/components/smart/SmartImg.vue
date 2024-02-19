@@ -2,9 +2,6 @@
 import { computed } from 'vue';
 import { getImageKitUrl } from '@/assets/utility';
 
-const placeholder =
-  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
-
 const props = defineProps({
   src: {
     type: String,
@@ -72,15 +69,23 @@ const srcset = computed(() => {
 
   return srcsetHolder.join(', ');
 });
+
+const lqipSrc = computed(() => {
+  const url = getImageKitUrl(props.src);
+  const params = new URLSearchParams(url.search);
+  params.set('tr', 'q-10');
+  url.search = params.toString();
+  return url;
+});
 </script>
 
 <template>
   <img
-    :loading="loading"
-    :src="placeholder"
+    :src="lqipSrc"
     :srcset="srcset"
     :width="width"
     :height="height"
+    :loading="loading"
     :style="{ 'background-color': isTransparent ? 'transparent' : 'lightgray' }"
     alt=""
   />

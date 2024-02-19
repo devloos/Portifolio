@@ -33,8 +33,9 @@ defineProps({
       <div class="flex flex-wrap gap-2">
         <div v-for="tag in experience.tags" :key="tag.text">
           <a
-            :href="tag.url"
+            href="/"
             target="_blank"
+            :aria-label="tag.text"
             class="inline-block transition-all hover:opacity-80"
           >
             <img

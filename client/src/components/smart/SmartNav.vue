@@ -51,6 +51,7 @@ onMounted(() => {
           height="916"
           alt="goat"
           class="max-w-[44px] rounded-3xl"
+          aria-label="Home"
           is-transparent
         />
       </RouterLink>
@@ -90,6 +91,7 @@ onMounted(() => {
         class="hamburger hamburger--elastic md:hidden"
         :class="{ 'is-active': navOpened }"
         type="button"
+        aria-label="Nav Menu"
         @click="navOpened = !navOpened"
       >
         <span class="hamburger-box">

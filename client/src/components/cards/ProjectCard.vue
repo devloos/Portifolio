@@ -50,6 +50,7 @@ const { project } = toRefs(props);
                 logo: tag.logo,
               })
             "
+            loading="lazy"
             alt=""
           />
         </div>

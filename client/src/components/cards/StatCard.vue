@@ -44,6 +44,7 @@ const statCardUrl = computed(() => {
     class="mx-auto"
     :class="{ perspective: props.perspective }"
     :src="statCardUrl"
+    loading="lazy"
     alt=""
   />
 </template>

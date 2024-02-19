@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
       >
         <div class="flex flex-col items-center justify-center gap-10 md:flex-row">
           <div class="text-nowrap">
-            <h3 class="text-2xl font-bold">Contact me</h3>
+            <p class="text-2xl font-bold">Contact me</p>
           </div>
           <div class="max-w-96 text-lg md:max-w-64 lg:max-w-lg xl:max-w-xl">
             <p>
@@ -62,6 +62,7 @@ const year = new Date().getFullYear();
           <a
             class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://www.linkedin.com/in/aguilerac"
+            aria-label="Linkedin"
             target="_blank"
           >
             <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
@@ -74,6 +75,7 @@ const year = new Date().getFullYear();
           <a
             class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://www.instagram.com/devloos"
+            aria-label="Instagram"
             target="_blank"
           >
             <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
@@ -86,6 +88,7 @@ const year = new Date().getFullYear();
           <a
             class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://github.com/devloos"
+            aria-label="Github"
             target="_blank"
           >
             <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
@@ -98,6 +101,7 @@ const year = new Date().getFullYear();
           <a
             class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://twitter.com/18aguilerac"
+            aria-label="Twitter"
             target="_blank"
           >
             <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">
@@ -110,6 +114,7 @@ const year = new Date().getFullYear();
           <a
             class="group rounded transition-all hover:bg-slate-700 dark:hover:bg-slate-200"
             href="https://leetcode.com/devlos/"
+            aria-label="Leetcode"
             target="_blank"
           >
             <div class="rounded border border-slate-700 p-2 px-3 dark:border-slate-200">

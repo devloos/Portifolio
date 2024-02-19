@@ -11,6 +11,7 @@ import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
+import SmartImg from '@/components/smart/SmartImg.vue';
 
 useHead({
   title: 'Devlos',
@@ -32,15 +33,21 @@ const featuredProjects = projects.filter((el) => el.featured);
         class="container mx-auto flex flex-col items-center justify-center gap-4 md:max-w-[44rem] md:flex-row-reverse lg:max-w-4xl xl:max-w-[60rem]"
       >
         <div class="relative mb-14">
-          <img
+          <SmartImg
             class="animate-vertical max-w-48 md:max-w-44"
-            src="/avatar.png"
+            src="/tplos/portfolio/avatar.png"
+            width="450"
+            height="450"
             alt="avatar"
+            is-transparent
           />
-          <img
+          <SmartImg
             class="animate-vertical absolute -bottom-16 -right-10 min-w-56 md:-bottom-14 md:-right-8 md:min-w-48 lg:-bottom-16 lg:-right-10 lg:min-w-52"
-            src="/nimbus.png"
+            src="/tplos/portfolio/nimbus.png"
+            width="683"
+            height="365"
             alt="nimbus"
+            is-transparent
           />
         </div>
         <div class="grow px-2 text-center md:text-start">
@@ -106,7 +113,7 @@ const featuredProjects = projects.filter((el) => el.featured);
             </p>
           </div>
           <div class="mb-10 text-sm leading-relaxed">
-            <h4 class="mb-3 text-base font-bold">About</h4>
+            <p class="mb-3 text-base font-bold">About</p>
             <p class="mb-3">
               I'm an enthusiastic software engineer with a deep passion for Computer
               Science. My journey into this field started in 2020, but it wasn't until
@@ -162,7 +169,7 @@ const featuredProjects = projects.filter((el) => el.featured);
           </div>
         </div>
         <div class="mx-auto max-w-2xl px-4">
-          <h4 class="mb-8 font-bold">Experience</h4>
+          <p class="mb-8 font-bold">Experience</p>
           <div class="group">
             <ExperienceCard v-for="(ex, i) in experiences" :key="i" :experience="ex" />
           </div>
@@ -171,7 +178,7 @@ const featuredProjects = projects.filter((el) => el.featured);
     </section>
     <section class="relative mb-16 pt-6">
       <div class="mx-auto mt-8 max-w-4xl">
-        <h4 class="mb-6 text-center text-lg font-semibold">Technologies</h4>
+        <p class="mb-6 text-center text-lg font-semibold">Technologies</p>
         <div class="mb-14 flex flex-wrap justify-center gap-3">
           <div v-for="tag in tech" :key="tag.text">
             <a
@@ -188,6 +195,8 @@ const featuredProjects = projects.filter((el) => el.featured);
                     logo: tag.logo,
                   })
                 "
+                loading="lazy"
+                :aria-label="tag.text"
                 alt=""
               />
             </a>
