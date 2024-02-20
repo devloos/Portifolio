@@ -12,6 +12,7 @@ import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
+import { ref } from 'vue';
 
 useHead({
   title: 'Devlos',
@@ -25,6 +26,12 @@ useHead({
 
 const isDark = useDark();
 const featuredProjects = projects.filter((el) => el.featured);
+
+const hoveredIndex = ref(null);
+
+function isHoveredIndex(i) {
+  return i === hoveredIndex.value;
+}
 </script>
 <template>
   <main>
@@ -170,8 +177,19 @@ const featuredProjects = projects.filter((el) => el.featured);
         </div>
         <div class="mx-auto max-w-2xl px-4">
           <p class="mb-8 font-bold">Experience</p>
-          <div class="group">
-            <ExperienceCard v-for="(ex, i) in experiences" :key="i" :experience="ex" />
+          <div>
+            <ExperienceCard
+              v-for="(ex, i) in experiences"
+              :key="i"
+              :class="{
+                'lg:bg-alternate-100 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
+                  isHoveredIndex(i),
+                'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
+              }"
+              :experience="ex"
+              @mouseenter="hoveredIndex = i"
+              @mouseleave="hoveredIndex = null"
+            />
           </div>
         </div>
       </div>
