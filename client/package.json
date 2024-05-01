@@ -11,7 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.42.5",
+    "@supabase/supabase-js": "^2.43.0",
     "@unhead/vue": "^1.9.7",
     "@vueuse/core": "^10.9.0",
     "axios": "^1.6.8",
@@ -28,7 +28,7 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "sass": "^1.75.0",
+    "sass": "^1.76.0",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.10",
     "vite-plugin-eslint": "^1.8.1"
