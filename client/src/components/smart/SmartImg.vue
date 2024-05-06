@@ -9,7 +9,7 @@ const props = defineProps({
   },
   alt: {
     type: String,
-    required: true,
+    default: '',
   },
   width: {
     type: [Number, String],
@@ -50,6 +50,7 @@ const STANDARD_SCREEN_WIDTHS = [
 ];
 
 function calculateWidths(imgWidth) {
+  // only include screen widths smaller than image width
   const widths = STANDARD_SCREEN_WIDTHS.filter((width) => width < imgWidth);
   widths.push(imgWidth);
   return widths.sort((a, b) => (a > b ? -1 : 1));
@@ -70,23 +71,19 @@ const srcset = computed(() => {
   return srcsetHolder.join(', ');
 });
 
-const lqipSrc = computed(() => {
-  const url = getImageKitUrl(props.src);
-  const params = new URLSearchParams(url.search);
-  params.set('tr', 'q-10');
-  url.search = params.toString();
-  return url;
-});
+const placeholder =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 </script>
 
 <template>
   <img
-    :src="lqipSrc"
+    :src="placeholder"
     :srcset="srcset"
     :width="width"
     :height="height"
     :loading="loading"
     :style="{ 'background-color': isTransparent ? 'transparent' : 'lightgray' }"
-    alt=""
+    sizes="auto"
+    :alt="props.alt"
   />
 </template>
