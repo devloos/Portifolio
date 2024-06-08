@@ -1,16 +1,19 @@
-## Portfolio
+### Client Setup
 
-### Todo
+Enter client directory
 
-- project layout
-- our own project badges
-- add custom toasts
-- add blog page
+```
+cd client
+```
 
-# Easy or Try
+Install required node dependencies
 
-- family image deck
-- try animation on name
-- switch to fully use smart svg
-- make footer image spin like a coin once only hover
-- try cursor light
+```
+npm install
+```
+
+Run client server (this runs on port 8080)
+
+```
+npm run dev
+```
