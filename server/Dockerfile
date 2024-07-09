@@ -2,11 +2,11 @@
 # Currently broken on latest 3.20, leaving it at 3.18 for now.
 FROM php:8.2-fpm-alpine3.18
 
-ENV php_conf /usr/local/etc/php-fpm.conf
-ENV fpm_conf /usr/local/etc/php-fpm.d/www.conf
-ENV php_vars /usr/local/etc/php/conf.d/docker-vars.ini
+ENV php_conf=/usr/local/etc/php-fpm.conf
+ENV fpm_conf=/usr/local/etc/php-fpm.d/www.conf
+ENV php_vars=/usr/local/etc/php/conf.d/docker-vars.ini
 
-ENV APP_ENV production
+ENV APP_ENV=production
 
 # Install nginx and devel kit
 RUN apk add --no-cache nginx \
