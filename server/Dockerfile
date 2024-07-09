@@ -6,8 +6,6 @@ ENV php_conf=/usr/local/etc/php-fpm.conf
 ENV fpm_conf=/usr/local/etc/php-fpm.d/www.conf
 ENV php_vars=/usr/local/etc/php/conf.d/docker-vars.ini
 
-RUN ls -la
-
 ENV APP_ENV=production
 
 # Install nginx and devel kit
@@ -124,6 +122,8 @@ ADD errors/ /var/www/errors
 WORKDIR "/var/www/app"
 
 COPY . .
+
+RUN ls -la
 
 RUN chmod 755 docker/scripts/startup.sh
 
