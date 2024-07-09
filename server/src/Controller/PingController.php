@@ -13,7 +13,7 @@ class PingController extends AbstractController
     public function ping(Request $request): JsonResponse
     {
         return $this->json([
-            'message' => 'Pong ' . $request->query->has('lol') ? 'TRUE' : 'FALSE',
+            'message' => 'Pong',
             'success' => true,
         ]);
     }
