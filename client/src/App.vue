@@ -1,9 +1,9 @@
 <script setup>
-import { computed, onMounted, provide, ref } from 'vue';
+import { computed, provide, ref } from 'vue';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
 import LoadingOverlay from '@/components/LoadingOverlay.vue';
 import { useRoute } from 'vue-router';
-import { useDark, useFetch } from '@vueuse/core';
+import { useDark } from '@vueuse/core';
 
 const route = useRoute();
 
@@ -15,16 +15,16 @@ provide('stop-overlay', () => (isLoading.value = false));
 
 useDark();
 
-onMounted(async () => {
-  const { data, error } = await useFetch('/api/ping').get().json();
+// onMounted(async () => {
+//   const { data, error } = await useFetch('/api/ping').get().json();
 
-  if (error.value) {
-    console.error(error.value);
-    return;
-  }
+//   if (error.value) {
+//     console.error(error.value);
+//     return;
+//   }
 
-  console.log(data.value);
-});
+//   console.log(data.value);
+// });
 </script>
 
 <template>
