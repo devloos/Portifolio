@@ -117,8 +117,6 @@ RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
 	    -e "s/;zend_extension=opcache/zend_extension=opcache/g" \
             /usr/local/etc/php/php.ini
 
-ADD errors/ /var/www/errors
-
 WORKDIR "/var/www/app"
 
 COPY . .
