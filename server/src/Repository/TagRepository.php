@@ -17,7 +17,7 @@ class TagRepository extends ServiceEntityRepository
     }
 
     //    /**
-    //     * @return Skill[] Returns an array of Skill objects
+    //     * @return Tag[] Returns an array of Tag objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class TagRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Skill
+    //    public function findOneBySomeField($value): ?Tag
     //    {
     //        return $this->createQueryBuilder('s')
     //            ->andWhere('s.exampleField = :val')
