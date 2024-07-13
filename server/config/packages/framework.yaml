@@ -9,8 +9,6 @@ framework:
   #esi: true
   #fragments: true
 
-  # error_controller: App\Controller\ErrorController::index
-
 when@test:
   framework:
     test: true
