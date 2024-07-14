@@ -3,9 +3,8 @@
 namespace App\Controller\Api;
 
 use App\Entity\Project;
-use App\Repository\ProjectRepository;
+use App\Service\ProjectService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
@@ -13,15 +12,19 @@ use Symfony\Component\Routing\Attribute\Route;
 class ProjectController extends AbstractController
 {
     #[Route('/api/project/list', name: 'Project List')]
-    public function list(Request $request, ProjectRepository $projectRepository): JsonResponse
+    public function list(Request $request, ProjectService $projectService): JsonResponse
     {
         $response = new JsonResponse();
 
+        $include = [];
         $criteria = [];
         $orderBy = null;
         $limit = null;
         $offset = null;
-        $include = [];
+
+        if ($request->query->has('include')) {
+            $include = $request->query->all('include');
+        }
 
         if ($request->query->has('featured') && $request->query->getBoolean('featured')) {
             $criteria = ['featured' => true];
@@ -39,28 +42,7 @@ class ProjectController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        if ($request->query->has('include')) {
-            $include = $request->query->all('include');
-        }
-
-        /** @var Project[] $projects */
-        $projects = $projectRepository->findBy($criteria, $orderBy, $limit, $offset);
-
-        $data = [];
-
-        foreach ($projects as $project) {
-            $normalizedProject = $project->toArray();
-
-            if (array_key_exists('tags', $include)) {
-                $normalizedProject['tags'] = [];
-
-                foreach ($project->getTags() as $tag) {
-                    $normalizedProject['tags'][] = $tag->toArray();
-                }
-            }
-
-            $data[] = $normalizedProject;
-        }
+        $data = $projectService->getProjects($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
             'projects' => $data,
