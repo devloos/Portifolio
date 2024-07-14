@@ -21,9 +21,10 @@ class ProjectController extends AbstractController
         $orderBy = null;
         $limit = null;
         $offset = null;
+        $include = [];
 
-        if ($request->query->has('criteria')) {
-            $criteria = $request->query->all('criteria');
+        if ($request->query->has('featured') && $request->query->getBoolean('featured')) {
+            $criteria = ['featured' => true];
         }
 
         if ($request->query->has('orderBy')) {
@@ -38,14 +39,12 @@ class ProjectController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        /** @var Project[] $projects */
-        $projects = $projectRepository->findBy($criteria, $orderBy, $limit, $offset);
-
-        $include = [];
-
         if ($request->query->has('include')) {
             $include = $request->query->all('include');
         }
+
+        /** @var Project[] $projects */
+        $projects = $projectRepository->findBy($criteria, $orderBy, $limit, $offset);
 
         $data = [];
 
@@ -65,6 +64,20 @@ class ProjectController extends AbstractController
 
         $response->setData([
             'projects' => $data,
+            'message' => 'Query was successful.',
+            'success' => true,
+        ]);
+
+        return $response;
+    }
+
+    #[Route('/api/project/get/{id}', name: 'Project Get')]
+    public function get(Request $request, Project $project): JsonResponse
+    {
+        $response = new JsonResponse();
+
+        $response->setData([
+            'project' => $project->toArray(),
             'message' => 'Query was successful.',
             'success' => true,
         ]);

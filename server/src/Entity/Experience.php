@@ -14,25 +14,25 @@ class Experience extends BaseEntity
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    protected ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $title = null;
+    protected ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $company = null;
+    protected ?string $company = null;
 
     #[ORM\Column(length: 1024)]
-    private ?string $summary = null;
+    protected ?string $summary = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $url = null;
+    protected ?string $url = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $startDate = null;
+    protected ?\DateTimeImmutable $startDate = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
-    private ?\DateTimeImmutable $endDate = null;
+    protected ?\DateTimeImmutable $endDate = null;
 
     /**
      * @var Collection<int, Tag>

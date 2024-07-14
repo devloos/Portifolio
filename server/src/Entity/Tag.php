@@ -13,16 +13,16 @@ class Tag extends BaseEntity
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    protected ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $title = null;
+    protected ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $logoName = null;
+    protected ?string $logoName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $url = null;
+    protected ?string $url = null;
 
     /**
      * @var Collection<int, Experience>

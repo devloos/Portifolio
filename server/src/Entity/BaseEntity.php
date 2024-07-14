@@ -13,10 +13,10 @@ class BaseEntity
     use ToArrayTrait;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
-    private ?\DateTimeImmutable $createdAt = null;
+    protected ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
-    private ?\DateTimeImmutable $modifiedAt = null;
+    protected ?\DateTimeImmutable $modifiedAt = null;
 
     public function getCreatedAt(): ?\DateTimeImmutable
     {

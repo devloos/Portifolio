@@ -13,25 +13,25 @@ class Project extends BaseEntity
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    protected ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $title = null;
+    protected ?string $title = null;
 
     #[ORM\Column(length: 1024)]
-    private ?string $description = null;
+    protected ?string $description = null;
 
     #[ORM\Column]
-    private ?bool $featured = null;
+    protected ?bool $featured = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $site = null;
+    protected ?string $site = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $source = null;
+    protected ?string $source = null;
 
     #[ORM\Column(nullable: true)]
-    private ?array $file = null;
+    protected ?array $file = null;
 
     /**
      * @var Collection<int, Tag>
