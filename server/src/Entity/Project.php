@@ -33,6 +33,9 @@ class Project extends BaseEntity
     #[ORM\Column(nullable: true)]
     protected ?array $file = null;
 
+    #[ORM\Column(nullable: true)]
+    protected ?bool $visible = null;
+
     /**
      * @var Collection<int, Tag>
      */
@@ -117,6 +120,18 @@ class Project extends BaseEntity
     public function setFile(?array $file): static
     {
         $this->file = $file;
+
+        return $this;
+    }
+
+    public function isVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): static
+    {
+        $this->visible = $visible;
 
         return $this;
     }

@@ -24,6 +24,9 @@ class Tag extends BaseEntity
     #[ORM\Column(length: 255, nullable: true)]
     protected ?string $url = null;
 
+    #[ORM\Column(nullable: true)]
+    protected ?bool $featured = null;
+
     /**
      * @var Collection<int, Experience>
      */
@@ -79,6 +82,18 @@ class Tag extends BaseEntity
     public function setUrl(?string $url): static
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function isFeatured(): ?bool
+    {
+        return $this->featured;
+    }
+
+    public function setFeatured(bool $featured): static
+    {
+        $this->featured = $featured;
 
         return $this;
     }

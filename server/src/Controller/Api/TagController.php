@@ -2,23 +2,21 @@
 
 namespace App\Controller\Api;
 
-use App\Service\ProjectService;
+use App\Service\TagService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
-class ProjectController extends AbstractController
+class TagController extends AbstractController
 {
-    #[Route('/api/project/list', name: 'Project List')]
-    public function list(Request $request, ProjectService $projectService): JsonResponse
+    #[Route('/api/tag/list', name: 'Tag List')]
+    public function list(Request $request, TagService $tagService): JsonResponse
     {
         $response = new JsonResponse();
 
         $include = [];
-        $criteria = [
-            'visible' => true,
-        ];
+        $criteria = [];
         $orderBy = null;
         $limit = null;
         $offset = null;
@@ -43,28 +41,14 @@ class ProjectController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        $data = $projectService->getProjects($include, $criteria, $orderBy, $limit, $offset);
+        $data = $tagService->getTags($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
-            'projects' => $data,
+            'tags' => $data,
             'message' => 'Query was successful.',
             'success' => true,
         ]);
 
         return $response;
     }
-
-    // #[Route('/api/project/get/{id}', name: 'Project Get')]
-    // public function get(Request $request, Project $project): JsonResponse
-    // {
-    //     $response = new JsonResponse();
-
-    //     $response->setData([
-    //         'project' => $project->toArray(),
-    //         'message' => 'Query was successful.',
-    //         'success' => true,
-    //     ]);
-
-    //     return $response;
-    // }
 }
