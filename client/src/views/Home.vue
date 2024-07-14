@@ -1,18 +1,17 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
-import projects from '@/assets/constants/projects';
 import TopWave from '@/components/wave-svgs/TopWave.vue';
 import BottomWave from '@/components/wave-svgs/BottomWave.vue';
 import ProjectCard from '@/components/cards/ProjectCard.vue';
 import StatCard from '@/components/cards/StatCard.vue';
-import tech from '@/assets/constants/tech';
-import { useDark } from '@vueuse/core';
+import { useDark, useFetch } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
 import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { joinQueryParams } from '@/assets/utility/url';
 
 useHead({
   title: 'Devlos',
@@ -25,7 +24,42 @@ useHead({
 });
 
 const isDark = useDark();
-const featuredProjects = projects.filter((el) => el.featured);
+const featuredProjects = ref([]);
+
+async function fetchFeaturedProjects() {
+  const params = ['featured=1', 'include[tags]=1'];
+  const url = joinQueryParams('/api/project/list', params);
+
+  const { data, error } = await useFetch(url).json();
+
+  if (error.value) {
+    console.log('ERROR: ' + error.value.message);
+    return;
+  }
+
+  featuredProjects.value = data.value.projects;
+}
+
+const featuredTags = ref([]);
+
+async function fetchFeaturedTags() {
+  const params = ['featured=1'];
+  const url = joinQueryParams('/api/tag/list', params);
+
+  const { data, error } = await useFetch(url).json();
+
+  if (error.value) {
+    console.log('ERROR: ' + error.value.message);
+    return;
+  }
+
+  featuredTags.value = data.value.tags;
+}
+
+onMounted(() => {
+  fetchFeaturedProjects();
+  fetchFeaturedTags();
+});
 
 const hoveredIndex = ref(null);
 
@@ -103,7 +137,7 @@ function isHoveredIndex(i) {
         >
           <ProjectCard
             v-for="project in featuredProjects"
-            :key="project.title"
+            :key="project.id"
             :project="project"
           />
         </div>
@@ -198,7 +232,7 @@ function isHoveredIndex(i) {
       <div class="mx-auto mt-8 max-w-4xl">
         <p class="mb-6 text-center text-lg font-semibold">Technologies</p>
         <div class="mb-14 flex flex-wrap justify-center gap-3">
-          <div v-for="tag in tech" :key="tag.text">
+          <div v-for="tag in featuredTags" :key="tag.id">
             <a
               :href="tag.url"
               target="_blank"
@@ -207,14 +241,14 @@ function isHoveredIndex(i) {
               <img
                 :src="
                   buildTagUrl({
-                    text: tag.text,
+                    text: tag.title,
                     backgroundColor: isDark ? '333' : 'cbd5e1',
                     style: 'for-the-badge',
-                    logo: tag.logo,
+                    logo: tag.logoName,
                   })
                 "
                 loading="lazy"
-                :aria-label="tag.text"
+                :aria-label="tag.title"
                 alt=""
               />
             </a>

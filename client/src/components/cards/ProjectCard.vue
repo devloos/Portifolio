@@ -37,17 +37,17 @@ const { project } = toRefs(props);
           {{ project.title }}
         </h5>
         <p class="mb-2 text-sm">
-          {{ project.desc }}
+          {{ project.description }}
         </p>
         <div class="mb-2 flex flex-wrap items-center justify-start gap-2">
           <img
             v-for="tag in project.tags"
-            :key="tag.text"
+            :key="tag.id"
             :src="
               buildTagUrl({
-                text: tag.text,
+                text: tag.title,
                 backgroundColor: '333',
-                logo: tag.logo,
+                logo: tag.logoName,
               })
             "
             loading="lazy"
@@ -65,6 +65,7 @@ const { project } = toRefs(props);
           Visit Site
         </a>
         <a
+          v-if="project?.source"
           class="text-sm text-primary-400 underline underline-offset-2 transition-colors hover:text-primary-600 dark:text-slate-400 dark:hover:text-slate-500"
           :href="project.source"
           target="_blank"
