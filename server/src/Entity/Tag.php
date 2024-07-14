@@ -31,13 +31,13 @@ class Tag extends BaseEntity
      * @var Collection<int, Experience>
      */
     #[ORM\ManyToMany(targetEntity: Experience::class, mappedBy: 'tags')]
-    private Collection $experiences;
+    protected Collection $experiences;
 
     /**
      * @var Collection<int, Project>
      */
     #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'tags')]
-    private Collection $projects;
+    protected Collection $projects;
 
     public function __construct()
     {

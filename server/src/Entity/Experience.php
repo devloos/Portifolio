@@ -34,11 +34,14 @@ class Experience extends BaseEntity
     #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
     protected ?\DateTimeImmutable $endDate = null;
 
+    #[ORM\Column]
+    protected ?bool $visible = null;
+
     /**
      * @var Collection<int, Tag>
      */
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'experiences')]
-    private Collection $tags;
+    protected Collection $tags;
 
     public function __construct()
     {
@@ -118,6 +121,18 @@ class Experience extends BaseEntity
     public function setEndDate(?\DateTimeImmutable $endDate): static
     {
         $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    public function isVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): static
+    {
+        $this->visible = $visible;
 
         return $this;
     }

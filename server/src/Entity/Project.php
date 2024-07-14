@@ -40,7 +40,7 @@ class Project extends BaseEntity
      * @var Collection<int, Tag>
      */
     #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'projects')]
-    private Collection $tags;
+    protected Collection $tags;
 
     public function __construct()
     {

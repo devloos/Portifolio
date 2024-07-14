@@ -1,6 +1,7 @@
 const experiences = [
   {
-    date: 'May 2022 - PRESENT',
+    startDate: 'May 2022',
+    endDate: 'now',
     title: 'Junior Web Developer',
     company: 'Ethika',
     summary:
@@ -34,7 +35,8 @@ const experiences = [
     ],
   },
   {
-    date: 'July 2023 - PRESENT',
+    startDate: 'July 2023',
+    endDate: 'now',
     title: 'Programmer',
     company: 'Saddleback College Robotics',
     summary:
@@ -72,7 +74,8 @@ const experiences = [
     ],
   },
   {
-    date: 'August 2021 - PRESENT',
+    startDate: 'August 2021',
+    endDate: 'now',
     title: 'Computer Science',
     company: 'Saddleback College',
     summary:
@@ -118,7 +121,8 @@ const experiences = [
     ],
   },
   {
-    date: 'October 2018 - January 2020',
+    startDate: 'October 2018',
+    endDate: 'January 2020',
     title: 'Sales Manager',
     company: 'T-Mobile',
     summary:
