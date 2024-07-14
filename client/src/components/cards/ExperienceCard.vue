@@ -1,12 +1,37 @@
 <script setup>
 import { buildTagUrl } from '@/assets/utility';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
   experience: {
     type: Object,
     required: true,
   },
+});
+
+const normalizedDate = computed(() => {
+  const startDate = new Date(props.experience.startDate.date);
+
+  const startDateFormatted = startDate.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+    month: 'long',
+    year: 'numeric',
+  });
+
+  let endDateFormatted = 'PRESENT';
+
+  if (props.experience?.endDate?.date) {
+    const endDate = new Date(props.experience.endDate.date);
+
+    endDateFormatted = endDate.toLocaleDateString('en-US', {
+      timeZone: 'UTC',
+      month: 'long',
+      year: 'numeric',
+    });
+  }
+
+  return `${startDateFormatted} - ${endDateFormatted}`;
 });
 </script>
 
@@ -17,7 +42,9 @@ defineProps({
     class="group/card mb-14 flex flex-col gap-1 rounded transition-all lg:mb-8 lg:cursor-pointer lg:p-6"
   >
     <div>
-      <p class="text-xs font-semibold uppercase tracking-wide">{{ experience.date }}</p>
+      <p class="text-xs font-semibold uppercase tracking-wide">
+        {{ normalizedDate }}
+      </p>
     </div>
     <div>
       <div class="mb-3 font-bold dark:text-slate-400">
@@ -31,22 +58,22 @@ defineProps({
         {{ experience.summary }}
       </p>
       <div class="flex flex-wrap gap-2">
-        <div v-for="tag in experience.tags" :key="tag.text">
+        <div v-for="tag in experience.tags" :key="tag.id">
           <a
             href="/"
             target="_blank"
-            :aria-label="tag.text"
+            :aria-label="tag.title"
             class="inline-block transition-all hover:opacity-80"
           >
             <img
               :src="
                 buildTagUrl({
-                  text: tag.text,
+                  text: tag.title,
                   backgroundColor: '333',
-                  logo: tag.logo,
+                  logo: tag.logoName,
                 })
               "
-              alt=""
+              :alt="tag.title"
             />
           </a>
         </div>

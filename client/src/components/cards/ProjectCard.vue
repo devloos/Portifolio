@@ -51,7 +51,7 @@ const { project } = toRefs(props);
               })
             "
             loading="lazy"
-            alt=""
+            :alt="tag.title"
           />
         </div>
       </div>

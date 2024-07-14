@@ -28,7 +28,7 @@ class ProjectController extends AbstractController
         }
 
         if ($request->query->has('featured')) {
-            array_merge($criteria, ['featured' => $request->query->getBoolean('featured')]);
+            $criteria = array_merge($criteria, ['featured' => $request->query->getBoolean('featured')]);
         }
 
         if ($request->query->has('orderBy')) {

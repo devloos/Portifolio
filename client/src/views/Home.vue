@@ -6,7 +6,6 @@ import ProjectCard from '@/components/cards/ProjectCard.vue';
 import StatCard from '@/components/cards/StatCard.vue';
 import { useDark, useFetch } from '@vueuse/core';
 import ExperienceCard from '@/components/cards/ExperienceCard.vue';
-import experiences from '@/assets/constants/experiences';
 import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
@@ -56,9 +55,26 @@ async function fetchFeaturedTags() {
   featuredTags.value = data.value.tags;
 }
 
+const experiences = ref([]);
+
+async function fetchExperiences() {
+  const params = ['include[tags]=1'];
+  const url = joinQueryParams('/api/experience/list', params);
+
+  const { data, error } = await useFetch(url).json();
+
+  if (error.value) {
+    console.log('ERROR: ' + error.value.message);
+    return;
+  }
+
+  experiences.value = data.value.experiences;
+}
+
 onMounted(() => {
   fetchFeaturedProjects();
   fetchFeaturedTags();
+  fetchExperiences();
 });
 
 const hoveredIndex = ref(null);
@@ -214,7 +230,7 @@ function isHoveredIndex(i) {
           <div>
             <ExperienceCard
               v-for="(ex, i) in experiences"
-              :key="i"
+              :key="ex.id"
               :class="{
                 'lg:bg-alternate-100 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
                   isHoveredIndex(i),
@@ -249,7 +265,7 @@ function isHoveredIndex(i) {
                 "
                 loading="lazy"
                 :aria-label="tag.title"
-                alt=""
+                :alt="tag.title"
               />
             </a>
           </div>

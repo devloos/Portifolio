@@ -2,6 +2,8 @@
 
 namespace App\Command;
 
+use App\Entity\Tag;
+use App\Repository\TagRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -16,6 +18,7 @@ class BackfillCommand extends Command
 {
     public function __construct(
         private EntityManagerInterface $entityManagerInterface,
+        private TagRepository $tagRepository,
     ) {
         parent::__construct();
     }
@@ -27,6 +30,17 @@ class BackfillCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('Starting backfill!');
+
+        /** @var Tag[] $tags */
+        $tags = $this->tagRepository->findBy(['logoName' => null]);
+
+        foreach ($tags as $tag) {
+            $tag->setFeatured(false);
+
+            $this->entityManagerInterface->persist($tag);
+        }
+
+        $this->entityManagerInterface->flush();
 
         $output->writeln('Backfill finished!');
         return Command::SUCCESS;

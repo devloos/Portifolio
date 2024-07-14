@@ -2,31 +2,29 @@
 
 namespace App\Controller\Api;
 
-use App\Service\TagService;
+use App\Service\ExperienceService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
-class TagController extends AbstractController
+class ExperienceController extends AbstractController
 {
-    #[Route('/api/tag/list', name: 'Tag List')]
-    public function list(Request $request, TagService $tagService): JsonResponse
+    #[Route('/api/experience/list', name: 'Experience List')]
+    public function list(Request $request, ExperienceService $experienceService): JsonResponse
     {
         $response = new JsonResponse();
 
         $include = [];
-        $criteria = [];
+        $criteria = [
+            'visible' => true,
+        ];
         $orderBy = null;
         $limit = null;
         $offset = null;
 
         if ($request->query->has('include')) {
             $include = $request->query->all('include');
-        }
-
-        if ($request->query->has('featured')) {
-            $criteria = array_merge($criteria, ['featured' => $request->query->getBoolean('featured')]);
         }
 
         if ($request->query->has('orderBy')) {
@@ -41,10 +39,10 @@ class TagController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        $data = $tagService->getTags($include, $criteria, $orderBy, $limit, $offset);
+        $data = $experienceService->getExperiences($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
-            'tags' => $data,
+            'experiences' => $data,
             'message' => 'Query was successful.',
             'success' => true,
         ]);
