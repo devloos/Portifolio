@@ -75,6 +75,9 @@ def main():
     os.chdir(PORTFOLIO_VUE_PATH + '/client')
     os.system('railway up --detach')
 
+    os.chdir(PORTFOLIO_VUE_PATH + '/server')
+    os.system('railway up --detach')
+
 
 if __name__ == '__main__':
     main()
