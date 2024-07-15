@@ -1,7 +1,7 @@
 <script setup>
 import { inject, ref } from 'vue';
-import supabase from '@/lib/supabase-client.js';
 import StyledButton from '@/components/styled/StyledButton.vue';
+import { smartFetch } from '@/assets/utility/api';
 
 const startOverlay = inject('start-overlay');
 const stopOverlay = inject('stop-overlay');
@@ -14,28 +14,26 @@ const subject = ref('');
 const message = ref('');
 
 async function sendEmail() {
-  try {
-    startOverlay();
+  startOverlay();
 
-    const emailRow = {
-      name: name.value,
-      email: email.value,
-      subject: subject.value,
-      message: message.value,
-    };
+  const body = {
+    name: name.value,
+    email: email.value,
+    subject: subject.value,
+    message: message.value,
+  };
 
-    const { error } = await supabase.from('emails').insert(emailRow);
+  const { data, failed } = await smartFetch('/api/email/create', {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
 
-    if (error) {
-      throw error;
-    }
-
+  if (!failed) {
+    console.log(data);
     form.value.reset();
-  } catch (e) {
-    // need to add toast still
-  } finally {
-    stopOverlay();
   }
+
+  stopOverlay();
 }
 </script>
 
