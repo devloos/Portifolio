@@ -12,6 +12,7 @@ import SmartImg from '@/components/smart/SmartImg.vue';
 import { onMounted, ref } from 'vue';
 import { joinQueryParams } from '@/assets/utility/url';
 import { smartFetch } from '@/assets/utility/api';
+import SmartTransition from '@/components/smart/SmartTransition.vue';
 
 useHead({
   title: 'Devlos',
@@ -144,17 +145,21 @@ function isHoveredIndex(i) {
     </section>
     <section class="relative py-12">
       <TopWave class="fill-alternate-100 dark:fill-primary-700" />
-      <div class="bg-alternate-100 dark:bg-primary-700">
-        <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
-        <div
-          class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
-        >
-          <ProjectCard
-            v-for="project in featuredProjects"
-            :key="project.id"
-            :project="project"
-          />
-        </div>
+      <div class="min-h-36 bg-alternate-100 dark:bg-primary-700">
+        <SmartTransition name="fade" mode="out-in">
+          <div v-if="featuredProjects.length > 0">
+            <h4 class="mb-6 text-center text-lg font-semibold">Featured Projects</h4>
+            <div
+              class="container grid max-w-6xl grid-cols-1 place-items-center gap-6 px-3 lg:grid-cols-2"
+            >
+              <ProjectCard
+                v-for="project in featuredProjects"
+                :key="project.id"
+                :project="project"
+              />
+            </div>
+          </div>
+        </SmartTransition>
       </div>
       <BottomWave class="fill-alternate-100 dark:fill-primary-700" />
     </section>
@@ -223,51 +228,61 @@ function isHoveredIndex(i) {
             </p>
           </div>
         </div>
+
         <div class="mx-auto max-w-2xl px-4">
-          <p class="mb-8 font-bold">Experience</p>
-          <div>
-            <ExperienceCard
-              v-for="(ex, i) in experiences"
-              :key="ex.id"
-              :class="{
-                'lg:bg-alternate-100 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
-                  isHoveredIndex(i),
-                'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
-              }"
-              :experience="ex"
-              @mouseenter="hoveredIndex = i"
-              @mouseleave="hoveredIndex = null"
-            />
-          </div>
+          <SmartTransition name="slide-from-right" mode="out-in">
+            <div v-if="experiences.length > 0">
+              <p class="mb-8 font-bold">Experience</p>
+              <div>
+                <ExperienceCard
+                  v-for="(ex, i) in experiences"
+                  :key="ex.id"
+                  :class="{
+                    'lg:bg-alternate-100 lg:opacity-100 lg:drop-shadow-lg lg:dark:bg-slate-700':
+                      isHoveredIndex(i),
+                    'lg:opacity-50': !isHoveredIndex(i) && hoveredIndex !== null,
+                  }"
+                  :experience="ex"
+                  @mouseenter="hoveredIndex = i"
+                  @mouseleave="hoveredIndex = null"
+                />
+              </div>
+            </div>
+          </SmartTransition>
         </div>
       </div>
     </section>
     <section class="relative mb-16 pt-6">
       <div class="mx-auto mt-8 max-w-4xl">
         <p class="mb-6 text-center text-lg font-semibold">Technologies</p>
-        <div class="mb-14 flex flex-wrap justify-center gap-3">
-          <div v-for="tag in featuredTags" :key="tag.id">
-            <a
-              :href="tag.url"
-              target="_blank"
-              class="inline-block transition-all hover:opacity-80"
-            >
-              <img
-                :src="
-                  buildTagUrl({
-                    text: tag.title,
-                    backgroundColor: isDark ? '333' : 'cbd5e1',
-                    style: 'for-the-badge',
-                    logo: tag.logoName,
-                  })
-                "
-                loading="lazy"
-                :aria-label="tag.title"
-                :alt="tag.title"
-              />
-            </a>
+        <SmartTransition name="fade" mode="out-in">
+          <div
+            v-if="featuredTags.length > 0"
+            class="mb-14 flex flex-wrap justify-center gap-3"
+          >
+            <div v-for="tag in featuredTags" :key="tag.id">
+              <a
+                :href="tag.url"
+                target="_blank"
+                class="inline-block transition-all hover:opacity-80"
+              >
+                <img
+                  :src="
+                    buildTagUrl({
+                      text: tag.title,
+                      backgroundColor: isDark ? '333' : 'cbd5e1',
+                      style: 'for-the-badge',
+                      logo: tag.logoName,
+                    })
+                  "
+                  loading="lazy"
+                  :aria-label="tag.title"
+                  :alt="tag.title"
+                />
+              </a>
+            </div>
           </div>
-        </div>
+        </SmartTransition>
         <div class="px-3">
           <StatCard perspective />
         </div>
