@@ -14,17 +14,6 @@ provide('start-overlay', () => (isLoading.value = true));
 provide('stop-overlay', () => (isLoading.value = false));
 
 useDark();
-
-// onMounted(async () => {
-//   const { data, error } = await useFetch('/api/ping').get().json();
-
-//   if (error.value) {
-//     console.error(error.value);
-//     return;
-//   }
-
-//   console.log(data.value);
-// });
 </script>
 
 <template>
