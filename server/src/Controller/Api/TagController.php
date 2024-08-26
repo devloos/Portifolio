@@ -41,10 +41,10 @@ class TagController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        $data = $tagService->getTags($include, $criteria, $orderBy, $limit, $offset);
+        $tags = $tagService->getTags($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
-            'tags' => $data,
+            'data' => $tags,
             'message' => 'Query was successful.',
             'success' => true,
         ]);

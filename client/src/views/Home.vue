@@ -10,9 +10,8 @@ import { useHead } from '@unhead/vue';
 import StyledButton from '@/components/styled/StyledButton.vue';
 import SmartImg from '@/components/smart/SmartImg.vue';
 import { onMounted, ref } from 'vue';
-import { joinQueryParams } from '@/assets/utility/url';
-import { smartFetch } from '@/assets/utility/api';
 import SmartTransition from '@/components/smart/SmartTransition.vue';
+import { useSmartFetch } from '@/composables/smart-fetch';
 
 useHead({
   title: 'Devlos',
@@ -28,46 +27,54 @@ const isDark = useDark();
 const featuredProjects = ref([]);
 
 async function fetchFeaturedProjects() {
-  const params = ['featured=1', 'include[tags]=1'];
-  const url = joinQueryParams('/api/project/list', params);
+  const response = await useSmartFetch({
+    url: '/api/project/list',
+    method: 'GET',
+    params: {
+      featured: true,
+      include: {
+        tags: true,
+      },
+    },
+  });
 
-  const { data, failed } = await smartFetch(url, { method: 'GET' });
-
-  if (failed) {
-    return;
+  if (response.success) {
+    featuredProjects.value = response.data;
   }
-
-  featuredProjects.value = data.projects;
 }
 
 const featuredTags = ref([]);
 
 async function fetchFeaturedTags() {
-  const params = ['featured=1'];
-  const url = joinQueryParams('/api/tag/list', params);
+  const response = await useSmartFetch({
+    url: '/api/tag/list',
+    method: 'GET',
+    params: {
+      featured: true,
+    },
+  });
 
-  const { data, failed } = await smartFetch(url, { method: 'GET' });
-
-  if (failed) {
-    return;
+  if (response.success) {
+    featuredTags.value = response.data;
   }
-
-  featuredTags.value = data.tags;
 }
 
 const experiences = ref([]);
 
 async function fetchExperiences() {
-  const params = ['include[tags]=1'];
-  const url = joinQueryParams('/api/experience/list', params);
+  const response = await useSmartFetch({
+    url: '/api/experience/list',
+    method: 'GET',
+    params: {
+      include: {
+        tags: true,
+      },
+    },
+  });
 
-  const { data, failed } = await smartFetch(url, { method: 'GET' });
-
-  if (failed) {
-    return;
+  if (response.success) {
+    experiences.value = response.data;
   }
-
-  experiences.value = data.experiences;
 }
 
 onMounted(() => {

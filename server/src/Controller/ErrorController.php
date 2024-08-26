@@ -31,6 +31,7 @@ class ErrorController
         }
 
         $data = [
+            'data' => null,
             'message' => 'Oops! An error occurred.',
             'success' => false
         ];

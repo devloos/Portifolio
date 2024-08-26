@@ -44,10 +44,10 @@ class ProjectController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        $data = $projectService->getProjects($include, $criteria, $orderBy, $limit, $offset);
+        $projects = $projectService->getProjects($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
-            'projects' => $data,
+            'data' => $projects,
             'message' => 'Query was successful.',
             'success' => true,
         ]);

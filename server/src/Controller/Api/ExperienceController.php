@@ -39,10 +39,10 @@ class ExperienceController extends AbstractController
             $offset = $request->query->getInt('offset');
         }
 
-        $data = $experienceService->getExperiences($include, $criteria, $orderBy, $limit, $offset);
+        $experiences = $experienceService->getExperiences($include, $criteria, $orderBy, $limit, $offset);
 
         $response->setData([
-            'experiences' => $data,
+            'data' => $experiences,
             'message' => 'Query was successful.',
             'success' => true,
         ]);

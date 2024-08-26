@@ -40,7 +40,7 @@ class EmailController extends AbstractController
         $response->setStatusCode(201);
 
         $response->setData([
-            'id' => $result['id'],
+            'data' => $result['id'],
             'message' => 'Successfully created email.',
             'success' => true,
         ]);
