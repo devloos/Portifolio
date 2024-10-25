@@ -124,16 +124,13 @@ function isHoveredIndex(i) {
             <span>. I work as a Web Developer at Ethika Inc.</span>
           </p>
           <div class="px-2">
-            <a class="mr-6 inline-block" href="/resume.pdf" download>
+            <RouterLink class="mr-6" to="/resume">
               <StyledButton
                 class="bg-alternate-200 ring-1 ring-primary-400 dark:bg-primary-600 dark:ring-slate-400"
               >
-                <div class="flex items-center justify-center gap-3">
-                  <p>Resume</p>
-                  <i class="fa-solid fa-download"></i>
-                </div>
+                Resume
               </StyledButton>
-            </a>
+            </RouterLink>
             <RouterLink to="/projects" class="group inline-block">
               <StyledButton
                 class="bg-primary-100 ring-1 ring-primary-400 dark:bg-alternate-700 dark:ring-slate-400"

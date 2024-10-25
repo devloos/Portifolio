@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const Home = () => import('@/views/Home.vue');
 const Projects = () => import('@/views/Projects.vue');
 const Contact = () => import('@/views/Contact.vue');
+const Resume = () => import('@/views/Resume.vue');
 const PageNotFound = () => import('@/views/PageNotFound.vue');
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     meta: {
       layout: 'NavLayout',
     },
+  },
+  {
+    path: '/resume',
+    name: 'Resume',
+    component: Resume,
   },
   {
     path: '/:pathMatch(.*)*',
