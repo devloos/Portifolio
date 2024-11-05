@@ -126,12 +126,12 @@ const year = new Date().getFullYear();
           </a>
         </div>
       </div>
-      <div class="relative">
-        <p class="pb-10 pt-16 text-center text-gray-500 dark:text-gray-400">
+      <div>
+        <p class="pb-2 pt-16 text-center text-gray-500 dark:text-gray-400">
           &copy; {{ year }} Carlos Aguilera
         </p>
 
-        <div class="absolute inset-y-0 right-8 flex items-center">
+        <div class="flex justify-end pb-5 pe-5 md:pb-8 md:pe-9">
           <a href="https://v1.caguilera.dev/#/" target="_blank">
             <SmartImg
               src="/tplos/portfolio/nether-portal.webp"
